@@ -1,0 +1,45 @@
+.secNAV {
+  height: 80px;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+  background-color: #e3e3e3;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.underNAV {
+  height: 510px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+  background-color: #e3e3e3;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.Att {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+.Att a {
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+  margin-right: auto;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.Att a.active {
+  color: lightseagreen;
+}
+
+.Att a:hover {
+  color: lightseagreen;
+}

@@ -1,0 +1,49 @@
+.img-main {
+  width: 100%;
+  height: 100%;
+}
+
+.Center {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.Bigtxt {
+  font-size: 45px;
+  color: black;
+  position: relative;
+}
+
+.Brush {
+  margin-right: auto;
+  margin-left: auto;
+  width: 380px;
+  height: 55px;
+  position: absolute;
+  z-index: -1;
+}
+
+.pBrush {
+  margin-right: auto;
+  margin-left: auto;
+  width: 480px;
+  height: 55px;
+  position: absolute;
+  z-index: -1;
+}
+
+.Bflex {
+  display: flex;
+  width: 33%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.marg5 {
+  margin: 0px;
+}

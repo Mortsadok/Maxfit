@@ -1,0 +1,31 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /*background-image: url("https://images8.alphacoders.com/375/375426.jpg");*/
+  background-color: #f8f8f8;
+  background-size: 100%;
+  direction: rtl;
+}
+
+.Box-flex {
+  display: flex;
+  height: 500px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.box {
+  background: white;
+  flex: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #f8f8f8;
+}
+
+.Home-att {
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+}
