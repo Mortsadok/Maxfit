@@ -14,7 +14,7 @@ class Myprofile extends Component {
 }
 
 const UnderNAV = props => <div className="underNAV"></div>;
-// Under Navbar for Myprofile
+
 const SecondNAV = props => (
   <div className="secNAV">
     <div className="Att">

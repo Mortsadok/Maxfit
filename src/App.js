@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components//Home/Home";
 import Live from "./components/Live/Live";
-import Personaltraining from "./components/PersonalTraining/Personaltraining";
 import Notifications from "./components/Notifications/Notifications";
 import Store from "./components/Store/Store";
 import "./css/Main.css";
@@ -20,7 +19,7 @@ class App extends Component {
             <Route path="/Live" component={Live} />
             <Route path="/Notifications" component={Notifications} />
             <Route path="/Store" component={Store} />
-            <Route path="/Personaltraining" component={Personaltraining} />
+
             <Route path="/Myprofile" component={Myprofile} />
           </div>
         </Switch>
