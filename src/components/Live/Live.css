@@ -1,0 +1,31 @@
+.LiveCenter {
+  height: 350px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 30px;
+  background-color: #e3e3e3;
+  margin-top: 50px;
+}
+
+.Inside {
+  height: 250px;
+  width: 550px;
+  margin: auto;
+  border-radius: 50px;
+  background-color: white;
+  display: flex;
+}
+
+.underLine {
+  text-decoration: underline;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.countExmple {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 200px;
+}

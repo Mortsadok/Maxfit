@@ -1,9 +1,9 @@
 .logo {
-    display: inline-flex;
-    margin: auto;
-    position: absolute;
+  display: inline-flex;
+  margin: auto;
+  position: absolute;
 }
 
 img {
- width: 130px;
+  width: 130px;
 }
