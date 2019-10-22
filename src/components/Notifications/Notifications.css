@@ -7,3 +7,18 @@
   margin-top: 25px;
   margin-bottom: 20px;
 }
+
+.toast {
+  direction: ltr;
+  text-align: center;
+  min-width: 500px;
+}
+
+.mr-auto {
+  text-align: center;
+  display: flex;
+}
+
+.toat-header {
+  text-align: center;
+}

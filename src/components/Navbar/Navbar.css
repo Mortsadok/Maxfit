@@ -25,6 +25,6 @@ a:hover {
   color: lightseagreen;
 }
 
-a.active {
+.att a.active {
   color: lightseagreen;
 }
