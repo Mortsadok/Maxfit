@@ -17,15 +17,9 @@
   display: flex;
 }
 
-.underLine {
-  text-decoration: underline;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-}
-
 .countExmple {
   margin-right: auto;
   margin-left: auto;
   font-size: 200px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

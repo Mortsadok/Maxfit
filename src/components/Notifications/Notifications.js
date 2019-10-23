@@ -15,14 +15,17 @@ class Notifications extends Component {
   render() {
     return (
       <div className="Notifications">
-        <NotificationsBox />
+        <NotificationsBox1 />
+        <NotificationsBox2 />
       </div>
     );
   }
 }
 
-const NotificationsBox = props => (
-  <div className="NotificationsBox">
+const NotificationsBox1 = props => (
+  <div className="NotificationsBox1">
+    <p class="font-weight-light">עדכונים</p>
+
     <Toast>
       <Toast.Header>
         <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
@@ -31,6 +34,12 @@ const NotificationsBox = props => (
       </Toast.Header>
       <Toast.Body>.הודעה חדשה ממנהל חדר הכושר</Toast.Body>
     </Toast>
+  </div>
+);
+
+const NotificationsBox2 = props => (
+  <div className="NotificationsBox2">
+    <p class="font-weight-light">שעות פתיחה</p>
   </div>
 );
 
