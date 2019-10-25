@@ -42,17 +42,17 @@ const NotificationsBox2 = props => (
     <p className="font-weight-light">שעות פתיחה</p>
 
     <div className="li-att ">ראשון - חמישי</div>
-    <li>22:00 - 9:00</li>
+    <li className="font-weight-light">22:00 - 9:00</li>
 
     <div className="Main-Padding"></div>
 
     <div className="li-att ">שישי</div>
-    <li>15:00 - 9:00</li>
+    <li className="font-weight-light">15:00 - 9:00</li>
 
     <div className="Main-Padding"></div>
 
     <div className="li-att ">שבת</div>
-    <li>23:00 - 9:00</li>
+    <li className="font-weight-light">23:00 - 9:00</li>
   </div>
 );
 

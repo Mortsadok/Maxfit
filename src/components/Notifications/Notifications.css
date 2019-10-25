@@ -51,7 +51,7 @@
 
 /* Hours */
 .Notifications li {
-  font-size: 25px;
+  font-size: 30px;
   list-style: none;
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -59,9 +59,17 @@
 
 /* Days */
 .li-att {
-  font-size: 35px;
+  font-size: 40px;
   list-style: none;
   text-align: center;
   font-weight: 600;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.Line {
+  border-bottom: 1px solid;
+  color: black;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
