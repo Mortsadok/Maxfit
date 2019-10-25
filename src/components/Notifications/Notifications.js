@@ -39,7 +39,20 @@ const NotificationsBox1 = props => (
 
 const NotificationsBox2 = props => (
   <div className="NotificationsBox2">
-    <p class="font-weight-light">שעות פתיחה</p>
+    <p className="font-weight-light">שעות פתיחה</p>
+
+    <div className="li-att ">ראשון - חמישי</div>
+    <li>22:00 - 9:00</li>
+
+    <div className="Main-Padding"></div>
+
+    <div className="li-att ">שישי</div>
+    <li>15:00 - 9:00</li>
+
+    <div className="Main-Padding"></div>
+
+    <div className="li-att ">שבת</div>
+    <li>23:00 - 9:00</li>
   </div>
 );
 

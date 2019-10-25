@@ -6,10 +6,11 @@
   background-color: #e3e3e3;
   margin-top: 25px;
   margin-bottom: 20px;
-  float: right;
   margin-right: 50px;
 }
-
+.Notifications {
+  display: flex;
+}
 .NotificationsBox2 {
   height: 600px;
   width: 45%;
@@ -18,10 +19,12 @@
   background-color: #e3e3e3;
   margin-top: 25px;
   margin-bottom: 20px;
-  float: left;
   margin-left: 50px;
+  margin-right: 50px;
 }
-
+.Main-Padding {
+  padding-bottom: 1rem;
+}
 .toast {
   direction: ltr;
   text-align: center;
@@ -44,4 +47,21 @@
 .font-weight-light {
   text-align: center;
   font-size: 30px;
+}
+
+/* Hours */
+.Notifications li {
+  font-size: 25px;
+  list-style: none;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Days */
+.li-att {
+  font-size: 35px;
+  list-style: none;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
