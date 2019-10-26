@@ -3,15 +3,6 @@ import "./Notifications.css";
 import Toast from "react-bootstrap/Toast";
 
 class Notifications extends Component {
-  state = {
-    toast: true
-  };
-  onClick = () => {
-    console.log(this.state.toast);
-    this.setState({
-      toast: false
-    });
-  };
   render() {
     return (
       <div className="Notifications">
@@ -40,19 +31,22 @@ const NotificationsBox1 = props => (
 const NotificationsBox2 = props => (
   <div className="NotificationsBox2">
     <p className="font-weight-light">שעות פתיחה</p>
+    <div className="OpenHours">
+      <div className="li-att ">ראשון - חמישי</div>
+      <li className="font-weight-light">22:00 - 9:00</li>
 
-    <div className="li-att ">ראשון - חמישי</div>
-    <li className="font-weight-light">22:00 - 9:00</li>
+      <div className="Main-Padding"></div>
+      <div className="Line"></div>
 
-    <div className="Main-Padding"></div>
+      <div className="li-att ">שישי</div>
+      <li className="font-weight-light">15:00 - 9:00</li>
 
-    <div className="li-att ">שישי</div>
-    <li className="font-weight-light">15:00 - 9:00</li>
+      <div className="Main-Padding"></div>
+      <div className="Line"></div>
 
-    <div className="Main-Padding"></div>
-
-    <div className="li-att ">שבת</div>
-    <li className="font-weight-light">23:00 - 9:00</li>
+      <div className="li-att ">שבת</div>
+      <li className="font-weight-light">22:00 - 8:00</li>
+    </div>
   </div>
 );
 
