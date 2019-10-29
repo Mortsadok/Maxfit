@@ -43,3 +43,41 @@
 .Att a:hover {
   color: lightseagreen;
 }
+
+/* FontAwesome */
+
+.muscleIcon {
+  position: absolute;
+  margin-right: 2.5%;
+  top: 122px;
+}
+
+.HandsHelping {
+  position: absolute;
+  margin-right: 13.6%;
+  top: 121px;
+}
+
+.CalendarCheck {
+  position: absolute;
+  margin-right: 27.2%;
+  top: 121px;
+}
+
+.ListUL {
+  position: absolute;
+  margin-right: 40.3%;
+  top: 122px;
+}
+
+.Heartbeat {
+  position: absolute;
+  margin-right: 55.8%;
+  top: 122px;
+}
+
+.Settings {
+  position: absolute;
+  margin-right: 71.2%;
+  top: 122px;
+}
