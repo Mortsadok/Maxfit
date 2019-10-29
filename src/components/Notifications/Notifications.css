@@ -8,9 +8,11 @@
   margin-bottom: 20px;
   margin-right: 50px;
 }
+
 .Notifications {
   display: flex;
 }
+
 .NotificationsBox2 {
   height: 600px;
   width: 45%;
@@ -22,9 +24,11 @@
   margin-left: 50px;
   margin-right: 50px;
 }
+
 .Main-Padding {
   padding-bottom: 1rem;
 }
+
 .toast {
   direction: ltr;
   text-align: center;

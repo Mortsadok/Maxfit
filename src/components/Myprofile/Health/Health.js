@@ -22,7 +22,22 @@ class Health extends Component {
   }
 }
 
-const UnderNAV = props => <div className="underNAV"></div>;
+const UnderNAV = props => (
+  <div className="underNAV">
+    <div className="Inside">
+      <div className="Headline">
+        <p class="font-weight-light">הצהרת בריאות</p>
+      </div>
+      <div className="HealthPolicy">
+        הנני החתום מטה מצהיר/ה בזאת שעל פי מיטב ידעתי אני בריא/ה ואין לי כל
+        מגבלה רפואית המונעת את השתתפותי בשיעורים והנני כשיר/ה להשתתף בפעילות
+        שיעורי הסטודיו. אני מודע למגבלות הרפואיות שלי. במידה וידועה לי בעיה
+        רפואית כלשהי, הנני מתחייב/ת להביא אישור רפואי בנוסף להצהרת הבריאות.
+      </div>
+    </div>
+  </div>
+);
+
 const SecondNAV = props => (
   <div className="secNAV">
     <div className="Att">

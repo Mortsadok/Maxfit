@@ -19,6 +19,7 @@
   background-color: #e3e3e3;
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
 }
 
 .Att {
@@ -26,6 +27,7 @@
   width: 100%;
   margin: auto;
 }
+
 .Att a {
   font-size: 20px;
   font-weight: 400;
@@ -42,6 +44,27 @@
 
 .Att a:hover {
   color: lightseagreen;
+}
+
+.Inside {
+  height: 480px;
+  width: 98%;
+  margin: auto;
+  border-radius: 50px;
+  background-color: white;
+}
+
+.Headline {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.HealthPolicy {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  font-size: 20px;
 }
 
 /* FontAwesome */
@@ -72,7 +95,7 @@
 
 .Heartbeat {
   position: absolute;
-  margin-right: 55.8%;
+  margin-right: 55.9%;
   top: 122px;
 }
 
