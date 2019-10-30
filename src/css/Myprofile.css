@@ -46,7 +46,7 @@
   color: lightseagreen;
 }
 
-.Inside {
+.Inside-box {
   height: 480px;
   width: 98%;
   margin: auto;
@@ -55,16 +55,27 @@
 }
 
 .Headline {
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
+  height: 50px;
+  width: 100%;
+}
+
+.HealthPolicy-content {
+  display: block;
+  padding: 1rem 8rem 1rem 8rem;
 }
 
 .HealthPolicy {
+  display: block;
   margin-right: auto;
   margin-left: auto;
-  display: flex;
-  font-size: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.font-weight-light {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 25px;
 }
 
 /* FontAwesome */
