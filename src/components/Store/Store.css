@@ -6,4 +6,13 @@
   background-color: #e3e3e3;
   margin-top: 25px;
   margin-bottom: 20px;
+  display: flex;
+}
+
+.Inside_BoxStore {
+  height: 580px;
+  width: 98%;
+  margin: auto;
+  border-radius: 50px;
+  background-color: white;
 }

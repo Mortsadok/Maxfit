@@ -11,6 +11,10 @@ class Store extends Component {
   }
 }
 
-const BoxStore = props => <div className="boxStore"></div>;
+const BoxStore = props => (
+  <div className="boxStore">
+    <div className="Inside_BoxStore"></div>
+  </div>
+);
 
 export default Store;
