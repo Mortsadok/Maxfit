@@ -6,6 +6,7 @@
   background-color: #e3e3e3;
   margin-top: 25px;
   margin-bottom: 20px;
+  display: flex;
 }
 
 .Inside {
@@ -13,8 +14,10 @@
   width: 550px;
   margin: auto;
   border-radius: 50px;
-  background-color: white;
+  background-color: lightseagreen;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .countExmple {
@@ -22,4 +25,14 @@
   margin-left: auto;
   font-size: 200px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.Inside_LiveStore {
+  height: 580px;
+  width: 98%;
+  margin: auto;
+  border-radius: 50px;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
 }

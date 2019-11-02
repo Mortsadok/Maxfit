@@ -13,9 +13,11 @@ class Live extends Component {
 
 const LiveCenter = props => (
   <div className="LiveCenter">
-    <p class="font-weight-light">מתאמנים בזמן אמת</p>
-    <div className="Inside">
-      <h1 className="countExmple">23</h1>
+    <div className="Inside_LiveStore">
+      <p class="font-weight-light">מתאמנים בזמן אמת</p>
+      <div className="Inside">
+        <h1 className="countExmple">23</h1>
+      </div>
     </div>
   </div>
 );
