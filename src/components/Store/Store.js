@@ -20,6 +20,10 @@ const BoxStore = props => (
     <div className="Inside_BoxStore">
       <Carousel>
         <Carousel.Item>
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
           <img className="d-block w-100" src={pic1} alt="First slide" />
         </Carousel.Item>
         <Carousel.Item>
@@ -43,6 +47,10 @@ const BoxStore = props => (
       </Carousel>
       <Carousel>
         <Carousel.Item>
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
           <img className="d-block w-100" src={pic1} alt="First slide" />
         </Carousel.Item>
         <Carousel.Item>

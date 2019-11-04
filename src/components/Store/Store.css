@@ -21,14 +21,16 @@
 }
 .w-100 {
   width: 75% !important;
-  height: 350px;
+  height: 450px;
   padding: 1.25rem;
   margin-right: auto;
   margin-left: auto;
 }
+
 .d-block {
   display: flex !important;
 }
+
 .carousel-inner {
   position: relative;
   width: 700px;
