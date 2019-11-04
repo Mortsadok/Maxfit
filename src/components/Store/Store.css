@@ -15,4 +15,22 @@
   margin: auto;
   border-radius: 50px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.w-100 {
+  width: 75% !important;
+  height: 350px;
+  padding: 1.25rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.d-block {
+  display: flex !important;
+}
+.carousel-inner {
+  position: relative;
+  width: 700px;
+  overflow: hidden;
 }
