@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 import "./Store.css";
-import pic1 from "../../img/pic1.jpg";
-import pic2 from "../../img/pic2.jpg";
-import pic3 from "../../img/pic3.jpg";
+import pic1 from "../../img/Bulk Muscle.png";
+import pic2 from "../../img/Dymatize Super Mass Gainer.png";
+import pic3 from "../../img/Extreme MASS.png";
+import pic4 from "../../img/MusclePharm Combat XL Mass Gainer.png";
 
 class Store extends Component {
   render() {
@@ -20,55 +22,80 @@ const BoxStore = props => (
     <div className="Inside_BoxStore">
       <Carousel>
         <Carousel.Item>
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
           <img className="d-block w-100" src={pic1} alt="First slide" />
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              BPI - BULK MUSCLE
+            </Badge>
+          </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img className="d-block w-100" src={pic2} alt="Third slide" />
-
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <Badge pill variant="dark">
+              Dymatize Super Mass Gainer
+            </Badge>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img className="d-block w-100" src={pic3} alt="Third slide" />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <Badge pill variant="dark">
+              Extreme MASS
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic4} alt="Third slide" />
+
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              MusclePharm Combat XL Mass
+            </Badge>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
       <Carousel>
         <Carousel.Item>
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
           <img className="d-block w-100" src={pic1} alt="First slide" />
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              BPI - BULK Muscle
+            </Badge>
+          </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img className="d-block w-100" src={pic2} alt="Third slide" />
-
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <Badge pill variant="dark">
+              Dymatize Super Mass Gainer
+            </Badge>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img className="d-block w-100" src={pic3} alt="Third slide" />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <Badge pill variant="dark">
+              Extreme MASS
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic4} alt="Third slide" />
+
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              MusclePharm Combat XL Mass
+            </Badge>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
