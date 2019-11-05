@@ -6,6 +6,16 @@ import pic1 from "../../img/Bulk Muscle.png";
 import pic2 from "../../img/Dymatize Super Mass Gainer.png";
 import pic3 from "../../img/Extreme MASS.png";
 import pic4 from "../../img/MusclePharm Combat XL Mass Gainer.png";
+import pic5 from "../../img/Advance Anabolic - Massive Gainer.png";
+import pic6 from "../../img/NPL Elite Gainer.png";
+import pic7 from "../../img/Original MASS Gainer Protein.png";
+import pic8 from "../../img/Under Armour Drive Shoes.png";
+import pic9 from "../../img/Under Armour Running Shoes.png";
+import pic10 from "../../img/Asics Gel Resolution.png";
+import pic11 from "../../img/Nike Air.png";
+import pic12 from "../../img/Nike Athletic Shoes.png";
+import pic13 from "../../img/Nike Training Shoes.png";
+import pic14 from "../../img/Nike Metcon Black-Volt.png";
 
 class Store extends Component {
   render() {
@@ -34,7 +44,7 @@ const BoxStore = props => (
           <img className="d-block w-100" src={pic2} alt="Third slide" />
           <Carousel.Caption>
             <Badge pill variant="dark">
-              Dymatize Super Mass Gainer
+              Dymatize Super Mass
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>
@@ -55,6 +65,36 @@ const BoxStore = props => (
           <Carousel.Caption>
             <Badge pill variant="dark">
               MusclePharm Combat XL Mass
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic5} alt="Third slide" />
+
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              Advance Anabolic - Massive
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic6} alt="Third slide" />
+
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              NPL Elite Gainer
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic7} alt="Third slide" />
+
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              Original MASS Gainer Protein
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>
@@ -62,39 +102,64 @@ const BoxStore = props => (
 
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={pic1} alt="First slide" />
+          <img className="d-block w-100" src={pic8} alt="First slide" />
           <Carousel.Caption>
             <Badge pill variant="dark">
-              BPI - BULK Muscle
+              Under Armour Drive Shoes
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic2} alt="Third slide" />
+          <img className="d-block w-100" src={pic9} alt="Third slide" />
           <Carousel.Caption>
             <Badge pill variant="dark">
-              Dymatize Super Mass Gainer
+              Under Armour Running Shoes
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic3} alt="Third slide" />
-
+          <img className="d-block w-100" src={pic10} alt="Third slide" />
           <Carousel.Caption>
             <Badge pill variant="dark">
-              Extreme MASS
+              Asics Gel Resolution
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic4} alt="Third slide" />
-
+          <img className="d-block w-100" src={pic11} alt="Third slide" />
           <Carousel.Caption>
             <Badge pill variant="dark">
-              MusclePharm Combat XL Mass
+              Nike Air
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic12} alt="Third slide" />
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              Nike Athletic Shoes
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic13} alt="Third slide" />
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              Nike Training Shoes
+            </Badge>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src={pic14} alt="Third slide" />
+          <Carousel.Caption>
+            <Badge pill variant="dark">
+              Nike Metcon Black-Volt
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>
