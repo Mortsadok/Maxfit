@@ -32,7 +32,7 @@ const BoxStore = props => (
     <div className="Inside_BoxStore">
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={pic1} alt="First slide" />
+          <img className="d-block w-100" src={pic1} alt="BPI - BULK MUSCLE" />
           <Carousel.Caption>
             <Badge pill variant="dark">
               BPI - BULK MUSCLE
@@ -41,7 +41,7 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic2} alt="Third slide" />
+          <img className="d-block w-100" src={pic2} alt="Dymatize Super Mass" />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Dymatize Super Mass
@@ -50,8 +50,7 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic3} alt="Third slide" />
-
+          <img className="d-block w-100" src={pic3} alt="Extreme MASS" />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Extreme MASS
@@ -60,8 +59,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic4} alt="Third slide" />
-
+          <img
+            className="d-block w-100"
+            src={pic4}
+            alt="MusclePharm Combat XL Mass"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               MusclePharm Combat XL Mass
@@ -70,8 +72,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic5} alt="Third slide" />
-
+          <img
+            className="d-block w-100"
+            src={pic5}
+            alt="Advance Anabolic - Massive"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Advance Anabolic - Massive
@@ -80,8 +85,7 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic6} alt="Third slide" />
-
+          <img className="d-block w-100" src={pic6} alt="NPL Elite Gainer" />
           <Carousel.Caption>
             <Badge pill variant="dark">
               NPL Elite Gainer
@@ -90,8 +94,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic7} alt="Third slide" />
-
+          <img
+            className="d-block w-100"
+            src={pic7}
+            alt="Original MASS Gainer Protein"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Original MASS Gainer Protein
@@ -102,7 +109,11 @@ const BoxStore = props => (
 
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={pic8} alt="First slide" />
+          <img
+            className="d-block w-100"
+            src={pic8}
+            alt="Under Armour Drive Shoes"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Under Armour Drive Shoes
@@ -111,7 +122,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic9} alt="Third slide" />
+          <img
+            className="d-block w-100"
+            src={pic9}
+            alt="Under Armour Running Shoes"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Under Armour Running Shoes
@@ -120,7 +135,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic10} alt="Third slide" />
+          <img
+            className="d-block w-100"
+            src={pic10}
+            alt="Asics Gel Resolution"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Asics Gel Resolution
@@ -129,7 +148,7 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic11} alt="Third slide" />
+          <img className="d-block w-100" src={pic11} alt="Nike Air" />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Nike Air
@@ -138,7 +157,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic12} alt="Third slide" />
+          <img
+            className="d-block w-100"
+            src={pic12}
+            alt="Nike Athletic Shoes"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Nike Athletic Shoes
@@ -147,7 +170,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic13} alt="Third slide" />
+          <img
+            className="d-block w-100"
+            src={pic13}
+            alt="Nike Training Shoes"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Nike Training Shoes
@@ -156,7 +183,11 @@ const BoxStore = props => (
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={pic14} alt="Third slide" />
+          <img
+            className="d-block w-100"
+            src={pic14}
+            alt="Nike Metcon Black-Volt"
+          />
           <Carousel.Caption>
             <Badge pill variant="dark">
               Nike Metcon Black-Volt
