@@ -170,3 +170,39 @@
 .card-body {
   padding: 0.4rem;
 }
+
+.userMSG {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0.5rem;
+}
+
+.DaysTrain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.3rem;
+  direction: ltr;
+}
+
+.mr-2.btn-group {
+  margin-right: 0px;
+  margin-bottom: 0.8rem;
+}
+
+.mr-2,
+.mx-2 {
+  margin-right: 0rem !important;
+}
+
+.sendBtn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin-right: 3px;
+}

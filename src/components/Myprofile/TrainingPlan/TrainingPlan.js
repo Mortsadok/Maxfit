@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "react-bootstrap/Card";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Button from "react-bootstrap/Button";
+
 import {
   faDumbbell,
   faPeopleCarry,
@@ -28,6 +31,9 @@ const UnderNAV = props => (
     <div className="Inside-box">
       <div className="Headline">
         <p className="font-weight-light">תוכנית אימונים</p>
+      </div>
+      <div className="userMSG">
+        שלום מור צדוק, בחר בבקשה את תוכנית האימונים הרצויה:
       </div>
       <div className="Train-content">
         <Card border="secondary" style={{ width: "18rem" }}>
@@ -66,6 +72,19 @@ const UnderNAV = props => (
             </Card.Text>
           </Card.Body>
         </Card>
+      </div>
+      <div className="userMSG">כמה ימים בשבוע תרצה להתאמן?</div>
+      <div className="DaysTrain">
+        <ButtonGroup className="mr-2" aria-label="First group">
+          <Button variant="secondary">1</Button>
+          <Button variant="secondary">2</Button>
+          <Button variant="secondary">3</Button>
+          <Button variant="secondary">4</Button>
+          <Button variant="secondary">5</Button>
+        </ButtonGroup>
+      </div>
+      <div className="sendBtn">
+        <Button variant="outline-dark">בקש תוכנית אימונים</Button>
       </div>
     </div>
   </div>
