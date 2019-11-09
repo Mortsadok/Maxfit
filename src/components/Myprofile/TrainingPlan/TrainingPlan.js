@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 import {
   faDumbbell,
@@ -73,7 +74,7 @@ const UnderNAV = props => (
           </Card.Body>
         </Card>
       </div>
-      <div className="userMSG">כמה ימים בשבוע תרצה להתאמן?</div>
+      <div className="userMSG">כמה אימונים בשבוע?</div>
       <div className="DaysTrain">
         <ButtonGroup className="mr-2" aria-label="First group">
           <Button variant="secondary">1</Button>
@@ -84,7 +85,11 @@ const UnderNAV = props => (
         </ButtonGroup>
       </div>
       <div className="sendBtn">
-        <Button variant="outline-dark">בקש תוכנית אימונים</Button>
+        <Form>
+          <Button variant="outline-dark" type="submit">
+            בקש תוכנית אימונים
+          </Button>
+        </Form>
       </div>
     </div>
   </div>
