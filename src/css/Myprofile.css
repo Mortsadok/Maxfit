@@ -204,7 +204,11 @@
 }
 
 .btn {
-  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.btnsnd {
+  margin-right: 0px;
 }
 
 .btn.btn-secondary {

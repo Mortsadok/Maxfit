@@ -85,11 +85,13 @@ const UnderNAV = props => (
         </ButtonGroup>
       </div>
       <div className="sendBtn">
-        <Form>
-          <Button variant="outline-dark" type="submit">
-            בקש תוכנית אימונים
-          </Button>
-        </Form>
+        <div className="btnsnd">
+          <Form>
+            <Button variant="outline-dark" type="submit">
+              בקש תוכנית אימונים
+            </Button>
+          </Form>
+        </div>
       </div>
     </div>
   </div>
