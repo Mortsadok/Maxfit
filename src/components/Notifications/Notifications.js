@@ -6,8 +6,10 @@ class Notifications extends Component {
   render() {
     return (
       <div className="Notifications">
-        <NotificationsBox1 />
-        <NotificationsBox2 />
+        <div className="NotificationsCenter">
+          <NotificationsBox1 />
+          <NotificationsBox2 />
+        </div>
       </div>
     );
   }

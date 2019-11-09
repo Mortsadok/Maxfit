@@ -1,9 +1,9 @@
 .NotificationsBox1 {
-  height: 600px;
-  width: 45%;
+  height: 550px;
+  width: 50%;
   margin: auto;
   border-radius: 80px;
-  background-color: #e3e3e3;
+  background-color: white;
   margin-top: 25px;
   margin-bottom: 20px;
   margin-right: 50px;
@@ -14,11 +14,11 @@
 }
 
 .NotificationsBox2 {
-  height: 600px;
-  width: 45%;
+  height: 550px;
+  width: 50%;
   margin: auto;
   border-radius: 80px;
-  background-color: #e3e3e3;
+  background-color: white;
   margin-top: 25px;
   margin-bottom: 20px;
   margin-left: 50px;
@@ -80,4 +80,15 @@
 
 .OpenHours {
   align-items: center;
+}
+
+.NotificationsCenter {
+  height: 600px;
+  width: 95%;
+  margin: auto;
+  border-radius: 50px;
+  background-color: #e3e3e3;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  display: flex;
 }

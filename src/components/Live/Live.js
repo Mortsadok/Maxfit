@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Badge } from "react-bootstrap";
 import "./Live.css";
 
 class Live extends Component {
@@ -16,11 +15,11 @@ const LiveCenter = props => (
   <div className="LiveCenter">
     <div className="Inside_LiveStore">
       <p class="font-weight-light">מתאמנים בזמן אמת</p>
+      <div className="Time">11:45</div>
       <div className="Inside">
-        <h1 className="countExmple">
-          <Badge variant="dark">23</Badge>
-        </h1>
+        <h1 className="countExmple">23</h1>
       </div>
+      <div className="Date">9/11/19</div>
     </div>
   </div>
 );
