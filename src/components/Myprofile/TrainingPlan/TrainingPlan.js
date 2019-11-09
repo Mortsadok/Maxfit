@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Card from "react-bootstrap/Card";
 import {
   faDumbbell,
   faPeopleCarry,
@@ -26,7 +27,45 @@ const UnderNAV = props => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
-        <p class="font-weight-light">תוכנית אימונים</p>
+        <p className="font-weight-light">תוכנית אימונים</p>
+      </div>
+      <div className="Train-content">
+        <Card border="secondary" style={{ width: "18rem" }}>
+          <Card.Header>מסת שריר</Card.Header>
+          <Card.Body>
+            <Card.Text>
+              שיטת אימון המותאמת לפיתוח כוחם וגודלם של השרירים. כאשר הוא נערך
+              בצורה נכונה, אימון משקולות יכול להביא לשיפור הבריאות ולהרגשה טובה.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card border="secondary" style={{ width: "18rem" }}>
+          <Card.Header>עיצוב וחיטוב</Card.Header>
+          <Card.Body>
+            <Card.Text>
+              מטרת פיתוח הגוף היא להציג את מסת השרירים, גודלם וחיטובם, באופן
+              האומנותי, הסימטרי והאסתטי ככל האפשר.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card border="secondary" style={{ width: "18rem" }}>
+          <Card.Header>אירובי</Card.Header>
+          <Card.Body>
+            <Card.Text>
+              מאמץ גופני תת-מרבי המפעיל קבוצות שרירים גדולות לזמן ממושך, כגון:
+              הליכה, ריצה, רכיבה על אופניים, שחייה, סקי, זומבה ועוד.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card border="secondary" style={{ width: "18rem" }}>
+          <Card.Header>אימון פונקציונאלי</Card.Header>
+          <Card.Body>
+            <Card.Text>
+              אימון פונקציונלי מאפשר לאמן את הגוף לא כמכלול של שרירים מבודדים,
+              אלא כמערכת שלמה המסוגלת לבצע באופן איכותי את הפעולות הכי מגוונות.
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     </div>
   </div>
