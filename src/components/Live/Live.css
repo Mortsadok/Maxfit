@@ -144,14 +144,22 @@
   justify-content: center;
 }
 
-.spinner-grow {
-  width: 23rem;
-  height: 23rem;
-}
-
 .SpinnerClass {
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.spinner-grow {
+  position: absolute;
+  display: flex;
+  width: 25rem;
+  height: 25rem;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: spinner-grow 0.75s linear infinite;
+  animation: spinner-grow 0.75s linear infinite;
+  z-index: 0;
 }

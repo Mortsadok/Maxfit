@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "react-bootstrap/Card";
+
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -38,7 +39,11 @@ const UnderNAV = props => (
       </div>
       <div className="Train-content">
         <Card border="secondary" style={{ width: "18rem" }}>
-          <Card.Header>מסת שריר</Card.Header>
+          <Card.Header>
+            {" "}
+            <input type="radio" />
+            מסת שריר
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               שיטת אימון המותאמת לפיתוח כוחם וגודלם של השרירים. כאשר הוא נערך
@@ -46,8 +51,12 @@ const UnderNAV = props => (
             </Card.Text>
           </Card.Body>
         </Card>
+
         <Card border="secondary" style={{ width: "18rem" }}>
-          <Card.Header>עיצוב וחיטוב</Card.Header>
+          <Card.Header>
+            <input type="radio" />
+            עיצוב וחיטוב
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               מטרת פיתוח הגוף היא להציג את מסת השרירים, גודלם וחיטובם, באופן
@@ -55,8 +64,12 @@ const UnderNAV = props => (
             </Card.Text>
           </Card.Body>
         </Card>
+
         <Card border="secondary" style={{ width: "18rem" }}>
-          <Card.Header>אירובי</Card.Header>
+          <Card.Header>
+            <input type="radio" />
+            אירובי
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               מאמץ גופני תת-מרבי המפעיל קבוצות שרירים גדולות לזמן ממושך, כגון:
@@ -64,8 +77,12 @@ const UnderNAV = props => (
             </Card.Text>
           </Card.Body>
         </Card>
+
         <Card border="secondary" style={{ width: "18rem" }}>
-          <Card.Header>אימון פונקציונאלי</Card.Header>
+          <Card.Header>
+            <input type="radio" />
+            אימון פונקציונאלי
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               אימון פונקציונלי מאפשר לאמן את הגוף לא כמכלול של שרירים מבודדים,
@@ -74,6 +91,7 @@ const UnderNAV = props => (
           </Card.Body>
         </Card>
       </div>
+
       <div className="userMSG">כמה אימונים בשבוע?</div>
       <div className="DaysTrain">
         <ButtonGroup className="mr-2" aria-label="First group">

@@ -22,6 +22,7 @@ const LiveCenter = props => (
             <div className="Time">11:45</div>
           </div>
         </div>
+
         <div className="SpinnerClass">
           <Spinner animation="grow" size="la" />
           <div className="Inside2">
@@ -32,6 +33,7 @@ const LiveCenter = props => (
             </div>
           </div>
         </div>
+
         <div className="Date2">
           <div className="Date1">
             <div className="Date">9/11/19</div>
