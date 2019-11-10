@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Form";
 import Col from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDumbbell,
@@ -31,74 +32,84 @@ const UnderNAV = props => (
     <div className="Inside-box">
       <div className="Headline">
         <p class="font-weight-light">הגדרות</p>
-        <div className="userCards">
-          <div className="Setting-form">
-            <Card border="secondary" style={{ width: "18rem" }}>
-              <Card.Header>פרטים אישיים</Card.Header>
-              <Card.Body>
-                <Card.Text>שם מלא: מור צדוק</Card.Text>
-                <Card.Text>Mortmanage@gmail.com</Card.Text>
-              </Card.Body>
-            </Card>
+        <div className="Setting-form">
+          <Card border="secondary" style={{ width: "18rem" }}>
+            <Card.Header>פרטים אישיים</Card.Header>
+            <Card.Body>
+              <Card.Text>שם מלא: מור צדוק</Card.Text>
+              <Card.Text>Mortmanage@gmail.com</Card.Text>
+            </Card.Body>
+          </Card>
 
-            <Card border="secondary" style={{ width: "18rem" }}>
-              <Card.Header>שינוי סיסמא</Card.Header>
-              <Card.Body>
-                <Card.Text>
-                  {" "}
-                  <Form.Group as={Row} controlId="formPlaintextPassword">
-                    <Col sm="10">
-                      <Form.Control
-                        type="password"
-                        placeholder="הכנס סיסמא ישנה"
-                      />
-                    </Col>
-                  </Form.Group>
-                  <Form.Group as={Row} controlId="formPlaintextPassword">
-                    <Col sm="10">
-                      <Form.Control
-                        type="password"
-                        placeholder="הכנס סיסמא חדשה"
-                      />
-                    </Col>
-                  </Form.Group>
-                  <Form.Group as={Row} controlId="formPlaintextPassword">
-                    <Col sm="10">
-                      <Form.Control
-                        type="password"
-                        placeholder="אמת סיסמא חדשה"
-                      />
-                    </Col>
-                  </Form.Group>
-                </Card.Text>
-              </Card.Body>
-            </Card>
+          <Card border="secondary" style={{ width: "18rem" }}>
+            <Card.Header>שינוי סיסמא</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                {" "}
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control
+                      type="password"
+                      placeholder="הכנס סיסמא ישנה"
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control
+                      type="password"
+                      placeholder="הכנס סיסמא חדשה"
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control
+                      type="password"
+                      placeholder="אמת סיסמא חדשה"
+                    />
+                  </Col>
+                </Form.Group>
+                <Form>
+                  <Button variant="outline-success" type="submit">
+                    שנה סיסמא
+                  </Button>
+                </Form>
+              </Card.Text>
+            </Card.Body>
+          </Card>
 
-            <Card border="secondary" style={{ width: "18rem" }}>
-              <Card.Header>שינוי דואר אלקטרוני</Card.Header>
-              <Card.Body>
-                <Card.Text>
-                  {" "}
-                  <Form.Group as={Row} controlId="formPlaintextPassword">
-                    <Col sm="10">
-                      <Form.Control
-                        type="password"
-                        placeholder="הכנס דואר אלקטרוני חדש"
-                      />
-                    </Col>
-                  </Form.Group>
-                  <Form.Group as={Row} controlId="formPlaintextPassword">
-                    <Col sm="10">
-                      <Form.Control
-                        type="password"
-                        placeholder="אימות דואר אלקטרוני"
-                      />
-                    </Col>
-                  </Form.Group>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
+          <Card border="secondary" style={{ width: "18rem" }}>
+            <Card.Header>שינוי דואר אלקטרוני</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                {" "}
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control
+                      type="password"
+                      placeholder="הכנס דואר אלקטרוני חדש"
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control
+                      type="password"
+                      placeholder="אימות דואר אלקטרוני"
+                    />
+                  </Col>
+                </Form.Group>
+                <div className="mailbtn">
+                  <Form>
+                    <Button variant="outline-success" type="submit">
+                      שנה דואר אלקטרוני
+                    </Button>
+                  </Form>
+                </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </div>
       </div>
     </div>

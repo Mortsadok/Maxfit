@@ -46,7 +46,7 @@ const UnderNAV = props => (
                 <Form.Control placeholder="שם משפחה" />
               </Col>
             </Row>
-            <Button variant="success" type="submit">
+            <Button variant="outline-success" type="submit">
               שלח
             </Button>
           </div>

@@ -161,6 +161,7 @@
 .card-text {
   text-align: center;
 }
+
 .card-footer {
   padding: 0.75rem 1.25rem;
 
@@ -168,9 +169,11 @@
   border-top: unset;
   text-align: center;
 }
+
 #footer-card {
   margin-top: 22px;
 }
+
 .card-header {
   text-align: center;
   font-size: 20px;
@@ -233,9 +236,14 @@
   display: block;
 }
 
+.Train-content .card.border-secondary {
+  height: 200px;
+}
+
 /* UserSettings */
 
-.userCards {
+.Setting-form {
+  padding: 1.25rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -244,17 +252,8 @@
   margin-left: auto;
 }
 
-.Train-content .card.border-secondary {
-  height: 200px;
-}
-
-.Setting-form {
-  padding: 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .Setting-form .form-control {
+  margin-top: 1rem;
   width: 70%;
   text-align: center;
   margin-right: auto;
@@ -262,7 +261,18 @@
 }
 
 .Setting-form .card {
-  width: 25rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+.Setting-form .card.border-secondary {
+  height: 300px;
+}
+
+.Setting-form .card-text {
+  font-size: 20px;
+}
+
+.mailbtn {
+  margin-top: 4.3rem;
 }
