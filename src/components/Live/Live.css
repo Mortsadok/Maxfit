@@ -35,6 +35,7 @@
   border-radius: 50px;
   background-color: white;
 }
+
 .Time-content {
   display: flex;
   flex-wrap: nowrap;
@@ -42,9 +43,36 @@
   justify-content: center;
   padding: 2rem;
 }
+
 .Time {
   height: 250px;
   width: 250px;
+  margin: auto;
+  border-radius: 500px;
+  background-color: rgb(78, 78, 78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: white;
+}
+
+.Time1 {
+  height: 255px;
+  width: 255px;
+  margin: auto;
+  border-radius: 500px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: white;
+}
+
+.Time2 {
+  height: 259px;
+  width: 259px;
   margin: auto;
   border-radius: 500px;
   background-color: rgb(78, 78, 78);
@@ -66,4 +94,64 @@
   justify-content: center;
   font-size: 60px;
   color: white;
+}
+
+.Date1 {
+  height: 255px;
+  width: 255px;
+  margin: auto;
+  border-radius: 500px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: white;
+}
+
+.Date2 {
+  height: 259px;
+  width: 259px;
+  margin: auto;
+  border-radius: 500px;
+  background-color: rgb(78, 78, 78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  color: white;
+}
+
+.Inside1 {
+  height: 355px;
+  width: 355px;
+  margin: auto;
+  border-radius: 500px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Inside2 {
+  height: 360px;
+  width: 360px;
+  margin: auto;
+  border-radius: 500px;
+  background-color: rgb(78, 78, 78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-grow {
+  width: 23rem;
+  height: 23rem;
+}
+
+.SpinnerClass {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -213,4 +213,6 @@
 
 .btn.btn-secondary {
   border-radius: 0px;
+  width: 45px;
+  font-size: 20px;
 }
