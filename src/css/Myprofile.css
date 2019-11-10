@@ -232,3 +232,37 @@
   margin-left: auto;
   display: block;
 }
+
+/* UserSettings */
+
+.userCards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Train-content .card.border-secondary {
+  height: 200px;
+}
+
+.Setting-form {
+  padding: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Setting-form .form-control {
+  width: 70%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Setting-form .card {
+  width: 25rem;
+  margin-right: auto;
+  margin-left: auto;
+}
