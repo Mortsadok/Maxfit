@@ -190,7 +190,7 @@ const BoxStore = props => (
           />
           <Carousel.Caption>
             <Badge pill variant="dark">
-              Nike Metcon Black-Volt
+              Nike Metcon Black - Volt
             </Badge>
           </Carousel.Caption>
         </Carousel.Item>

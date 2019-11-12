@@ -18,7 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
 }
+
 .w-100 {
   width: 60% !important;
   height: 400px;
@@ -40,8 +42,8 @@
 .carousel-caption {
   color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 25px;
-  top: -10px;
+  font-size: 30px;
+  top: -15px;
 }
 
 .carousel-indicators li {
