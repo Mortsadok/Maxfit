@@ -22,8 +22,7 @@ const NotificationsBox1 = props => (
     <Toast>
       <Toast.Header>
         <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-        <strong className="mr-auto">מור צדוק</strong>
-        <small>לפני 11 דקות</small>
+        <strong className="mr-auto">מנהל חדר הכושר</strong>
       </Toast.Header>
       <Toast.Body>.הודעה חדשה ממנהל חדר הכושר</Toast.Body>
     </Toast>

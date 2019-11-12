@@ -39,11 +39,11 @@
 }
 
 .Att a.active {
-  color: lightseagreen;
+  color: #14629d;
 }
 
 .Att a:hover {
-  color: lightseagreen;
+  color: #14629d;
 }
 
 .Inside-box {
@@ -261,8 +261,8 @@
 }
 
 .Setting-form .card {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 60px;
+  margin-left: 60px;
 }
 
 .Setting-form .card.border-secondary {
@@ -275,4 +275,19 @@
 
 .mailbtn {
   margin-top: 4.3rem;
+}
+
+.SettingsInfo {
+  font-size: 18px;
+  text-align: center;
+}
+
+.SettingsHeadline {
+  margin: 0.5rem;
+  font-size: 23px;
+  text-align: center;
+}
+
+.Settingsline {
+  text-align: center;
 }

@@ -22,11 +22,11 @@
 }
 
 a:hover {
-  color: lightseagreen;
+  color: #1a8c70;
 }
 
 .att a.active {
-  color: lightseagreen;
+  color: #1a8c70;
 }
 
 /* FontAwesome */

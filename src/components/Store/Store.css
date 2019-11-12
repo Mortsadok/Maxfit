@@ -20,8 +20,8 @@
   align-items: center;
 }
 .w-100 {
-  width: 75% !important;
-  height: 450px;
+  width: 60% !important;
+  height: 400px;
   padding: 1.25rem;
   margin-right: auto;
   margin-left: auto;
@@ -41,7 +41,7 @@
   color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 25px;
-  top: 0px;
+  top: -10px;
 }
 
 .carousel-indicators li {

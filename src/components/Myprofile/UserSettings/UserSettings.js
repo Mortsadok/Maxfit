@@ -36,8 +36,11 @@ const UnderNAV = props => (
           <Card border="secondary" style={{ width: "18rem" }}>
             <Card.Header>פרטים אישיים</Card.Header>
             <Card.Body>
-              <Card.Text>שם מלא: מור צדוק</Card.Text>
-              <Card.Text>Mortmanage@gmail.com</Card.Text>
+              <div className="SettingsHeadline">שם מלא:</div>
+              <div className="SettingsInfo">מור צדוק</div>
+              <div className="Settingsline">___________________________</div>
+              <div className="SettingsHeadline">כתובת מייל:</div>
+              <div className="SettingsInfo">Mortmanage@gmail.com</div>
             </Card.Body>
           </Card>
 
@@ -48,25 +51,19 @@ const UnderNAV = props => (
                 {" "}
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Col sm="10">
-                    <Form.Control
-                      type="password"
-                      placeholder="הכנס סיסמא ישנה"
-                    />
+                    <Form.Control type="password" placeholder="סיסמא ישנה" />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control type="password" placeholder="סיסמא חדשה" />
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Col sm="10">
                     <Form.Control
                       type="password"
-                      placeholder="הכנס סיסמא חדשה"
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Col sm="10">
-                    <Form.Control
-                      type="password"
-                      placeholder="אמת סיסמא חדשה"
+                      placeholder="אימות סיסמא חדשה"
                     />
                   </Col>
                 </Form.Group>
@@ -88,7 +85,7 @@ const UnderNAV = props => (
                   <Col sm="10">
                     <Form.Control
                       type="password"
-                      placeholder="הכנס דואר אלקטרוני חדש"
+                      placeholder="דואר אלקטרוני חדש"
                     />
                   </Col>
                 </Form.Group>
