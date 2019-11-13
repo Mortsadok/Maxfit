@@ -22,9 +22,8 @@ const LiveCenter = props => (
             <div className="Time">11:45</div>
           </div>
         </div>
-
+        <Spinner animation="grow" size="la" />
         <div className="SpinnerClass">
-          <Spinner animation="grow" size="la" />
           <div className="Inside2">
             <div className="Inside1">
               <div className="Inside">

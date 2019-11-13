@@ -158,8 +158,7 @@
   vertical-align: text-bottom;
   background-color: currentColor;
   border-radius: 50%;
-  opacity: 0;
   -webkit-animation: spinner-grow 0.75s linear infinite;
-  animation: spinner-grow 0.75s linear infinite;
+  animation: spinner-grow 2s linear infinite;
   z-index: 0;
 }
