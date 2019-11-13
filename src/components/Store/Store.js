@@ -30,171 +30,178 @@ class Store extends Component {
 const BoxStore = props => (
   <div className="boxStore">
     <div className="Inside_BoxStore">
-      <Carousel>
-        <Carousel.Item>
-          <img className="d-block w-100" src={pic1} alt="BPI - BULK MUSCLE" />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              BPI - BULK MUSCLE
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+      <p className="font-weight-light">חנות</p>
+      <div className="Flex-content ">
+        <Carousel>
+          <Carousel.Item>
+            <img className="d-block w-100" src={pic1} alt="BPI - BULK MUSCLE" />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                BPI - BULK MUSCLE
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className="d-block w-100" src={pic2} alt="Dymatize Super Mass" />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Dymatize Super Mass
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic2}
+              alt="Dymatize Super Mass"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Dymatize Super Mass
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className="d-block w-100" src={pic3} alt="Extreme MASS" />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Extreme MASS
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={pic3} alt="Extreme MASS" />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Extreme MASS
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic4}
-            alt="MusclePharm Combat XL Mass"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              MusclePharm Combat XL Mass
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic4}
+              alt="MusclePharm Combat XL Mass"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                MusclePharm Combat XL Mass
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic5}
-            alt="Advance Anabolic - Massive"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Advance Anabolic - Massive
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic5}
+              alt="Advance Anabolic - Massive"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Advance Anabolic - Massive
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className="d-block w-100" src={pic6} alt="NPL Elite Gainer" />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              NPL Elite Gainer
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={pic6} alt="NPL Elite Gainer" />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                NPL Elite Gainer
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic7}
-            alt="Original MASS Gainer Protein"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Original MASS Gainer Protein
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic7}
+              alt="Original MASS Gainer Protein"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Original MASS Gainer Protein
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
 
-      <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic8}
-            alt="Under Armour Drive Shoes"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Under Armour Drive Shoes
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic8}
+              alt="Under Armour Drive Shoes"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Under Armour Drive Shoes
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic9}
-            alt="Under Armour Running Shoes"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Under Armour Running Shoes
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic9}
+              alt="Under Armour Running Shoes"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Under Armour Running Shoes
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic10}
-            alt="Asics Gel Resolution"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Asics Gel Resolution
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic10}
+              alt="Asics Gel Resolution"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Asics Gel Resolution
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className="d-block w-100" src={pic11} alt="Nike Air" />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Nike Air
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={pic11} alt="Nike Air" />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Nike Air
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic12}
-            alt="Nike Athletic Shoes"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Nike Athletic Shoes
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic12}
+              alt="Nike Athletic Shoes"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Nike Athletic Shoes
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic13}
-            alt="Nike Training Shoes"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Nike Training Shoes
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic13}
+              alt="Nike Training Shoes"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Nike Training Shoes
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={pic14}
-            alt="Nike Metcon Black-Volt"
-          />
-          <Carousel.Caption>
-            <Badge pill variant="dark">
-              Nike Metcon Black - Volt
-            </Badge>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={pic14}
+              alt="Nike Metcon Black-Volt"
+            />
+            <Carousel.Caption>
+              <Badge pill variant="dark">
+                Nike Metcon Black - Volt
+              </Badge>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
     </div>
   </div>
 );
