@@ -15,7 +15,7 @@ class Live extends Component {
 const LiveCenter = props => (
   <div className="LiveCenter">
     <div className="Inside_LiveStore">
-      <p class="font-weight-light">מתאמנים בזמן אמת</p>
+      <p className="font-weight-light">מתאמנים בזמן אמת</p>
       <div className="Time-content">
         <div className="Time2">
           <div className="Time1">

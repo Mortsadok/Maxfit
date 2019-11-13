@@ -285,3 +285,17 @@
 .Settingsline {
   text-align: center;
 }
+
+.SubscriptionMenu {
+  padding: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card.border-secondary {
+  height: 350px;
+}

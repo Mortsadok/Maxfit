@@ -41,7 +41,7 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .Time {
@@ -149,16 +149,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 0;
 }
+
 .spinner-grow {
   position: absolute;
   display: flex;
-  width: 25rem;
-  height: 25rem;
+  color: green;
+  width: 27rem;
+  height: 27rem;
   vertical-align: text-bottom;
   background-color: currentColor;
   border-radius: 50%;
-  -webkit-animation: spinner-grow 0.75s linear infinite;
-  animation: spinner-grow 2s linear infinite;
-  z-index: 0;
+  -webkit-animation: spinner-grow 1s linear infinite;
+  animation: spinner-grow 3s linear infinite; /* במקרה ומספר המתאמנים יהיה גדולה ממספר כלשהו צבע האפקט יהיה אדום, אחרת ירוק */
 }
