@@ -162,5 +162,5 @@
   background-color: currentColor;
   border-radius: 50%;
   -webkit-animation: spinner-grow 1s linear infinite;
-  animation: spinner-grow 3s linear infinite; /* במקרה ומספר המתאמנים יהיה גדולה ממספר כלשהו צבע האפקט יהיה אדום, אחרת ירוק */
+  animation: spinner-grow 3s linear infinite; /* במקרה ומספר המתאמנים יהיה גדול ממספר כלשהו צבע האפקט יהיה אדום, אחרת ירוק */
 }
