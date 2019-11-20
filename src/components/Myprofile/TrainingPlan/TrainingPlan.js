@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { CustomInput } from "reactstrap";
 
 import {
   faDumbbell,
@@ -39,8 +40,11 @@ const UnderNAV = props => (
       <div className="Train-content">
         <Card border="secondary" style={{ width: "18rem" }}>
           <Card.Header>
-            {" "}
-            <input type="radio" />
+            <CustomInput
+              type="radio"
+              id="exampleCustomRadio1"
+              name="customRadio1"
+            />
             מסת שריר
           </Card.Header>
           <Card.Body>
@@ -53,7 +57,11 @@ const UnderNAV = props => (
 
         <Card border="secondary" style={{ width: "18rem" }}>
           <Card.Header>
-            <input type="radio" />
+            <CustomInput
+              type="radio"
+              id="exampleCustomRadio2"
+              name="customRadio2"
+            />
             עיצוב וחיטוב
           </Card.Header>
           <Card.Body>
@@ -66,7 +74,11 @@ const UnderNAV = props => (
 
         <Card border="secondary" style={{ width: "18rem" }}>
           <Card.Header>
-            <input type="radio" />
+            <CustomInput
+              type="radio"
+              id="exampleCustomRadio3"
+              name="customRadio3"
+            />
             אירובי
           </Card.Header>
           <Card.Body>
@@ -79,7 +91,11 @@ const UnderNAV = props => (
 
         <Card border="secondary" style={{ width: "18rem" }}>
           <Card.Header>
-            <input type="radio" />
+            <CustomInput
+              type="radio"
+              id="exampleCustomRadio4"
+              name="customRadio4"
+            />
             אימון פונקציונאלי
           </Card.Header>
           <Card.Body>

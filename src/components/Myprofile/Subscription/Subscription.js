@@ -33,31 +33,86 @@ const UnderNAV = props => (
         <p class="font-weight-light">חידוש מנוי</p>
         <div className="SubscriptionMenu">
           <Card border="secondary" style={{ width: "50rem" }}>
-            <Card.Header>פרטי חידוש מנוי:</Card.Header>
             <Card.Body>
-              <h4>
-                <Card.Text>סוג המנוי:</Card.Text>
-              </h4>
-
-              <h4>
-                <Card.Text>תקופת מנוי:</Card.Text>
-              </h4>
-
-              <h4>
-                <Card.Text>אמצעי תשלום:</Card.Text>
-              </h4>
-
-              <h4>
-                <Card.Text>סה"כ לתשלום:</Card.Text>
-              </h4>
               <Card.Text>
-                <Form>
-                  <Button variant="outline-success" type="submit">
-                    חדש מנוי
-                  </Button>
-                </Form>
+                <Form.Label>סוג מנוי</Form.Label>
+                {["radio"].map(type => (
+                  <div key={`custom-inline-${type}`} className="mb-3">
+                    <Form.Check
+                      custom
+                      inline
+                      label="רגיל"
+                      type={type}
+                      id={`custom-inline-${type}-1`}
+                    />
+                    <Form.Check
+                      custom
+                      inline
+                      label="סטודנט"
+                      type={type}
+                      id={`custom-inline-${type}-2`}
+                    />
+                  </div>
+                ))}
+              </Card.Text>
+              <Card.Text>
+                <Form.Label>תקופת מנוי</Form.Label>
+                {["radio"].map(type => (
+                  <div key={`custom-inline-${type}`} className="mb-3">
+                    <Form.Check
+                      custom
+                      inline
+                      label="חודש"
+                      type={type}
+                      id={`custom-inline-${type}-3`}
+                    />
+                    <Form.Check
+                      custom
+                      inline
+                      label="שלושה חודשים"
+                      type={type}
+                      id={`custom-inline-${type}-4`}
+                    />
+                    <Form.Check
+                      custom
+                      inline
+                      label="שנה"
+                      type={type}
+                      id={`custom-inline-${type}-5`}
+                    />
+                  </div>
+                ))}
+              </Card.Text>
+              <Card.Text>
+                <Form.Label>אמצעי תשלום</Form.Label>
+                {["radio"].map(type => (
+                  <div key={`custom-inline-${type}`} className="mb-3">
+                    <Form.Check
+                      custom
+                      inline
+                      label="אשראי"
+                      type={type}
+                      id={`custom-inline-${type}-6`}
+                    />
+                    <Form.Check
+                      custom
+                      inline
+                      label="מזומן"
+                      type={type}
+                      id={`custom-inline-${type}-7`}
+                    />
+                  </div>
+                ))}
               </Card.Text>
             </Card.Body>
+            <div className="Sum">סה"כ לתשלום:</div>
+            <Card.Footer>
+              <Form>
+                <Button variant="outline-success" type="submit">
+                  חדש מנוי
+                </Button>
+              </Form>
+            </Card.Footer>
           </Card>
         </div>
       </div>
