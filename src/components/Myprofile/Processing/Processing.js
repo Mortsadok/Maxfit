@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import { Button, Col } from "react-bootstrap";
 import {
   faDumbbell,
   faPeopleCarry,
@@ -26,7 +29,40 @@ const UnderNAV = props => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
-        <p class="font-weight-light">מדדים</p>
+        <p class="font-weight-light">עדכון מדדים</p>
+        <div className="Processing-form">
+          <Card border="secondary" style={{ width: "50rem" }}>
+            <Card.Body>
+              <Card.Text>
+                <Form>
+                  <Form.Row>
+                    <Col>
+                      <Form.Control placeholder="הכנס משקל" />
+                    </Col>
+                    <Col>
+                      <Form.Control placeholder="הכנס היקף חזה" />
+                    </Col>
+                  </Form.Row>
+                </Form>
+              </Card.Text>
+              <Card.Text>
+                <Form>
+                  <Form.Row>
+                    <Col>
+                      <Form.Control placeholder="הכנס היקף יד קדמית" />
+                    </Col>
+                    <Col>
+                      <Form.Control placeholder="הכנס היקף יד אחורית" />
+                    </Col>
+                  </Form.Row>
+                </Form>
+              </Card.Text>
+            </Card.Body>
+            <Button variant="primary" type="submit">
+              שלח מדדים
+            </Button>
+          </Card>
+        </div>
       </div>
     </div>
   </div>

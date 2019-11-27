@@ -320,3 +320,27 @@
   height: auto;
   border-color: #6c757d !important;
 }
+.Processing-form {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.Processing-form .form-control {
+  display: flex;
+  margin: 1rem auto 1rem auto;
+  padding: 2rem;
+}
+.Processing-form .btn {
+  display: flex;
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+.Processing-form .card.border-secondary {
+  height: 300px;
+}
