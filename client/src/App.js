@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components//Home/Home";
+import Home from "./components/Home/Home";
 import Live from "./components/Live/Live";
 import Notifications from "./components/Notifications/Notifications";
 import Store from "./components/Store/Store";
