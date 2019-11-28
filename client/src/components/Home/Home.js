@@ -14,12 +14,10 @@ class Home extends Component {
         <Box />
 
         <div className="Center">
-          <p>
-            <div className="Bigtxt">
-              <img className="Brush" src={brushstorke} alt="Brush" />
-              .One Life. Live it well
-            </div>
-          </p>
+          <div className="Bigtxt">
+            <img className="Brush" src={brushstorke} alt="Brush" />
+            .One Life. Live it well
+          </div>
 
           <h4>
             אנחנו בקבוצת מקס - פיט מאמינים שפעילות מהנה יותר, היא גם יעילה יותר
@@ -28,14 +26,12 @@ class Home extends Component {
         </div>
         <Boxflex />
 
-        <p>
-          <div className="Bigtxt">
-            <div className="Center">
-              <img className="pBrush" src={pinkbrush} alt="Brush" />
-              על איכות חיים לא מתפשרים!
-            </div>
+        <div className="Bigtxt">
+          <div className="Center">
+            <img className="pBrush" src={pinkbrush} alt="Brush" />
+            על איכות חיים לא מתפשרים!
           </div>
-        </p>
+        </div>
 
         <div className="Center">
           <h4>

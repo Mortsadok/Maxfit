@@ -58,7 +58,7 @@ const UnderNAV = props => (
                 </Form>
               </Card.Text>
             </Card.Body>
-            <Button variant="primary" type="submit">
+            <Button variant="outline-success" type="submit">
               שלח מדדים
             </Button>
           </Card>

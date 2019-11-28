@@ -13,12 +13,14 @@
   font-size: 45px;
   color: black;
   position: relative;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .Brush {
   margin-right: auto;
   margin-left: auto;
-  width: 380px;
+  width: 400px;
   height: 55px;
   position: absolute;
   z-index: -1;
@@ -28,7 +30,7 @@
 .pBrush {
   margin-right: auto;
   margin-left: auto;
-  width: 480px;
+  width: 500px;
   height: 55px;
   position: absolute;
   z-index: -1;
