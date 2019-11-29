@@ -1,10 +1,13 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+// Redux
+import { connect } from "react-redux";
+import { Nclient } from "../../../actions/NclientAction";
 
 import {
   faDumbbell,
@@ -15,18 +18,41 @@ import {
   faCog
 } from "@fortawesome/free-solid-svg-icons";
 
-class Subscription extends Component {
-  render() {
-    return (
-      <div className="Subscription">
-        <SecondNAV />
-        <UnderNAV />
-      </div>
-    );
-  }
-}
+const Subscription = ({ Nclient }) => {
+  // useState
+  const [FormData, SetFormData] = useState({
+    firstname: "eden",
+    lastname: "elmalich",
+    id: "123456789",
+    phone: "0543241787",
+    Type: "רגיל",
+    Time: "חודש",
+    Payment: "מזומן",
+    Total: 0
+  });
+  const {
+    firstname,
+    lastname,
+    id,
+    phone,
+    Type,
+    Time,
+    Payment,
+    Total
+  } = FormData;
+  const SendClient = e => {
+    e.preventDefault();
+    Nclient(firstname, lastname, id, phone, Type, Time, Payment, Total);
+  };
+  return (
+    <div className="Subscription">
+      <SecondNAV />
+      <UnderNAV SendClient={SendClient} />
+    </div>
+  );
+};
 
-const UnderNAV = props => (
+const UnderNAV = ({ SendClient }) => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
@@ -108,7 +134,11 @@ const UnderNAV = props => (
             <div className="Sum">סה"כ לתשלום:</div>
             <Card.Footer>
               <Form>
-                <Button variant="outline-success" type="submit">
+                <Button
+                  onClick={e => SendClient(e)}
+                  variant="outline-success"
+                  type="submit"
+                >
                   חדש מנוי
                 </Button>
               </Form>
@@ -139,4 +169,4 @@ const SecondNAV = props => (
   </div>
 );
 
-export default Subscription;
+export default connect(null, { Nclient })(Subscription);

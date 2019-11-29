@@ -13,28 +13,33 @@ import Subscription from "./components/Myprofile/Subscription/Subscription";
 import TrainingPlan from "./components/Myprofile/TrainingPlan/TrainingPlan";
 import UserSettings from "./components/Myprofile/UserSettings/UserSettings";
 import Health from "./components/Myprofile/Health/Health";
+// Redux
+import { Provider } from "react-redux";
+import store from "./store";
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <div className="App">
-            <Route path="/Home" component={Home} exact />
-            <Route path="/Live" component={Live} />
-            <Route path="/Notifications" component={Notifications} />
-            <Route path="/Store" component={Store} />
-            <Route path="/Myprofile" component={Myprofile} />
-            <Route path="/Processing" component={Processing} />
-            <Route path="/Personaltraining" component={Personaltraining} />
-            <Route path="/Subscription" component={Subscription} />
-            <Route path="/TrainingPlan" component={TrainingPlan} />
-            <Route path="/UserSettings" component={UserSettings} />
-            <Route path="/Health" component={Health} />
-          </div>
-        </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <div className="App">
+              <Route path="/Home" component={Home} exact />
+              <Route path="/Live" component={Live} />
+              <Route path="/Notifications" component={Notifications} />
+              <Route path="/Store" component={Store} />
+              <Route path="/Myprofile" component={Myprofile} />
+              <Route path="/Processing" component={Processing} />
+              <Route path="/Personaltraining" component={Personaltraining} />
+              <Route path="/Subscription" component={Subscription} />
+              <Route path="/TrainingPlan" component={TrainingPlan} />
+              <Route path="/UserSettings" component={UserSettings} />
+              <Route path="/Health" component={Health} />
+            </div>
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
