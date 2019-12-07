@@ -13,6 +13,9 @@ import Subscription from "./components/Myprofile/Subscription/Subscription";
 import TrainingPlan from "./components/Myprofile/TrainingPlan/TrainingPlan";
 import UserSettings from "./components/Myprofile/UserSettings/UserSettings";
 import Health from "./components/Myprofile/Health/Health";
+import Openingpage from "./components/Openingpage/Openingpage";
+import Register from "./components/Openingpage/Register";
+import Login from "./components/Openingpage/Login";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -25,7 +28,10 @@ class App extends Component {
           <Navbar />
           <Switch>
             <div className="App">
-              <Route path="/Home" component={Home} exact />
+              <Route path="/" component={Openingpage} exact />
+              <Route path="/Login" component={Login} />
+              <Route path="/Register" component={Register} />
+              <Route path="/Home" component={Home} />
               <Route path="/Live" component={Live} />
               <Route path="/Notifications" component={Notifications} />
               <Route path="/Store" component={Store} />

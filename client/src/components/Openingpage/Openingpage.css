@@ -1,0 +1,59 @@
+.Openingpage {
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+.Login {
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+h2 {
+  padding: 1.25rem;
+}
+.welcome-text {
+  font-size: 25px;
+  padding: 1.25rem;
+}
+.Openingpage .Carousel-content {
+  padding-top: 2rem;
+}
+.Openingpage .w-100 {
+  width: 100% !important;
+  height: unset;
+  padding: 1.25rem;
+}
+.Openingpage .carousel-inner {
+  width: unset;
+}
+/* Sounds good */
+.Openingpage .MainPage-text button {
+  width: 150px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: #353c3f;
+  background-clip: padding-box;
+  border: 2px solid #f8f9fa;
+  border-radius: 1.5rem;
+  display: block;
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+button:not(:disabled) {
+  cursor: pointer;
+  text-decoration: none;
+}
+.Openingpage .Button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Openingpage .MainPage-text {
+  font-size: 24px;
+  padding: 1.25rem;
+}
