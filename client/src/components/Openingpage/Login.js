@@ -31,7 +31,7 @@ const Login = ({ login }) => {
                 <header className="Main-Title"> התחברות</header>
 
                 <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
-                  <label> דואר אלקטרוני</label>
+                  <label>דואר אלקטרוני</label>
                   <input
                     type="text"
                     name="Email"
@@ -39,7 +39,7 @@ const Login = ({ login }) => {
                     onChange={e => onChange(e)}
                     placeholder="דואר אלקטרוני"
                   />
-                  <label> סיסמה</label>
+                  <label>סיסמה</label>
                   <input
                     type={typeState ? "text" : "password"}
                     name="Password"
@@ -47,7 +47,7 @@ const Login = ({ login }) => {
                     onChange={e => onChange(e)}
                     placeholder="סיסמה"
                   />
-                  <label> הצג סיסמה</label>
+                  <label>הצג סיסמה</label>
                   <input type="checkbox" onClick={() => setType(!typeState)} />
 
                   <input type="submit" name="Password" value="התחברות" />
