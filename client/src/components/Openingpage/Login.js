@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser as FasUser } from "@fortawesome/free-regular-svg-icons";
 import "../../css/Openning.css";
+
 const Login = ({ login }) => {
   // useState
   const [Data, SetData] = useState({
