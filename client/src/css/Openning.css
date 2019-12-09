@@ -250,3 +250,79 @@ label {
 body::-webkit-scrollbar-thumb {
   background-color: #f8f9fa;
 }
+
+/* Register form */
+
+.Register-Form {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.Register-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Register-Form input[type="text"],
+[type="email"] {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  outline: none;
+  color: #353c3f;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 2px solid #353c3f;
+  border-radius: 0.75rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Register-Form input[type="password"] {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  outline: none;
+  color: #353c3f;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 2px solid #353c3f;
+  border-radius: 0.75rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Register-Form input[type="submit"] {
+  display: block;
+  width: 28%;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  background-color: #353c3f;
+  background-clip: padding-box;
+  border-radius: 0.8rem;
+  margin-right: auto;
+  margin-left: auto;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 0.325rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Register-Form label {
+  padding-top: 15px;
+  text-align: right !important;
+  color: #353c3f;
+}
+
+.form-group {
+  margin-bottom: unset;
+}

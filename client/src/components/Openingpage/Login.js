@@ -20,7 +20,7 @@ const Login = ({ login }) => {
   };
 
   return (
-    <div className="Login">
+    <div className="Pages-attributes">
       <main className="main">
         <div className="MainPage-container">
           <div className="MainPage-content ">

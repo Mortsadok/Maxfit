@@ -9,6 +9,7 @@ import Live from "../../img/Live.png";
 import Store from "../../img/Store.png";
 import Notifications from "../../img/Notifications.png";
 import { Link } from "react-router-dom";
+import { Badge } from "react-bootstrap";
 
 const Openingpage = () => {
   return (
@@ -20,8 +21,11 @@ const Openingpage = () => {
 
 const FirstPage = () => (
   <div>
-    <h2> ברוכים הבאים לאפליקציית - Maxfit!</h2>
-
+    <div className="badge-headline">
+      <Badge pill variant="dark">
+        ברוכים הבאים לאפליקציית - Maxfit
+      </Badge>
+    </div>
     <div className="welcome-text">
       אפליקציית חדר הכושר תאפשר למתאמנים לבצע פעולות כמו: בניית תוכניות אימונים,
       מעקב אחר סטטיסטיקות, לצפות בכמות המתאמנים בזמן אמת, חידוש מנוי, הצהרת

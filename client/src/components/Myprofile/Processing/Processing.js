@@ -72,8 +72,6 @@ const SecondNAV = props => (
     <div className="Att">
       <FontAwesomeIcon className="muscleIcon" icon={faDumbbell} />
       <NavLink to="/Processing"> מדדים </NavLink>
-      <FontAwesomeIcon className="HandsHelping" icon={faPeopleCarry} />
-      <NavLink to="/Personaltraining">אימון אישי</NavLink>
       <FontAwesomeIcon className="CalendarCheck" icon={faCalendarCheck} />
       <NavLink to="/Subscription"> חידוש מנוי </NavLink>
       <FontAwesomeIcon className="ListUL" icon={faListUl} />

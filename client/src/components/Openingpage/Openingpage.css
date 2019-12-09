@@ -4,7 +4,7 @@
   padding-left: 200px;
 }
 
-.Login {
+.Pages-attributes {
   text-align: center;
   padding-right: 200px;
   padding-left: 200px;
@@ -64,4 +64,24 @@ button:not(:disabled) {
 .Openingpage .MainPage-text {
   font-size: 24px;
   padding: 1rem;
+}
+
+.badge-headline {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 0.25em 0.4em;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.badge-headline .badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 1rem;
 }
