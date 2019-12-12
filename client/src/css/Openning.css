@@ -326,3 +326,6 @@ body::-webkit-scrollbar-thumb {
 .form-group {
   margin-bottom: unset;
 }
+a:hover {
+  text-decoration: none;
+}

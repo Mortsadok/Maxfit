@@ -1,4 +1,8 @@
 import { combineReducers } from "redux";
-import { NclientReducer } from "./NclientReducer";
-
-export default combineReducers({});
+import authReducer from "./authReducer";
+import NclientReducer from "./NclientReducer";
+import alertReducer from "./alertReducer";
+export default combineReducers({
+  authReducer,
+  alertReducer
+});

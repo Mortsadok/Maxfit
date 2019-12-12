@@ -5,20 +5,33 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressCard as FasAddressCard } from "@fortawesome/free-regular-svg-icons";
 import { Row, Form, Col, FormGroup, Label, Input } from "reactstrap";
+// Redux
+import { connect } from "react-redux";
+import { register } from "../../actions/authActions";
 
 import "../../css/Openning.css";
-const Register = ({ login }) => {
+const Register = ({ register }) => {
   // useState
-  const [Data, SetData] = useState({
+  const [Data, setData] = useState({
     Email: "",
-    Password: ""
+    Password: "",
+    Name: "",
+    rePassword: ""
   });
-  const { Email, Password } = Data;
+  const { Email, Password, rePassword, Name } = Data;
   const [typeState, setType] = useState(false);
-  const onChange = e => SetData({ ...Data, [e.target.name]: e.target.value });
+  const onChange = e => setData({ ...Data, [e.target.name]: e.target.value });
 
-  const onSubmit = async e => {
+  const onSubmit = e => {
     e.preventDefault();
+    if (Password !== rePassword) {
+      console.log("password dont match");
+    } else {
+      register(Name, Email, Password);
+    }
+  };
+  const resetForm = () => {
+    setData({ ...Data, Email: "", Password: "", rePassword: "", Name: "" });
   };
 
   return (
@@ -36,22 +49,24 @@ const Register = ({ login }) => {
                   <Row form>
                     <Col md={6}>
                       <FormGroup>
-                        <Label for="exampleEmail">דואר אלקטרוני</Label>
+                        <Label>דואר אלקטרוני</Label>
                         <Input
                           type="email"
-                          name="email"
-                          id="exampleEmail"
+                          name="Email"
+                          value={Email}
+                          onChange={e => onChange(e)}
                           placeholder="דואר אלקטרוני"
                         />
                       </FormGroup>
                     </Col>
                     <Col md={6}>
                       <FormGroup>
-                        <Label for="examplePassword">סיסמה</Label>
+                        <Label>סיסמה</Label>
                         <Input
                           type="password"
-                          name="password"
-                          id="examplePassword"
+                          name="Password"
+                          value={Password}
+                          onChange={e => onChange(e)}
                           placeholder="סיסמה"
                         />
                       </FormGroup>
@@ -60,22 +75,24 @@ const Register = ({ login }) => {
                   <Row form>
                     <Col md={6}>
                       <FormGroup>
-                        <Label for="exampleEmail">שם מלא</Label>
+                        <Label>שם מלא</Label>
                         <Input
-                          type="email"
-                          name="email"
-                          id="exampleEmail"
+                          type="text"
+                          name="Name"
+                          onChange={e => onChange(e)}
+                          value={Name}
                           placeholder="שם מלא"
                         />
                       </FormGroup>
                     </Col>
                     <Col md={6}>
                       <FormGroup>
-                        <Label for="examplePassword">אימות סיסמה</Label>
+                        <Label>אימות סיסמה</Label>
                         <Input
                           type="password"
-                          name="password"
-                          id="examplePassword"
+                          name="rePassword"
+                          value={rePassword}
+                          onChange={e => onChange(e)}
                           placeholder="אימות סיסמה"
                         />
                       </FormGroup>
@@ -112,8 +129,8 @@ const Register = ({ login }) => {
 };
 
 Register.propTypes = {
-  login: PropTypes.func.isRequired,
-  isAuth: PropTypes.bool
+  isAuth: PropTypes.bool,
+  register: PropTypes.func.isRequired
 };
 
-export default Register;
+export default connect(null, { register })(Register);

@@ -16,6 +16,7 @@ import Health from "./components/Myprofile/Health/Health";
 import Openingpage from "./components/Openingpage/Openingpage";
 import Register from "./components/Openingpage/Register";
 import Login from "./components/Openingpage/Login";
+import ForgotPass from "./components/Openingpage/ForgotPass";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -29,6 +30,7 @@ class App extends Component {
           <Switch>
             <div className="App">
               <Route path="/" component={Openingpage} exact />
+              <Route path="/ForgotPass" component={ForgotPass} />
               <Route path="/Login" component={Login} />
               <Route path="/Register" component={Register} />
               <Route path="/Home" component={Home} />

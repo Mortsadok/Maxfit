@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser as FasUser } from "@fortawesome/free-regular-svg-icons";
 import "../../css/Openning.css";
 
-const Login = ({ login }) => {
+const Login = () => {
   // useState
   const [Data, SetData] = useState({
     Email: "",
