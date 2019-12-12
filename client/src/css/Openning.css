@@ -181,7 +181,7 @@ body {
 }
 
 .MainPage-Form label {
-  padding-top: 15px;
+  padding-top: 10px;
   text-align: center;
   color: #353c3f;
 }
@@ -204,7 +204,7 @@ label {
   color: #353c3f;
   font-size: 22px;
   font-weight: 600;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -326,6 +326,11 @@ body::-webkit-scrollbar-thumb {
 .form-group {
   margin-bottom: unset;
 }
+
 a:hover {
   text-decoration: none;
+}
+
+.card-body {
+  padding: 0.2rem;
 }
