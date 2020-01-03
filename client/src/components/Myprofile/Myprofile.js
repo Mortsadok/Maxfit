@@ -4,7 +4,6 @@ import "../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDumbbell,
-  faPeopleCarry,
   faCalendarCheck,
   faListUl,
   faHeartbeat,

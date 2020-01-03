@@ -9,7 +9,6 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDumbbell,
-  faPeopleCarry,
   faCalendarCheck,
   faListUl,
   faHeartbeat,

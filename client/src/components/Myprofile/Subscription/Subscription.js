@@ -11,7 +11,6 @@ import { Nclient } from "../../../actions/NclientAction";
 
 import {
   faDumbbell,
-  faPeopleCarry,
   faCalendarCheck,
   faListUl,
   faHeartbeat,

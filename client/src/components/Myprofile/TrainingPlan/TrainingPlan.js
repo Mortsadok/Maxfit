@@ -10,7 +10,6 @@ import { CustomInput } from "reactstrap";
 
 import {
   faDumbbell,
-  faPeopleCarry,
   faCalendarCheck,
   faListUl,
   faHeartbeat,

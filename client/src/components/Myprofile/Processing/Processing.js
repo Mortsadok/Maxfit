@@ -7,7 +7,6 @@ import Form from "react-bootstrap/Form";
 import { Button, Col } from "react-bootstrap";
 import {
   faDumbbell,
-  faPeopleCarry,
   faCalendarCheck,
   faListUl,
   faHeartbeat,
