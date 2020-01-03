@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Live from "./components/Live/Live";
@@ -17,39 +17,45 @@ import Openingpage from "./components/Openingpage/Openingpage";
 import Register from "./components/Openingpage/Register";
 import Login from "./components/Openingpage/Login";
 import ForgotPass from "./components/Openingpage/ForgotPass";
+import setAuthToken from "./utils/setAuthToken";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
+import { checkUser } from "./actions/authActions";
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <Navbar />
-          <Switch>
-            <div className="App">
-              <Route path="/" component={Openingpage} exact />
-              <Route path="/ForgotPass" component={ForgotPass} />
-              <Route path="/Login" component={Login} />
-              <Route path="/Register" component={Register} />
-              <Route path="/Home" component={Home} />
-              <Route path="/Live" component={Live} />
-              <Route path="/Notifications" component={Notifications} />
-              <Route path="/Store" component={Store} />
-              <Route path="/Myprofile" component={Myprofile} />
-              <Route path="/Processing" component={Processing} />
-              <Route path="/Personaltraining" component={Personaltraining} />
-              <Route path="/Subscription" component={Subscription} />
-              <Route path="/TrainingPlan" component={TrainingPlan} />
-              <Route path="/UserSettings" component={UserSettings} />
-              <Route path="/Health" component={Health} />
-            </div>
-          </Switch>
-        </BrowserRouter>
-      </Provider>
-    );
-  }
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
 }
+const App = () => {
+  useEffect(() => {
+    store.dispatch(checkUser());
+  }, []);
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <div className="App">
+            <Route path="/" component={Openingpage} exact />
+            <Route path="/ForgotPass" component={ForgotPass} />
+            <Route path="/Login" component={Login} />
+            <Route path="/Register" component={Register} />
+            <Route path="/Home" component={Home} />
+            <Route path="/Live" component={Live} />
+            <Route path="/Notifications" component={Notifications} />
+            <Route path="/Store" component={Store} />
+            <Route path="/Myprofile" component={Myprofile} />
+            <Route path="/Processing" component={Processing} />
+            <Route path="/Personaltraining" component={Personaltraining} />
+            <Route path="/Subscription" component={Subscription} />
+            <Route path="/TrainingPlan" component={TrainingPlan} />
+            <Route path="/UserSettings" component={UserSettings} />
+            <Route path="/Health" component={Health} />
+          </div>
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  );
+};
 
 export default App;

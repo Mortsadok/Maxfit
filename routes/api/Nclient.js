@@ -31,7 +31,7 @@ router.post(
       Payment,
       Total
     } = req.body;
-    let Nclient = await NeClient.findOne({ id });
+    let Nclient = await NewClient.findOne({ id });
     if (Nclient) {
       return res
         .status(400)

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressCard as FasAddressCard } from "@fortawesome/free-regular-svg-icons";
 import { Row, Form, Col, FormGroup, Label, Input } from "reactstrap";
@@ -10,8 +10,9 @@ import { connect } from "react-redux";
 import { register } from "../../actions/authActions";
 
 import "../../css/Openning.css";
-const Register = ({ register }) => {
+const Register = ({ register, isAuth }) => {
   // useState
+  const [redirectDelay, setRedirect] = useState(false);
   const [Data, setData] = useState({
     Email: "",
     Password: "",
@@ -28,12 +29,18 @@ const Register = ({ register }) => {
       console.log("password dont match");
     } else {
       register(Name, Email, Password);
+      resetForm();
+      setTimeout(() => {
+        setRedirect(true);
+      }, 2000);
     }
   };
   const resetForm = () => {
     setData({ ...Data, Email: "", Password: "", rePassword: "", Name: "" });
   };
-
+  if (isAuth && redirectDelay) {
+    return <Redirect to="/Login" />;
+  }
   return (
     <div className="Pages-attributes">
       <main className="main">
@@ -132,5 +139,7 @@ Register.propTypes = {
   isAuth: PropTypes.bool,
   register: PropTypes.func.isRequired
 };
-
-export default connect(null, { register })(Register);
+const mapStateToProps = state => ({
+  isAuth: state.authReducer.isAuth
+});
+export default connect(mapStateToProps, { register })(Register);

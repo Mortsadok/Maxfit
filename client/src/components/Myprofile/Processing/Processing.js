@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,19 +13,48 @@ import {
   faHeartbeat,
   faCog
 } from "@fortawesome/free-solid-svg-icons";
+// Redux
+import { connect } from "react-redux";
+import { setProcessing } from "../../../actions/processingAction";
 
-class Processing extends Component {
-  render() {
-    return (
-      <div className="Processing">
-        <SecondNAV />
-        <UnderNAV />
-      </div>
-    );
-  }
-}
+const Processing = ({ setProcessing }) => {
+  const [getProccessing, setProcessingData] = useState({
+    Weight: "",
+    Chest: "",
+    frontHand: "",
+    backHand: ""
+  });
+  const { Weight, Chest, frontHand, backHand } = getProccessing;
+  const onChange = e => {
+    setProcessingData({ getProccessing, [e.target.name]: e.target.value });
+  };
+  const onSubmit = e => {
+    e.preventDefault();
+    setProcessing(Weight, Chest, frontHand, backHand);
+  };
+  return (
+    <div className="Processing">
+      <SecondNAV />
+      <UnderNAV
+        Weight={Weight}
+        Chest={Chest}
+        frontHand={frontHand}
+        backHand={backHand}
+        onChange={onChange}
+        onSubmit={onSubmit}
+      />
+    </div>
+  );
+};
 
-const UnderNAV = props => (
+const UnderNAV = ({
+  Weight,
+  Chest,
+  frontHand,
+  backHand,
+  onChange,
+  onSubmit
+}) => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
@@ -37,10 +66,20 @@ const UnderNAV = props => (
                 <Form>
                   <Form.Row>
                     <Col>
-                      <Form.Control placeholder="הכנס משקל" />
+                      <Form.Control
+                        name="Weight"
+                        value={Weight}
+                        placeholder="הכנס משקל"
+                        onChange={e => onChange(e)}
+                      />
                     </Col>
                     <Col>
-                      <Form.Control placeholder="הכנס היקף חזה" />
+                      <Form.Control
+                        name="Chest"
+                        value={Chest}
+                        placeholder="הכנס היקף חזה"
+                        onChange={e => onChange(e)}
+                      />
                     </Col>
                   </Form.Row>
                 </Form>
@@ -49,10 +88,20 @@ const UnderNAV = props => (
                 <Form>
                   <Form.Row>
                     <Col>
-                      <Form.Control placeholder="הכנס היקף יד קדמית" />
+                      <Form.Control
+                        name="frontHand"
+                        value={frontHand}
+                        placeholder="הכנס היקף יד קדמית"
+                        onChange={e => onChange(e)}
+                      />
                     </Col>
                     <Col>
-                      <Form.Control placeholder="הכנס היקף יד אחורית" />
+                      <Form.Control
+                        name="backHand"
+                        value={backHand}
+                        placeholder="הכנס היקף יד אחורית"
+                        onChange={e => onChange(e)}
+                      />
                     </Col>
                   </Form.Row>
                 </Form>
@@ -83,4 +132,4 @@ const SecondNAV = props => (
     </div>
   </div>
 );
-export default Processing;
+export default connect(null, { setProcessing })(Processing);

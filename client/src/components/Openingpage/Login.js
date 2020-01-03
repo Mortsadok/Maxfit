@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser as FasUser } from "@fortawesome/free-regular-svg-icons";
 import "../../css/Openning.css";
+// Redux
+import { connect } from "react-redux";
+import { login } from "../../actions/authActions";
 
-const Login = () => {
+const Login = ({ login, isAuth }) => {
   // useState
   const [Data, SetData] = useState({
     Email: "",
@@ -18,7 +21,11 @@ const Login = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
+    login(Email, Password);
   };
+  if (isAuth) {
+    return <Redirect to="/Home" />;
+  }
 
   return (
     <div className="Pages-attributes">
@@ -80,5 +87,7 @@ Login.propTypes = {
   login: PropTypes.func.isRequired,
   isAuth: PropTypes.bool
 };
-
-export default Login;
+const mapStateToProps = state => ({
+  isAuth: state.authReducer.isAuth
+});
+export default connect(mapStateToProps, { login })(Login);

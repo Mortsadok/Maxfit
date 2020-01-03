@@ -1,49 +1,79 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { Form, Row, Col, Button } from "react-bootstrap/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDumbbell,
-  faPeopleCarry,
   faCalendarCheck,
   faListUl,
   faHeartbeat,
   faCog
 } from "@fortawesome/free-solid-svg-icons";
+// Redux
+import { connect } from "react-redux";
+import { setHealthDetails } from "../../../actions/healthAction";
+const Health = ({ setHealthDetails }) => {
+  const onChange = e => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+  const onSubmit = e => {
+    e.preventDefault();
+    setHealthDetails(firstName, lastName, documentInfo);
+  };
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: ""
+  });
+  const { firstName, lastName } = data;
+  const documentInfo =
+    "הנני החתום מטה מצהיר/ה בזאת שעל פי מיטב ידעתי אני בריא/ה ואין לי כל מגבלה רפואית המונעלת את השתתפותי בחדר הכושר והנני כשיר/ה להשתתף בפעילות שיעורי הסטודיו. אני מודע למגבלות הרפואיות במידה וידועה לי בעיה רפואית כלשהי הנני מתחייב/ת להביא אישור בנוסף להצהרת בריאות";
+  return (
+    <div className="Health">
+      <SecondNAV />
+      <UnderNAV
+        documentInfo={documentInfo}
+        firstName={firstName}
+        lastName={lastName}
+        onChange={onChange}
+        onSubmit={onSubmit}
+      />
+    </div>
+  );
+};
 
-class Health extends Component {
-  render() {
-    return (
-      <div className="Health">
-        <SecondNAV />
-        <UnderNAV />
-      </div>
-    );
-  }
-}
-
-const UnderNAV = props => (
+const UnderNAV = ({
+  documentInfo,
+  firstName,
+  lastName,
+  onChange,
+  onSubmit
+}) => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
-        <p class="font-weight-light">הצהרת בריאות</p>
+        <p className="font-weight-light">הצהרת בריאות</p>
       </div>
       <div className="HealthPolicy-content">
-        <div className="HealthPolicy">
-          הנני החתום מטה מצהיר/ה בזאת שעל פי מיטב ידעתי אני בריא/ה ואין לי כל
-          מגבלה רפואית המונעת את השתתפותי בחדר הכושר והנני כשיר/ה להשתתף בפעילות
-          שיעורי הסטודיו. אני מודע למגבלות הרפואיות שלי, במידה וידועה לי בעיה
-          רפואית כלשהי, הנני מתחייב/ת להביא אישור רפואי בנוסף להצהרת הבריאות.
-        </div>
-        <Form>
+        <div className="HealthPolicy">{documentInfo}</div>
+        <Form onSubmit={onSubmit}>
           <div className="Form-content">
             <Row>
               <Col>
-                <Form.Control placeholder="שם פרטי" />
+                <Form.Control
+                  name="firstName"
+                  value={firstName}
+                  placeholder="שם פרטי"
+                  onChange={e => onChange(e)}
+                />
               </Col>
               <Col>
-                <Form.Control placeholder="שם משפחה" />
+                <Form.Control
+                  name="lastName"
+                  value={lastName}
+                  placeholder="שם משפחה"
+                  onChange={e => onChange(e)}
+                />
               </Col>
             </Row>
             <Button variant="outline-success" type="submit">
@@ -72,4 +102,4 @@ const SecondNAV = props => (
     </div>
   </div>
 );
-export default Health;
+export default connect(null, { setHealthDetails })(Health);
