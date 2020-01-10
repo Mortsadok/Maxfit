@@ -5,12 +5,14 @@ import { Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressCard as FasAddressCard } from "@fortawesome/free-regular-svg-icons";
 import { Row, Form, Col, FormGroup, Label, Input } from "reactstrap";
+import Alert from "../Layout/Alert";
 // Redux
 import { connect } from "react-redux";
 import { register } from "../../actions/authActions";
+import { setAlert } from "../../actions/alertAction";
 
 import "../../css/Openning.css";
-const Register = ({ register, isAuth }) => {
+const Register = ({ register, isAuth, setAlert }) => {
   // useState
   const [redirectDelay, setRedirect] = useState(false);
   const [Data, setData] = useState({
@@ -26,7 +28,7 @@ const Register = ({ register, isAuth }) => {
   const onSubmit = e => {
     e.preventDefault();
     if (Password !== rePassword) {
-      console.log("password dont match");
+      setAlert("סיסמאות לא תואמות", "danger");
     } else {
       register(Name, Email, Password);
       resetForm();
@@ -105,13 +107,14 @@ const Register = ({ register, isAuth }) => {
                       </FormGroup>
                     </Col>
                   </Row>
-
                   <div className="Register-Form-margin"></div>
                   <label>הצג סיסמה</label>
                   <input type="checkbox" onClick={() => setType(!typeState)} />
 
                   <input type="submit" name="Password" value="הרשמה" />
-
+                  <div className="Alert">
+                    <Alert />
+                  </div>
                   <div className="Button-content ">
                     <div className="LoginApp-text">
                       <Link to="/forgotPass">שכחת את הסיסמה?</Link>
@@ -142,4 +145,4 @@ Register.propTypes = {
 const mapStateToProps = state => ({
   isAuth: state.authReducer.isAuth
 });
-export default connect(mapStateToProps, { register })(Register);
+export default connect(mapStateToProps, { register, setAlert })(Register);

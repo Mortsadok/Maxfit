@@ -1,20 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import { Button, Col } from "react-bootstrap";
-import {
-  faDumbbell,
-  faCalendarCheck,
-  faListUl,
-  faHeartbeat,
-  faCog
-} from "@fortawesome/free-solid-svg-icons";
 // Redux
 import { connect } from "react-redux";
 import { setProcessing } from "../../../actions/processingAction";
+import SecNav from "../SecNav";
 
 const Processing = ({ setProcessing }) => {
   const [getProccessing, setProcessingData] = useState({
@@ -33,7 +25,7 @@ const Processing = ({ setProcessing }) => {
   };
   return (
     <div className="Processing">
-      <SecondNAV />
+      <SecNav />
       <UnderNAV
         Weight={Weight}
         Chest={Chest}
@@ -112,22 +104,6 @@ const UnderNAV = ({
           </Card>
         </div>
       </div>
-    </div>
-  </div>
-);
-const SecondNAV = props => (
-  <div className="secNAV">
-    <div className="Att">
-      <FontAwesomeIcon className="muscleIcon" icon={faDumbbell} />
-      <NavLink to="/Processing"> מדדים </NavLink>
-      <FontAwesomeIcon className="CalendarCheck" icon={faCalendarCheck} />
-      <NavLink to="/Subscription"> חידוש מנוי </NavLink>
-      <FontAwesomeIcon className="ListUL" icon={faListUl} />
-      <NavLink to="/TrainingPlan"> תוכנית אימונים </NavLink>
-      <FontAwesomeIcon className="Heartbeat" icon={faHeartbeat} />
-      <NavLink to="/Health">הצהרת בריאות</NavLink>
-      <FontAwesomeIcon className="Settings" icon={faCog} />
-      <NavLink to="/UserSettings">הגדרות</NavLink>
     </div>
   </div>
 );

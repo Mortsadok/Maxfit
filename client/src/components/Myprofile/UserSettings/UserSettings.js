@@ -1,25 +1,17 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Form";
 import Col from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDumbbell,
-  faCalendarCheck,
-  faListUl,
-  faHeartbeat,
-  faCog
-} from "@fortawesome/free-solid-svg-icons";
+import SecNav from "../SecNav";
 
 class UserSettings extends Component {
   render() {
     return (
       <div className="UserSettings">
-        <SecondNAV />
+        <SecNav />
         <UnderNAV />
       </div>
     );
@@ -30,7 +22,7 @@ const UnderNAV = props => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
-        <p class="font-weight-light">הגדרות</p>
+        <p className="font-weight-light">הגדרות</p>
         <div className="Setting-form">
           <Card border="secondary" style={{ width: "18rem" }}>
             <Card.Header>פרטים אישיים</Card.Header>
@@ -108,22 +100,6 @@ const UnderNAV = props => (
           </Card>
         </div>
       </div>
-    </div>
-  </div>
-);
-const SecondNAV = props => (
-  <div className="secNAV">
-    <div className="Att">
-      <FontAwesomeIcon className="muscleIcon" icon={faDumbbell} />
-      <NavLink to="/Processing"> מדדים </NavLink>
-      <FontAwesomeIcon className="CalendarCheck" icon={faCalendarCheck} />
-      <NavLink to="/Subscription"> חידוש מנוי </NavLink>
-      <FontAwesomeIcon className="ListUL" icon={faListUl} />
-      <NavLink to="/TrainingPlan"> תוכנית אימונים </NavLink>
-      <FontAwesomeIcon className="Heartbeat" icon={faHeartbeat} />
-      <NavLink to="/Health">הצהרת בריאות</NavLink>
-      <FontAwesomeIcon className="Settings" icon={faCog} />
-      <NavLink to="/UserSettings">הגדרות</NavLink>
     </div>
   </div>
 );

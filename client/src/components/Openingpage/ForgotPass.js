@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUnlockAlt } from "@fortawesome/free-solid-svg-icons";
 import "../../css/Openning.css";
-
-const ForgotPass = () => {
+import Alert from "../Layout/Alert";
+// Redux
+import { connect } from "react-redux";
+import { resetPassword } from "../../actions/authActions";
+import { setAlert } from "../../actions/alertAction";
+const ForgotPass = ({ resetPassword, setAlert }) => {
   // useState
   const [Data, SetData] = useState({
     Email: "",
@@ -19,6 +23,14 @@ const ForgotPass = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    if (Password !== rePassword) {
+      setAlert("סיסמאות לא תואמות", "danger");
+    }
+    resetPassword(Email, Password);
+    resetForm();
+  };
+  const resetForm = () => {
+    SetData({ ...Data, Email: "", Password: "", rePassword: "" });
   };
 
   return (
@@ -64,17 +76,17 @@ const ForgotPass = () => {
                       onClick={() => setType(!typeState)}
                     />
 
-                    <input type="submit" name="Password" value="התחברות" />
-
-                    <div className="Button-content ">
-                      <div className="LoginApp-text">
-                        איך לך משתמש?
-                        <span className="Link-Color">
-                          <Link to="/Register" className="RegistarButton">
-                            הירשם כעת
-                          </Link>
-                        </span>
-                      </div>
+                    <input type="submit" name="Password" value="אפס סיסמה" />
+                    <div className="Alert">
+                      <Alert />
+                    </div>
+                    <div className="LoginApp-text">
+                      משתמש קיים?
+                      <span className="Link-Color">
+                        <Link to="/Login" className="RegistarButton">
+                          התחבר
+                        </Link>
+                      </span>
                     </div>
                   </form>
                 </Card.Body>
@@ -86,5 +98,8 @@ const ForgotPass = () => {
     </div>
   );
 };
-
-export default ForgotPass;
+ForgotPass.propTypes = {
+  resetPassword: PropTypes.func.isRequired,
+  setAlert: PropTypes.func.isRequired
+};
+export default connect(null, { resetPassword, setAlert })(ForgotPass);

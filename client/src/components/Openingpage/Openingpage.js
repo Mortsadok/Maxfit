@@ -67,7 +67,7 @@ const FirstPage = () => (
     <div className="Button-content ">
       <div className="MainPage-text">
         <Link to="/Register">
-          <button>הירשם עכשיו</button>
+          <button>הירשם</button>
         </Link>
       </div>
 

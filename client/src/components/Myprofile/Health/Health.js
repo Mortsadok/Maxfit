@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "../../../css/Myprofile.css";
 import { Form, Row, Col, Button } from "react-bootstrap/";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDumbbell,
-  faCalendarCheck,
-  faListUl,
-  faHeartbeat,
-  faCog
-} from "@fortawesome/free-solid-svg-icons";
 // Redux
 import { connect } from "react-redux";
 import { setHealthDetails } from "../../../actions/healthAction";
+import SecNav from "../SecNav";
 const Health = ({ setHealthDetails }) => {
   const onChange = e => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -30,7 +22,7 @@ const Health = ({ setHealthDetails }) => {
     "הנני החתום מטה מצהיר/ה בזאת שעל פי מיטב ידעתי אני בריא/ה ואין לי כל מגבלה רפואית המונעלת את השתתפותי בחדר הכושר והנני כשיר/ה להשתתף בפעילות שיעורי הסטודיו. אני מודע למגבלות הרפואיות שלי, במידה וידועה לי בעיה רפואית כלשהי, הנני מתחייב/ת להביא אישור בנוסף להצהרת בריאות.";
   return (
     <div className="Health">
-      <SecondNAV />
+      <SecNav />
       <UnderNAV
         documentInfo={documentInfo}
         firstName={firstName}
@@ -86,20 +78,4 @@ const UnderNAV = ({
   </div>
 );
 
-const SecondNAV = props => (
-  <div className="secNAV">
-    <div className="Att">
-      <FontAwesomeIcon className="muscleIcon" icon={faDumbbell} />
-      <NavLink to="/Processing"> מדדים </NavLink>
-      <FontAwesomeIcon className="CalendarCheck" icon={faCalendarCheck} />
-      <NavLink to="/Subscription"> חידוש מנוי </NavLink>
-      <FontAwesomeIcon className="ListUL" icon={faListUl} />
-      <NavLink to="/TrainingPlan"> תוכנית אימונים </NavLink>
-      <FontAwesomeIcon className="Heartbeat" icon={faHeartbeat} />
-      <NavLink to="/Health">הצהרת בריאות</NavLink>
-      <FontAwesomeIcon className="Settings" icon={faCog} />
-      <NavLink to="/UserSettings">הגדרות</NavLink>
-    </div>
-  </div>
-);
 export default connect(null, { setHealthDetails })(Health);

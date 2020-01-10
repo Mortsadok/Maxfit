@@ -5,6 +5,7 @@ import { Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser as FasUser } from "@fortawesome/free-regular-svg-icons";
 import "../../css/Openning.css";
+import Alert from "../Layout/Alert";
 // Redux
 import { connect } from "react-redux";
 import { login } from "../../actions/authActions";
@@ -59,7 +60,9 @@ const Login = ({ login, isAuth }) => {
                   <input type="checkbox" onClick={() => setType(!typeState)} />
 
                   <input type="submit" name="Password" value="התחברות" />
-
+                  <div className="Alert">
+                    <Alert />
+                  </div>
                   <div className="Button-content ">
                     <div className="LoginApp-text">
                       <Link to="/forgotPass">שכחת את הסיסמה?</Link>
