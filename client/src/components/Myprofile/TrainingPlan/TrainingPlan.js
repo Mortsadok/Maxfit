@@ -6,11 +6,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { CustomInput } from "reactstrap";
 import SecNav from "../SecNav";
+import Navbar from "../../Navbar/Navbar";
 
 class TrainingPlan extends Component {
   render() {
     return (
       <div className="TrainingPlan">
+        <Navbar />
         <SecNav />
         <UnderNAV />
       </div>

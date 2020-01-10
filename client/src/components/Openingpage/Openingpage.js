@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../Openingpage/Openingpage.css";
 import { Carousel } from "react-bootstrap";
 import Health from "../../img/Health.png";
@@ -8,7 +9,7 @@ import UserSettings from "../../img/UserSettings.png";
 import Live from "../../img/Live.png";
 import Store from "../../img/Store.png";
 import Notifications from "../../img/Notifications.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Badge } from "react-bootstrap";
 
 const Openingpage = () => {

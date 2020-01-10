@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Carousel } from "react-bootstrap";
 import { Badge } from "react-bootstrap";
 import "./Store.css";
@@ -16,16 +16,16 @@ import pic11 from "../../img/Nike Air.png";
 import pic12 from "../../img/Nike Athletic Shoes.png";
 import pic13 from "../../img/Nike Training Shoes.png";
 import pic14 from "../../img/Nike Metcon Black-Volt.png";
+import Navbar from "../Navbar/Navbar";
 
-class Store extends Component {
-  render() {
-    return (
-      <div className="Store">
-        <BoxStore />
-      </div>
-    );
-  }
-}
+const Store = () => {
+  return (
+    <div className="Store">
+      <Navbar />
+      <BoxStore />
+    </div>
+  );
+};
 
 const BoxStore = props => (
   <div className="boxStore">

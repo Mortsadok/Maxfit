@@ -248,6 +248,7 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 1rem;
 }
 
 .Setting-form .card {
@@ -358,4 +359,12 @@
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+}
+.EmailForm .row {
+  width: unset;
+  padding: unset;
+  justify-content: center;
+}
+.EmailForm .mailbtn {
+  margin-top: 2.325rem;
 }

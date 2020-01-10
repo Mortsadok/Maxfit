@@ -1,19 +1,21 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import "./Notifications.css";
 import Toast from "react-bootstrap/Toast";
+import Navbar from "../Navbar/Navbar";
 
-class Notifications extends Component {
-  render() {
-    return (
+const Notifications = () => {
+  return (
+    <Fragment>
+      <Navbar />
       <div className="Notifications">
         <div className="NotificationsCenter">
           <NotificationsBox1 />
           <NotificationsBox2 />
         </div>
       </div>
-    );
-  }
-}
+    </Fragment>
+  );
+};
 
 const NotificationsBox1 = props => (
   <div className="NotificationsBox1">

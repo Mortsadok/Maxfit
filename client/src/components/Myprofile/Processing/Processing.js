@@ -3,6 +3,7 @@ import "../../../css/Myprofile.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import { Button, Col } from "react-bootstrap";
+import Navbar from "../../Navbar/Navbar";
 // Redux
 import { connect } from "react-redux";
 import { setProcessing } from "../../../actions/processingAction";
@@ -25,6 +26,7 @@ const Processing = ({ setProcessing }) => {
   };
   return (
     <div className="Processing">
+      <Navbar />
       <SecNav />
       <UnderNAV
         Weight={Weight}

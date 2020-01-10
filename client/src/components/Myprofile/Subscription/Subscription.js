@@ -3,6 +3,7 @@ import "../../../css/Myprofile.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Navbar from "../../Navbar/Navbar";
 // Redux
 import { connect } from "react-redux";
 import { Nclient } from "../../../actions/NclientAction";
@@ -36,6 +37,7 @@ const Subscription = ({ Nclient }) => {
   };
   return (
     <div className="Subscription">
+      <Navbar />
       <SecNav />
       <UnderNAV SendClient={SendClient} />
     </div>

@@ -9,6 +9,8 @@ app.use("/api/users", require("./routes/api/users"));
 app.use("/api/health", require("./routes/api/health"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/forgotPass", require("./routes/api/forgotPass"));
+app.use("/api/settingsForgotPass", require("./routes/api/settingsForgetPass"));
+app.use("/api/resetEmail", require("./routes/api/resetEmail"));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));

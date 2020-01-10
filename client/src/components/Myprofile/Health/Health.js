@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../../css/Myprofile.css";
 import { Form, Row, Col, Button } from "react-bootstrap/";
+import Navbar from "../../Navbar/Navbar";
 // Redux
 import { connect } from "react-redux";
 import { setHealthDetails } from "../../../actions/healthAction";
@@ -22,6 +23,7 @@ const Health = ({ setHealthDetails }) => {
     "הנני החתום מטה מצהיר/ה בזאת שעל פי מיטב ידעתי אני בריא/ה ואין לי כל מגבלה רפואית המונעלת את השתתפותי בחדר הכושר והנני כשיר/ה להשתתף בפעילות שיעורי הסטודיו. אני מודע למגבלות הרפואיות שלי, במידה וידועה לי בעיה רפואית כלשהי, הנני מתחייב/ת להביא אישור בנוסף להצהרת בריאות.";
   return (
     <div className="Health">
+      <Navbar />
       <SecNav />
       <UnderNAV
         documentInfo={documentInfo}

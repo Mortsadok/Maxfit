@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import Spinner from "react-bootstrap/Spinner";
 import "./Live.css";
+import Navbar from "../Navbar/Navbar";
 
-class Live extends Component {
-  render() {
-    return (
-      <div className="Live">
-        <LiveCenter />
-      </div>
-    );
-  }
-}
+const Live = () => {
+  return (
+    <div className="Live">
+      <Navbar />
+      <LiveCenter />
+    </div>
+  );
+};
 
 const LiveCenter = props => (
   <div className="LiveCenter">

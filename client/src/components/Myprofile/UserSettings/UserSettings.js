@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../../../css/Myprofile.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -6,19 +6,62 @@ import Row from "react-bootstrap/Form";
 import Col from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import SecNav from "../SecNav";
+import Navbar from "../../Navbar/Navbar";
+import Alert from "../../Layout/Alert";
+import EmailForm from "./EmailForm";
+// Redux
+import { connect } from "react-redux";
+import { settingsResetPassword } from "../../../actions/authActions";
+import { setAlert } from "../../../actions/alertAction";
 
-class UserSettings extends Component {
-  render() {
-    return (
-      <div className="UserSettings">
-        <SecNav />
-        <UnderNAV />
-      </div>
-    );
-  }
-}
+const UserSettings = ({ user, settingsResetPassword, setAlert }) => {
+  const [data, setData] = useState({
+    oldPassword: "",
+    password: "",
+    rePassword: ""
+  });
+  const { password, rePassword, oldPassword } = data;
+  const { Name, email } = user;
+  const onChange = e => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+  const onSubmit = e => {
+    e.preventDefault();
+    if (password !== rePassword) {
+      setAlert("סיסמאות לא תואמות", "danger");
+    }
+    settingsResetPassword(email, oldPassword, password);
+    resetForm();
+  };
+  const resetForm = () => {
+    setData({ ...data, oldPassword: "", password: "", rePassword: "" });
+  };
+  return (
+    <div className="UserSettings">
+      <Navbar />
+      <SecNav />
+      <UnderNAV
+        Name={Name}
+        email={email}
+        password={password}
+        rePassword={rePassword}
+        oldPassword={oldPassword}
+        onChange={onChange}
+        onSubmit={onSubmit}
+      />
+    </div>
+  );
+};
 
-const UnderNAV = props => (
+const UnderNAV = ({
+  Name,
+  email,
+  password,
+  rePassword,
+  onChange,
+  oldPassword,
+  onSubmit
+}) => (
   <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
@@ -27,11 +70,11 @@ const UnderNAV = props => (
           <Card border="secondary" style={{ width: "18rem" }}>
             <Card.Header>פרטים אישיים</Card.Header>
             <Card.Body>
-              <div className="SettingsHeadline">שם מלא:</div>
-              <div className="SettingsInfo">מור צדוק</div>
+              <div className="SettingsHeadline">שם מלא</div>
+              <div className="SettingsInfo">{Name}</div>
               <div className="Settingsline">___________________________</div>
               <div className="SettingsHeadline">כתובת מייל:</div>
-              <div className="SettingsInfo">Mortmanage@gmail.com</div>
+              <div className="SettingsInfo">{email}</div>
             </Card.Body>
           </Card>
 
@@ -42,65 +85,58 @@ const UnderNAV = props => (
                 {" "}
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Col sm="10">
-                    <Form.Control type="password" placeholder="סיסמא ישנה" />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Col sm="10">
-                    <Form.Control type="password" placeholder="סיסמא חדשה" />
+                    <Form.Control
+                      type="password"
+                      name="oldPassword"
+                      value={oldPassword}
+                      onChange={e => onChange(e)}
+                      placeholder="סיסמא ישנה"
+                    />
                   </Col>
                 </Form.Group>
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Col sm="10">
                     <Form.Control
                       type="password"
+                      name="password"
+                      value={password}
+                      onChange={e => onChange(e)}
+                      placeholder="סיסמא חדשה"
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} controlId="formPlaintextPassword">
+                  <Col sm="10">
+                    <Form.Control
+                      type="password"
+                      name="rePassword"
+                      value={rePassword}
+                      onChange={e => onChange(e)}
                       placeholder="אימות סיסמא חדשה"
                     />
                   </Col>
                 </Form.Group>
-                <Form>
+                <Form onSubmit={e => onSubmit(e)}>
                   <Button variant="outline-success" type="submit">
                     שנה סיסמא
                   </Button>
+                  <div className="Alert">
+                    <Alert />
+                  </div>
                 </Form>
               </Card.Text>
             </Card.Body>
           </Card>
-
-          <Card border="secondary" style={{ width: "18rem" }}>
-            <Card.Header>שינוי דואר אלקטרוני</Card.Header>
-            <Card.Body>
-              <Card.Text>
-                {" "}
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Col sm="10">
-                    <Form.Control
-                      type="password"
-                      placeholder="דואר אלקטרוני חדש"
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Col sm="10">
-                    <Form.Control
-                      type="password"
-                      placeholder="אימות דואר אלקטרוני"
-                    />
-                  </Col>
-                </Form.Group>
-                <div className="mailbtn">
-                  <Form>
-                    <Button variant="outline-success" type="submit">
-                      שנה דואר אלקטרוני
-                    </Button>
-                  </Form>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <EmailForm />
         </div>
       </div>
     </div>
   </div>
 );
-export default UserSettings;
+const mapStateToProps = state => ({
+  user: state.authReducer.user
+});
+export default connect(mapStateToProps, {
+  settingsResetPassword,
+  setAlert
+})(UserSettings);

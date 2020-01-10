@@ -95,6 +95,27 @@ export const resetPassword = (email, password) => async dispatch => {
     }
   }
 };
+export const settingsResetPassword = (
+  email,
+  oldPassword,
+  password
+) => async dispatch => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+  const body = JSON.stringify({ email, oldPassword, password });
+  try {
+    await axios.post("/api/settingsForgotPass", body, config);
+    dispatch(setAlert("סיסמה שונתה בהצלחה", "success"));
+  } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    }
+  }
+};
 export const Logout = () => dispatch => {
   dispatch({
     type: LOGOUT

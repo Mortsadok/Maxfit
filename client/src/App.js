@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Live from "./components/Live/Live";
 import Notifications from "./components/Notifications/Notifications";
@@ -32,7 +31,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Navbar />
         <Switch>
           <div className="App">
             <Route path="/" component={Openingpage} exact />
