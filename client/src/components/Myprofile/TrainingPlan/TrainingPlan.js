@@ -7,27 +7,27 @@ import Form from "react-bootstrap/Form";
 import { CustomInput } from "reactstrap";
 import SecNav from "../SecNav";
 import Navbar from "../../Navbar/Navbar";
+import { connect } from "react-redux";
 
-class TrainingPlan extends Component {
-  render() {
-    return (
-      <div className="TrainingPlan">
-        <Navbar />
-        <SecNav />
-        <UnderNAV />
-      </div>
-    );
-  }
-}
+const TrainingPlan = ({ user }) => {
+  const { Name } = user;
+  return (
+    <div className="TrainingPlan">
+      <Navbar />
+      <SecNav />
+      <UnderNAV Name={Name} />
+    </div>
+  );
+};
 
-const UnderNAV = props => (
-  <div className="underNAV">
+const UnderNAV = ({ Name }) => (
+  <div className="underNAV" name={Name}>
     <div className="Inside-box">
       <div className="Headline">
         <p className="font-weight-light">תוכנית אימונים</p>
       </div>
       <div className="userMSG">
-        שלום מור צדוק, בחר בבקשה את תוכנית האימונים הרצויה:
+        {`שלום ${Name}, בחר בבקשה את תוכנית האימונים הרצויה:`}
       </div>
       <div className="Train-content">
         <Card border="secondary" style={{ width: "18rem" }}>
@@ -121,4 +121,6 @@ const UnderNAV = props => (
     </div>
   </div>
 );
-export default TrainingPlan;
+
+const mapStateToProps = state => ({ user: state.authReducer.user });
+export default connect(mapStateToProps, {})(TrainingPlan);
