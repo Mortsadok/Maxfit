@@ -16,6 +16,8 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 200px;
+    padding-bottom: 1rem;
 }
 
 .App {
@@ -49,7 +51,7 @@ body {
 .Mobile-Main-Title {
     display: flex;
     justify-content: center;
-    font-size: 28px;
+    font-size: 24px;
     align-items: center;
 }
 
@@ -215,6 +217,7 @@ body {
 
 .card {
     position: unset;
+    margin-top: 15px;
 }
 
 .Mobile .Dash-Card-Size {
@@ -322,7 +325,7 @@ body {
     margin-right: auto;
 }
 
-.Mobile-Button-content {
+.Mobile .Button-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -740,6 +743,10 @@ body {
 @media only screen and (max-width: 700px) {
     .badge-pill {
         border-radius: 0.5rem;
+    }
+
+    .RegistarButton {
+        width: unset !important;
     }
 
     .w-100 {

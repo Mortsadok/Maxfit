@@ -79,7 +79,7 @@ const MobileMain = ({ images }) => (
   </div>
 );
 const FirstPage = ({ images }) => (
-  <div>
+  <Fragment>
     <div className='badge-headline'>
       <Badge pill variant='dark'>
         ברוכים הבאים לאפליקציית - Maxfit
@@ -112,7 +112,7 @@ const FirstPage = ({ images }) => (
         </Link>
       </div>
     </div>
-  </div>
+  </Fragment>
 );
 
 export default OpeningPage;
