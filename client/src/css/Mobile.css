@@ -8,8 +8,14 @@ body {
 
 .Mobile .main {
     padding: 1.75rem;
-    padding-top: 40px;
+    padding-top: 20px;
     min-height: 100vh;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .App {
@@ -156,14 +162,16 @@ body {
     position: unset;
 }
 
-.Mobile .Carousel-content {
-    padding-top: 1rem;
+.Mobile-Carousel-content {
+    padding-top: 3rem;
     padding-bottom: 3rem;
-    display: flex;
-    justify-content: center;
 }
 
-.Mobile .Carousel-content img {
+.Mobile .carousel-inner {
+    width: auto;
+}
+
+.Mobile-Carousel-content img {
     height: unset !important;
 }
 
@@ -735,7 +743,9 @@ body {
     }
 
     .w-100 {
-        padding: 0 3rem 3rem;
+        padding: unset;
+        height: unset;
+        width: 100% !important;
     }
 
     .Mobile .Stat-Form {

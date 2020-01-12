@@ -33,7 +33,7 @@ h2 {
   width: unset;
 }
 
-.Openingpage .MainPage-text button {
+.MainPage-text button {
   width: 115px;
   color: #fff;
   font-size: 20px;
@@ -55,13 +55,13 @@ button:not(:disabled) {
   text-decoration: none;
 }
 
-.Openingpage .Button-content {
+.Button-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Openingpage .MainPage-text {
+.MainPage-text {
   font-size: 24px;
   padding: 1rem;
 }
@@ -85,11 +85,13 @@ button:not(:disabled) {
   padding-left: 0.6em;
   border-radius: 1rem;
 }
+
 /* Alert attributes */
 .Alert {
   padding-top: 1rem;
   text-align: center;
 }
+
 .alert {
   position: unset;
 }

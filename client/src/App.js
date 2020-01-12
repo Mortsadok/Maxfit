@@ -32,8 +32,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Switch>
-          <div className='App'>
+        <div className='App'>
+          <Switch>
             <Route path='/' component={Openingpage} exact />
             <Route path='/ForgotPass' component={ForgotPass} />
             <Route path='/Login' component={Login} />
@@ -48,8 +48,8 @@ const App = () => {
             <Route path='/TrainingPlan' component={TrainingPlan} />
             <Route path='/UserSettings' component={UserSettings} />
             <Route path='/Health' component={Health} />
-          </div>
-        </Switch>
+          </Switch>
+        </div>
       </BrowserRouter>
     </Provider>
   );

@@ -4,6 +4,7 @@ import '../../css/Mobile.css';
 import './Openingpage.css';
 import { Carousel } from 'react-bootstrap';
 import Health from '../../img/Health.png';
+import logo from '../../img/logo.png';
 import Subscription from '../../img/Subscription.png';
 import TrainingPlan from '../../img/TrainingPlan.png';
 import UserSettings from '../../img/UserSettings.png';
@@ -21,7 +22,8 @@ const OpeningPage = () => {
     { src: UserSettings, alt: 'UserSettings' },
     { src: TrainingPlan, alt: 'TrainingPlan' },
     { src: Health, alt: 'Health' },
-    { src: Live, alt: 'Live' }
+    { src: Live, alt: 'Live' },
+    { src: Subscription, alt: 'Subscription' }
   ];
   return (
     <Fragment>
@@ -30,7 +32,7 @@ const OpeningPage = () => {
       </MediaQuery>
       <div className='Openingpage'>
         <MediaQuery minDeviceWidth={1280}>
-          <FirstPage />
+          <FirstPage images={images} />
         </MediaQuery>
       </div>
     </Fragment>
@@ -39,6 +41,8 @@ const OpeningPage = () => {
 const MobileMain = ({ images }) => (
   <div className='Mobile'>
     <main className='main'>
+      <img id='logo' src={logo} alt={logo} />
+
       <header className='Mobile-Main-Title'>
         <Badge pill variant='dark'>
           ברוכים הבאים לאפליקציית - Maxfit
@@ -58,10 +62,23 @@ const MobileMain = ({ images }) => (
           ))}
         </Carousel>
       </div>
+      <div className='Button-content '>
+        <div className='MainPage-text'>
+          <Link to='/Register'>
+            <button>הירשם</button>
+          </Link>
+        </div>
+
+        <div className='MainPage-text'>
+          <Link to='/Login'>
+            <button>התחבר</button>
+          </Link>
+        </div>
+      </div>
     </main>
   </div>
 );
-const FirstPage = () => (
+const FirstPage = ({ images }) => (
   <div>
     <div className='badge-headline'>
       <Badge pill variant='dark'>
@@ -76,43 +93,19 @@ const FirstPage = () => (
 
     <div className='Carousel-content '>
       <Carousel>
-        <Carousel.Item>
-          <img className='d-block w-100' src={Health} alt='Health' />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Subscription} alt='Sub' />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={TrainingPlan} alt='Plan' />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={UserSettings} alt='Settings' />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Live} alt='Live' />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Store} alt='Store' />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Notifications} alt='Notif' />
-        </Carousel.Item>
+        {images.map(img => (
+          <Carousel.Item>
+            <img className='d-block w-100' src={img.src} alt={img.alt} />
+          </Carousel.Item>
+        ))}
       </Carousel>
     </div>
-
     <div className='Button-content '>
       <div className='MainPage-text'>
         <Link to='/Register'>
           <button>הירשם</button>
         </Link>
       </div>
-
       <div className='MainPage-text'>
         <Link to='/Login'>
           <button>התחבר</button>
