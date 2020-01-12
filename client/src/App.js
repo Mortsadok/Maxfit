@@ -12,10 +12,10 @@ import Subscription from './components/Myprofile/Subscription/Subscription';
 import TrainingPlan from './components/Myprofile/TrainingPlan/TrainingPlan';
 import UserSettings from './components/Myprofile/UserSettings/UserSettings';
 import Health from './components/Myprofile/Health/Health';
-import OpeningPage from './components/OpeningPage/OpeningPage';
-import Register from './components/OpeningPage/Register';
-import Login from './components/OpeningPage/Login';
-import ForgotPass from './components/OpeningPage/ForgotPass';
+import Openingpage from './components/Openingpage/Openingpage';
+import Register from './components/Openingpage/Register';
+import Login from './components/Openingpage/Login';
+import ForgotPass from './components/Openingpage/ForgotPass';
 import setAuthToken from './utils/setAuthToken';
 // Redux
 import { Provider } from 'react-redux';
@@ -34,7 +34,7 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <div className='App'>
-            <Route path='/' component={OpeningPage} exact />
+            <Route path='/' component={Openingpage} exact />
             <Route path='/ForgotPass' component={ForgotPass} />
             <Route path='/Login' component={Login} />
             <Route path='/Register' component={Register} />
