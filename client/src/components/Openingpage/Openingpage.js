@@ -1,79 +1,120 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "../Openingpage/Openingpage.css";
-import { Carousel } from "react-bootstrap";
-import Health from "../../img/Health.png";
-import Subscription from "../../img/Subscription.png";
-import TrainingPlan from "../../img/TrainingPlan.png";
-import UserSettings from "../../img/UserSettings.png";
-import Live from "../../img/Live.png";
-import Store from "../../img/Store.png";
-import Notifications from "../../img/Notifications.png";
-import { Link, Redirect } from "react-router-dom";
-import { Badge } from "react-bootstrap";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import '../../css/Mobile.css';
+import './Openingpage.css';
+import { Carousel } from 'react-bootstrap';
+import Health from '../../img/Health.png';
+import Subscription from '../../img/Subscription.png';
+import TrainingPlan from '../../img/TrainingPlan.png';
+import UserSettings from '../../img/UserSettings.png';
+import Live from '../../img/Live.png';
+import Store from '../../img/Store.png';
+import Notifications from '../../img/Notifications.png';
+import MediaQuery from 'react-responsive';
+import { Link, Redirect } from 'react-router-dom';
+import { Badge } from 'react-bootstrap';
 
-const Openingpage = () => {
+const OpeningPage = () => {
+  const images = [
+    { src: Notifications, alt: 'Notifications' },
+    { src: Store, alt: 'Store' },
+    { src: UserSettings, alt: 'UserSettings' },
+    { src: TrainingPlan, alt: 'TrainingPlan' },
+    { src: Health, alt: 'Health' },
+    { src: Live, alt: 'Live' }
+  ];
   return (
-    <div className="Openingpage">
-      <FirstPage />
-    </div>
+    <Fragment>
+      <MediaQuery maxDeviceWidth={1024}>
+        <MobileMain images={images} />
+      </MediaQuery>
+      <div className='Openingpage'>
+        <MediaQuery minDeviceWidth={1280}>
+          <FirstPage />
+        </MediaQuery>
+      </div>
+    </Fragment>
   );
 };
-
+const MobileMain = ({ images }) => (
+  <div className='Mobile'>
+    <main className='main'>
+      <header className='Mobile-Main-Title'>
+        <Badge pill variant='dark'>
+          ברוכים הבאים לאפליקציית - Maxfit
+        </Badge>
+      </header>
+      <div className='Mobile-Main-Text'>
+        אפליקציית חדר הכושר תאפשר למתאמנים לבצע פעולות כמו: בניית תוכניות
+        אימונים, מעקב אחר סטטיסטיקות, לצפות בכמות המתאמנים בזמן אמת, חידוש מנוי,
+        הצהרת בריאות, חנות חדר הכושר, עדכונים ועוד.
+      </div>
+      <div className='Carousel-content '>
+        <Carousel>
+          {images.map(img => (
+            <Carousel.Item>
+              <img className='d-block w-100 ' src={img.src} alt={img.alt} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
+    </main>
+  </div>
+);
 const FirstPage = () => (
   <div>
-    <div className="badge-headline">
-      <Badge pill variant="dark">
+    <div className='badge-headline'>
+      <Badge pill variant='dark'>
         ברוכים הבאים לאפליקציית - Maxfit
       </Badge>
     </div>
-    <div className="welcome-text">
+    <div className='welcome-text'>
       אפליקציית חדר הכושר תאפשר למתאמנים לבצע פעולות כמו: בניית תוכניות אימונים,
       מעקב אחר סטטיסטיקות, לצפות בכמות המתאמנים בזמן אמת, חידוש מנוי, הצהרת
       בריאות, חנות חדר הכושר, עדכונים ועוד.
     </div>
 
-    <div className="Carousel-content ">
+    <div className='Carousel-content '>
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={Health} alt="Health" />
+          <img className='d-block w-100' src={Health} alt='Health' />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={Subscription} alt="Sub" />
+          <img className='d-block w-100' src={Subscription} alt='Sub' />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={TrainingPlan} alt="Plan" />
+          <img className='d-block w-100' src={TrainingPlan} alt='Plan' />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={UserSettings} alt="Settings" />
+          <img className='d-block w-100' src={UserSettings} alt='Settings' />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={Live} alt="Live" />
+          <img className='d-block w-100' src={Live} alt='Live' />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={Store} alt="Store" />
+          <img className='d-block w-100' src={Store} alt='Store' />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={Notifications} alt="Notif" />
+          <img className='d-block w-100' src={Notifications} alt='Notif' />
         </Carousel.Item>
       </Carousel>
     </div>
 
-    <div className="Button-content ">
-      <div className="MainPage-text">
-        <Link to="/Register">
+    <div className='Button-content '>
+      <div className='MainPage-text'>
+        <Link to='/Register'>
           <button>הירשם</button>
         </Link>
       </div>
 
-      <div className="MainPage-text">
-        <Link to="/Login">
+      <div className='MainPage-text'>
+        <Link to='/Login'>
           <button>התחבר</button>
         </Link>
       </div>
@@ -81,4 +122,4 @@ const FirstPage = () => (
   </div>
 );
 
-export default Openingpage;
+export default OpeningPage;

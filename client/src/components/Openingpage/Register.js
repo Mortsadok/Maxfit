@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Card } from "react-bootstrap";
-import { Link, Redirect } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressCard as FasAddressCard } from "@fortawesome/free-regular-svg-icons";
-import { Row, Form, Col, FormGroup, Label, Input } from "reactstrap";
-import Alert from "../Layout/Alert";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAddressCard as FasAddressCard } from '@fortawesome/free-regular-svg-icons';
+import { Row, Form, Col, FormGroup, Label, Input } from 'reactstrap';
+import Alert from '../Layout/Alert';
 // Redux
-import { connect } from "react-redux";
-import { register } from "../../actions/authActions";
-import { setAlert } from "../../actions/alertAction";
+import { connect } from 'react-redux';
+import { register } from '../../actions/authActions';
+import { setAlert } from '../../actions/alertAction';
 
-import "../../css/Openning.css";
+import '../../css/Openning.css';
 const Register = ({ register, isAuth, setAlert }) => {
   // useState
   const [redirectDelay, setRedirect] = useState(false);
   const [Data, setData] = useState({
-    Email: "",
-    Password: "",
-    Name: "",
-    rePassword: ""
+    Email: '',
+    Password: '',
+    Name: '',
+    rePassword: ''
   });
   const { Email, Password, rePassword, Name } = Data;
   const [typeState, setType] = useState(false);
@@ -28,7 +28,7 @@ const Register = ({ register, isAuth, setAlert }) => {
   const onSubmit = e => {
     e.preventDefault();
     if (Password !== rePassword) {
-      setAlert("סיסמאות לא תואמות", "danger");
+      setAlert('סיסמאות לא תואמות', 'danger');
     } else {
       register(Name, Email, Password);
       resetForm();
@@ -38,33 +38,33 @@ const Register = ({ register, isAuth, setAlert }) => {
     }
   };
   const resetForm = () => {
-    setData({ ...Data, Email: "", Password: "", rePassword: "", Name: "" });
+    setData({ ...Data, Email: '', Password: '', rePassword: '', Name: '' });
   };
   if (isAuth && redirectDelay) {
-    return <Redirect to="/Login" />;
+    return <Redirect to='/Login' />;
   }
   return (
-    <div className="Pages-attributes">
-      <main className="main">
-        <div className="MainPage-container">
-          <div className="MainPage-content ">
-            <Card className="Card-size">
+    <div className='Pages-attributes'>
+      <main className='main'>
+        <div className='MainPage-container'>
+          <div className='MainPage-content '>
+            <Card className='Card-size'>
               <Card.Header>הרשמה</Card.Header>
               <Card.Body>
-                <FontAwesomeIcon className="Main-Icon" icon={FasAddressCard} />
-                <header className="Main-Title"> הרשמה</header>
+                <FontAwesomeIcon className='Main-Icon' icon={FasAddressCard} />
+                <header className='Main-Title'> הרשמה</header>
 
-                <Form className="Register-Form" onSubmit={e => onSubmit(e)}>
+                <Form className='Register-Form' onSubmit={e => onSubmit(e)}>
                   <Row form>
                     <Col md={6}>
                       <FormGroup>
                         <Label>דואר אלקטרוני</Label>
                         <Input
-                          type="email"
-                          name="Email"
+                          type='email'
+                          name='Email'
                           value={Email}
                           onChange={e => onChange(e)}
-                          placeholder="דואר אלקטרוני"
+                          placeholder='דואר אלקטרוני'
                         />
                       </FormGroup>
                     </Col>
@@ -72,11 +72,11 @@ const Register = ({ register, isAuth, setAlert }) => {
                       <FormGroup>
                         <Label>סיסמה</Label>
                         <Input
-                          type="password"
-                          name="Password"
+                          type='password'
+                          name='Password'
                           value={Password}
                           onChange={e => onChange(e)}
-                          placeholder="סיסמה"
+                          placeholder='סיסמה'
                         />
                       </FormGroup>
                     </Col>
@@ -86,11 +86,11 @@ const Register = ({ register, isAuth, setAlert }) => {
                       <FormGroup>
                         <Label>שם מלא</Label>
                         <Input
-                          type="text"
-                          name="Name"
+                          type='text'
+                          name='Name'
                           onChange={e => onChange(e)}
                           value={Name}
-                          placeholder="שם מלא"
+                          placeholder='שם מלא'
                         />
                       </FormGroup>
                     </Col>
@@ -98,31 +98,31 @@ const Register = ({ register, isAuth, setAlert }) => {
                       <FormGroup>
                         <Label>אימות סיסמה</Label>
                         <Input
-                          type="password"
-                          name="rePassword"
+                          type='password'
+                          name='rePassword'
                           value={rePassword}
                           onChange={e => onChange(e)}
-                          placeholder="אימות סיסמה"
+                          placeholder='אימות סיסמה'
                         />
                       </FormGroup>
                     </Col>
                   </Row>
-                  <div className="Register-Form-margin"></div>
+                  <div className='Register-Form-margin'></div>
                   <label>הצג סיסמה</label>
-                  <input type="checkbox" onClick={() => setType(!typeState)} />
+                  <input type='checkbox' onClick={() => setType(!typeState)} />
 
-                  <input type="submit" name="Password" value="הרשמה" />
-                  <div className="Alert">
+                  <input type='submit' name='Password' value='הרשמה' />
+                  <div className='Alert'>
                     <Alert />
                   </div>
-                  <div className="Button-content ">
-                    <div className="LoginApp-text">
-                      <Link to="/forgotPass">שכחת את הסיסמה?</Link>
+                  <div className='Button-content '>
+                    <div className='LoginApp-text'>
+                      <Link to='/forgotPass'>שכחת את הסיסמה?</Link>
                     </div>
-                    <div className="LoginApp-text">
+                    <div className='LoginApp-text'>
                       משתמש קיים?
-                      <span className="Link-Color">
-                        <Link to="/Login" className="RegistarButton">
+                      <span className='Link-Color'>
+                        <Link to='/Login' className='RegistarButton'>
                           התחבר
                         </Link>
                       </span>
