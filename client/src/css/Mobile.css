@@ -149,6 +149,27 @@ body {
     border: unset;
 }
 
+.Bigtxt {
+    font-size: 25px;
+}
+
+.pBrush {
+    width: 250px;
+}
+
+h4 {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.Brush {
+    width: 250px;
+}
+
+.navbar-nav {
+    text-align: right;
+}
+
 .Nav-Setting {
     font-weight: 600;
     padding: 0.5rem 0;

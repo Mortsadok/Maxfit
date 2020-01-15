@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../../css/Mobile.css';
 import './Openingpage.css';
@@ -14,8 +14,11 @@ import Notifications from '../../img/Notifications.png';
 import MediaQuery from 'react-responsive';
 import { Link, Redirect } from 'react-router-dom';
 import { Badge } from 'react-bootstrap';
+// Redux
+import { connect } from 'react-redux';
+import { Logout } from '../../actions/authActions';
 
-const OpeningPage = () => {
+const OpeningPage = ({ isAuth, Logout }) => {
   const images = [
     { src: Notifications, alt: 'Notifications' },
     { src: Store, alt: 'Store' },
@@ -25,6 +28,11 @@ const OpeningPage = () => {
     { src: Live, alt: 'Live' },
     { src: Subscription, alt: 'Subscription' }
   ];
+  useEffect(() => {
+    if (isAuth) {
+      Logout();
+    }
+  });
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
@@ -114,5 +122,11 @@ const FirstPage = ({ images }) => (
     </div>
   </Fragment>
 );
-
-export default OpeningPage;
+OpeningPage.propTypes = {
+  isAuth: PropTypes.bool,
+  Logout: PropTypes.func.isRequired
+};
+const mapStateToProps = state => ({
+  isAuth: state.authReducer.isAuth
+});
+export default connect(mapStateToProps, { Logout })(OpeningPage);
