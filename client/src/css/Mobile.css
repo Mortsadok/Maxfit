@@ -326,7 +326,6 @@ body {
 }
 
 .Mobile .Button-content {
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -744,6 +743,7 @@ body {
     .badge-pill {
         border-radius: 0.5rem;
     }
+
 
     .RegistarButton {
         width: unset !important;

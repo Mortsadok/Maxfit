@@ -55,7 +55,8 @@ button:not(:disabled) {
   text-decoration: none;
 }
 
-.Button-content {
+.Openingpage .Button-content {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
