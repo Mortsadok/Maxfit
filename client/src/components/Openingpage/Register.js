@@ -239,9 +239,10 @@ const RegisterMobile = ({
               </Col>
             </Row>
             <div className='Register-Form-margin'></div>
+            <div className="Checkbox-Flex">
             <label>הצג סיסמה</label>
             <input type='checkbox' onClick={() => setType(!typeState)} />
-
+            </div>
             <input type='submit' name='Password' value='הרשמה' />
             <div className='Alert'>
               <Alert />

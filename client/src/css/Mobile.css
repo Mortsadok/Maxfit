@@ -131,6 +131,16 @@ body {
     font-weight: 600;
 }
 
+#Mobile-Flex {
+    display: flex;
+}
+
+.Checkbox-Flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar-nav .dropdown-menu {
     position: static;
     float: none;

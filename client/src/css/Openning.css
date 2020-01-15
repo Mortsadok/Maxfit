@@ -124,6 +124,10 @@ body {
   padding-left: 3rem;
 }
 
+.MainPage-Form input[type=checkbox] {
+  margin-right: 3px;
+}
+
 .MainPage-Form input[type="text"],
 [type="email"] {
   display: block;
@@ -317,7 +321,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .Register-Form label {
-  padding-top: 15px;
+  padding-top: 8px;
+
   text-align: right !important;
   color: #353c3f;
 }

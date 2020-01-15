@@ -143,9 +143,10 @@ const LoginMobile = ({
               onChange={e => onChange(e)}
               placeholder='סיסמה'
             />
-            <label>הצג סיסמה</label>
-            <input type='checkbox' onClick={() => setType(!typeState)} />
-
+            <div className='Checkbox-Flex'>
+              <label>הצג סיסמה</label>
+              <input type='checkbox' onClick={() => setType(!typeState)} />
+            </div>
             <input type='submit' name='Password' value='התחברות' />
             <div className='Alert'>
               <Alert />

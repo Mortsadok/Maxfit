@@ -62,7 +62,7 @@ const MobileMain = ({ images }) => (
           ))}
         </Carousel>
       </div>
-      <div className='Button-content '>
+      <div id='Mobile-Flex' className='Button-content '>
         <div className='MainPage-text'>
           <Link to='/Register'>
             <button>הירשם</button>
