@@ -149,12 +149,13 @@ body {
     border: unset;
 }
 
-.Bigtxt {
+.Mobile .Bigtxt {
     font-size: 25px;
 }
 
-.pBrush {
-    width: 250px;
+.Mobile .pBrush {
+    width: 275px;
+    height: 30px;
 }
 
 h4 {
@@ -162,8 +163,9 @@ h4 {
     margin-top: 15px;
 }
 
-.Brush {
+.Mobile .Brush {
     width: 250px;
+    height: 30px;
 }
 
 .navbar-nav {

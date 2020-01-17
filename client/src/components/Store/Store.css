@@ -20,7 +20,7 @@
   flex-wrap: nowrap;
 }
 
-.w-100 {
+.Store .w-100 {
   width: 60% !important;
   height: 400px;
   padding: 1.25rem;
