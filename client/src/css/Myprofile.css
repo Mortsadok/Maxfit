@@ -72,36 +72,8 @@
   font-size: 30px;
 }
 
-/* FontAwesome */
-
-.muscleIcon {
-  position: absolute;
-  margin-right: 3.7%;
-  top: 122px;
-}
-
-.CalendarCheck {
-  position: absolute;
-  margin-right: 18%;
-  top: 121px;
-}
-
-.ListUL {
-  position: absolute;
-  margin-right: 33.7%;
-  top: 122px;
-}
-
-.Heartbeat {
-  position: absolute;
-  margin-right: 51.7%;
-  top: 122px;
-}
-
-.Settings {
-  position: absolute;
-  margin-right: 69.7%;
-  top: 122px;
+.svg-inline--fa {
+  margin-left: 10px;
 }
 
 .Form-content {
@@ -345,7 +317,7 @@
   height: 300px;
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
+.custom-control-input:checked~.custom-control-label::before {
   color: #fff;
   border-color: #3d92d3;
   background-color: #3d92d3;
@@ -360,11 +332,39 @@
   background-color: #6c757d;
   border-color: #6c757d;
 }
+
 .EmailForm .row {
   width: unset;
   padding: unset;
   justify-content: center;
 }
+
 .EmailForm .mailbtn {
   margin-top: 2.325rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .secNAV {
+    width: 100%;
+    margin-top: unset;
+  }
+
+  .svg-inline--fa {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .Att {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Att a {
+    justify-content: center;
+    flex: 0 0 20%;
+    font-size: 15px;
+    margin-right: unset;
+    margin-left: unset;
+    padding: .5rem;
+  }
 }

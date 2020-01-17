@@ -20,16 +20,16 @@ const MobileNav = ({ isAuth, loading, user }) => {
       <Link to='/Home' id='a-Padding'>
         <FontAwesomeIcon icon={faHome} /> עמוד הבית
       </Link>
-      <Link to='/Nclients' id='a-Padding'>
+      <Link to='/Myprofile' id='a-Padding'>
         <FontAwesomeIcon icon={faUser} /> אזור אישי
       </Link>
-      <Link to='/HealthP' id='a-Padding'>
+      <Link to='/Live' id='a-Padding'>
         <FontAwesomeIcon icon={faMapMarkerAlt} /> LIVE
       </Link>
-      <Link to='/AllClients' id='a-Padding'>
+      <Link to='/Store' id='a-Padding'>
         <FontAwesomeIcon icon={faStore} /> חנות
       </Link>
-      <Link to='/Statistics' id='a-Padding'>
+      <Link to='/Notifications' id='a-Padding'>
         <FontAwesomeIcon icon={faBell} /> עדכונים
       </Link>
     </Fragment>
