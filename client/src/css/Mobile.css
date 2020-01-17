@@ -777,6 +777,16 @@ h4 {
         border-radius: 0.5rem;
     }
 
+    .MobileNav .svg-inline--fa {
+        margin-left: 3px;
+        margin-right: unset;
+    }
+
+    .MobileProcessing .underNAV {
+        width: unset;
+        margin-top: unset;
+
+    }
 
     .RegistarButton {
         width: unset !important;

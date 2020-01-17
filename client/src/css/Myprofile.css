@@ -289,6 +289,10 @@
   border-color: #6c757d !important;
 }
 
+.Processing .card {
+  border: unset;
+}
+
 .Processing-form {
   display: flex;
   flex-wrap: wrap;
@@ -354,6 +358,10 @@
     margin-right: 5px;
   }
 
+  .Processing-form {
+    padding: 0 1rem 0 1rem;
+  }
+
   .Att {
     flex-wrap: wrap;
     justify-content: center;
@@ -366,5 +374,30 @@
     margin-right: unset;
     margin-left: unset;
     padding: .5rem;
+  }
+
+  .card {
+    margin-top: unset;
+    border: unset;
+  }
+
+  .Inside-box {
+    height: 300px;
+  }
+
+  .Processing-form .btn {
+    width: unset;
+  }
+
+  .Processing-form .form-control {
+    padding: 1rem;
+  }
+
+  .form-control::placeholder {
+    font-size: 11px;
+  }
+
+  .MobileProcessing .underNAV {
+    height: 300px;
   }
 }
