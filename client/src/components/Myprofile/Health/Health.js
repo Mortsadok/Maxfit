@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../css/Myprofile.css";
 import { Form, Row, Col, Button } from "react-bootstrap/";
 import Navbar from "../../Navbar/Navbar";
+import Alert from "../../Layout/Alert";
 // Redux
 import { connect } from "react-redux";
 import { setHealthDetails } from "../../../actions/healthAction";
@@ -13,6 +14,10 @@ const Health = ({ setHealthDetails }) => {
   const onSubmit = e => {
     e.preventDefault();
     setHealthDetails(firstName, lastName, documentInfo);
+    restForm();
+  };
+  const restForm = () => {
+    setData({ ...data, firstName: "", lastName: "" });
   };
   const [data, setData] = useState({
     firstName: "",
@@ -73,6 +78,9 @@ const UnderNAV = ({
             <Button variant="outline-success" type="submit">
               שלח
             </Button>
+          </div>
+          <div className="Alert">
+            <Alert />
           </div>
         </Form>
       </div>

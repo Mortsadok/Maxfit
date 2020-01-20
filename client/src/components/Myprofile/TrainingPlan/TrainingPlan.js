@@ -11,17 +11,21 @@ import { connect } from "react-redux";
 
 const TrainingPlan = ({ user }) => {
   const { Name } = user;
+  let name = [];
+  if (Name !== undefined) {
+    name = Name.split(" ");
+  }
   return (
     <div className="TrainingPlan">
       <Navbar />
       <SecNav />
-      <UnderNAV Name={Name} />
+      <UnderNAV Name={name[0]} />
     </div>
   );
 };
 
 const UnderNAV = ({ Name }) => (
-  <div className="underNAV" name={Name}>
+  <div className="underNAV">
     <div className="Inside-box">
       <div className="Headline">
         <p className="font-weight-light">תוכנית אימונים</p>
@@ -122,5 +126,7 @@ const UnderNAV = ({ Name }) => (
   </div>
 );
 
-const mapStateToProps = state => ({ user: state.authReducer.user });
-export default connect(mapStateToProps, {})(TrainingPlan);
+const mapStateToProps = state => ({
+  user: state.authReducer.user
+});
+export default connect(mapStateToProps)(TrainingPlan);
