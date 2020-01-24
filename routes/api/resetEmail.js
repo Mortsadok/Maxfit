@@ -6,7 +6,7 @@ const { check, validationResult } = require("express-validator");
 
 router.post(
   "/",
-  [check("Email", "הכנס דואר אלקטרוני תקין").isEmail()],
+  [check("email", "הכנס דואר אלקטרוני תקין").isEmail()],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

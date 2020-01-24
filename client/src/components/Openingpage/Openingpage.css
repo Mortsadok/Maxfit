@@ -55,7 +55,7 @@ button:not(:disabled) {
   text-decoration: none;
 }
 
-.Register-Form input[type=checkbox] {
+.Register-Form input[type="checkbox"] {
   margin-right: 3px;
 }
 
@@ -98,4 +98,5 @@ button:not(:disabled) {
 
 .alert {
   position: unset;
+  font-size: 16px;
 }

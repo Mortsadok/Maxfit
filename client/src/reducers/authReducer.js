@@ -5,14 +5,22 @@ import {
   LOGIN_FAIL,
   AUTH_FAIL,
   LOGIN_LOAD,
-  LOGOUT
+  LOGOUT,
+  SUCCESS_RESET_PASSWORD,
+  ERROR_RESET_PASSWORD,
+  SUCCESS_RESET_EMAIL,
+  ERROR_RESET_EMAIL
 } from "../actions/typeActions";
 
 const initialState = {
   token: localStorage.getItem("token"),
   isAuth: null,
   loading: true,
-  user: {}
+  user: {},
+  successResetPassword: false,
+  errorResetPassword: false,
+  successResetEmail: false,
+  errorResetEmail: false
 };
 const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -45,7 +53,22 @@ const authReducer = (state = initialState, action) => {
         isAuth: false,
         loading: false
       };
-
+    case SUCCESS_RESET_PASSWORD:
+      return {
+        ...state,
+        successResetPassword: payload,
+        successResetEmail: false
+      };
+    case ERROR_RESET_PASSWORD:
+      return { ...state, errorResetPassword: payload, errorResetEmail: false };
+    case SUCCESS_RESET_EMAIL:
+      return {
+        ...state,
+        successResetEmail: payload,
+        successResetPassword: false
+      };
+    case ERROR_RESET_EMAIL:
+      return { ...state, errorResetEmail: payload, errorResetPassword: false };
     default:
       return state;
   }

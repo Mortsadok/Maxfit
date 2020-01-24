@@ -220,9 +220,13 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 1rem;
 }
-
+#buttonEmail {
+  margin-top: 2rem;
+}
+.Setting-form .btn {
+  margin-top: 1rem;
+}
 .Setting-form .card {
   margin-right: 60px;
   margin-left: 60px;
@@ -321,7 +325,7 @@
   height: 300px;
 }
 
-.custom-control-input:checked~.custom-control-label::before {
+.custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   border-color: #3d92d3;
   background-color: #3d92d3;
@@ -346,7 +350,18 @@
 .EmailForm .mailbtn {
   margin-top: 2.325rem;
 }
-
+/* ForgotPassword page*/
+.ForgotPassword .row {
+  width: unset;
+  padding: unset;
+  justify-content: center;
+}
+.ForgotPasswordForm .alert {
+  font-size: 16px;
+}
+.resetEmailForm .alert {
+  font-size: 16px;
+}
 @media only screen and (max-width: 700px) {
   .secNAV {
     width: 100%;
@@ -373,7 +388,7 @@
     font-size: 15px;
     margin-right: unset;
     margin-left: unset;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   .card {
@@ -409,7 +424,6 @@
   .spinner-grow {
     height: 15rem;
     width: 15rem;
-
   }
 
   .Inside1 {
@@ -424,7 +438,7 @@
 
   .Time-content {
     display: block;
-    padding: .5rem 1rem 1rem 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
   }
 
   .countExmple {

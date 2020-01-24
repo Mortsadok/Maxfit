@@ -7,7 +7,13 @@ import { connect } from "react-redux";
 import { resetEmail } from "../../../actions/resetEmailAction";
 import { setAlert } from "../../../actions/alertAction";
 
-const EmailForm = ({ setAlert, user }) => {
+const EmailForm = ({
+  setAlert,
+  user,
+  successResetEmail,
+  errorResetEmail,
+  resetEmail
+}) => {
   const { _id } = user;
   const [emailData, setEmailData] = useState({
     Email: "",
@@ -17,7 +23,7 @@ const EmailForm = ({ setAlert, user }) => {
     setEmailData({ ...emailData, [e.target.name]: e.target.value });
   };
   const { Email, reEmail } = emailData;
-  const onSubmit = e => {
+  const onSubmitEmail = e => {
     e.preventDefault();
     if (Email !== reEmail) {
       setAlert("דואר אלקטרוני לא תואם", "danger");
@@ -30,39 +36,40 @@ const EmailForm = ({ setAlert, user }) => {
         <Card.Header>שינוי דואר אלקטרוני</Card.Header>
         <Card.Body>
           <Card.Text>
-            {" "}
-            <Form.Group as={Row} controlId="formPlaintextPassword">
-              <Col sm="10">
-                <Form.Control
-                  type="text"
-                  name="Email"
-                  value={Email}
-                  onChange={e => onChange(e)}
-                  placeholder="דואר אלקטרוני חדש"
-                />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} controlId="formPlaintextPassword">
-              <Col sm="10">
-                <Form.Control
-                  type="text"
-                  name="reEmail"
-                  value={reEmail}
-                  onChange={e => onChange(e)}
-                  placeholder="אימות דואר אלקטרוני"
-                />
-              </Col>
-            </Form.Group>
-            <div className="mailbtn">
-              <Form onSubmit={e => onSubmit(e)}>
-                <Button variant="outline-success" type="submit">
+            <form onSubmit={e => onSubmitEmail(e)} className="resetEmailForm">
+              <Form.Group as={Row} controlId="formPlaintextEmail">
+                <Col sm="10">
+                  <Form.Control
+                    type="text"
+                    name="Email"
+                    value={Email}
+                    onChange={e => onChange(e)}
+                    placeholder="דואר אלקטרוני חדש"
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextEmail">
+                <Col sm="10">
+                  <Form.Control
+                    type="text"
+                    name="reEmail"
+                    value={reEmail}
+                    onChange={e => onChange(e)}
+                    placeholder="אימות דואר אלקטרוני"
+                  />
+                </Col>
+              </Form.Group>
+              <div className="mailbtn">
+                <Button
+                  id="buttonEmail"
+                  variant="outline-success"
+                  type="submit"
+                >
                   שנה דואר אלקטרוני
                 </Button>
-                <div className="Alert">
-                  <Alert />
-                </div>
-              </Form>
-            </div>
+                {successResetEmail || errorResetEmail ? <Alert /> : null}
+              </div>
+            </form>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -70,6 +77,8 @@ const EmailForm = ({ setAlert, user }) => {
   );
 };
 const mapStateToProps = state => ({
-  user: state.authReducer.user
+  user: state.authReducer.user,
+  successResetEmail: state.authReducer.successResetEmail,
+  errorResetEmail: state.authReducer.errorResetEmail
 });
 export default connect(mapStateToProps, { resetEmail, setAlert })(EmailForm);

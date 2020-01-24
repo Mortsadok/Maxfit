@@ -5,7 +5,9 @@ import {
   LOGIN_LOAD,
   AUTH_FAIL,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  SUCCESS_RESET_PASSWORD,
+  ERROR_RESET_PASSWORD
 } from "./typeActions";
 import axios from "axios";
 import { setAlert } from "../actions/alertAction";
@@ -108,8 +110,16 @@ export const settingsResetPassword = (
   const body = JSON.stringify({ email, oldPassword, password });
   try {
     await axios.post("/api/settingsForgotPass", body, config);
+    dispatch({
+      type: SUCCESS_RESET_PASSWORD,
+      payload: true
+    });
     dispatch(setAlert("סיסמה שונתה בהצלחה", "success"));
   } catch (err) {
+    dispatch({
+      type: ERROR_RESET_PASSWORD,
+      payload: true
+    });
     const errors = err.response.data.errors;
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
