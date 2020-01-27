@@ -1,62 +1,61 @@
-import React, { Fragment } from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import logo from "../../img/logo.png";
-import "../../css/Mobile.css";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Fragment } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
+import logo from '../../img/logo.png';
+import '../../css/Mobile.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faUser,
   faMapMarkerAlt,
   faStore,
   faBell
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 // Redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 const MobileNav = ({ isAuth, loading, user }) => {
   const { Name } = user;
-  console.log(Name);
   const AuthLinks = () => (
     <Fragment>
-      <Link to="/Home" id="a-Padding">
+      <Link to='/Home' id='a-Padding'>
         <FontAwesomeIcon icon={faHome} /> עמוד הבית
       </Link>
-      <Link to="/Myprofile" id="a-Padding">
+      <Link to='/Myprofile' id='a-Padding'>
         <FontAwesomeIcon icon={faUser} /> אזור אישי
       </Link>
-      <Link to="/Live" id="a-Padding">
+      <Link to='/Live' id='a-Padding'>
         <FontAwesomeIcon icon={faMapMarkerAlt} /> LIVE
       </Link>
-      <Link to="/Store" id="a-Padding">
+      <Link to='/Store' id='a-Padding'>
         <FontAwesomeIcon icon={faStore} /> חנות
       </Link>
-      <Link to="/Notifications" id="a-Padding">
+      <Link to='/Notifications' id='a-Padding'>
         <FontAwesomeIcon icon={faBell} /> עדכונים
       </Link>
     </Fragment>
   );
   const GuestLinks = () => <Fragment></Fragment>;
   return (
-    <div className="MobileNav">
-      <Navbar expand="lg" bg="light">
+    <div className='MobileNav'>
+      <Navbar expand='lg' bg='light'>
         <Navbar.Brand>
           {!loading && isAuth ? (
-            <Link to="/Home">
-              <img src={logo} alt="Mobile logo" id="MobileNav-img" />
+            <Link to='/Home'>
+              <img src={logo} alt='Mobile logo' id='MobileNav-img' />
             </Link>
           ) : (
-            <Link to="/">
-              <img src={logo} alt="Mobile logo" id="MobileNav-img" />
+            <Link to='/'>
+              <img src={logo} alt='Mobile logo' id='MobileNav-img' />
             </Link>
           )}
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='mr-auto'>
             {!loading && isAuth ? (
               <span>
-                <span className="Nav-account-name ">שלום {Name}</span>
+                <span className='Nav-account-name '>שלום {Name}</span>
               </span>
             ) : null}
 

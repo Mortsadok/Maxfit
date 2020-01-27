@@ -1,21 +1,25 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const processingSchema = new mongoose.Schema({
   Weight: {
-    type: Number
+    type: Number,
+    required: true
   },
   Chest: {
-    type: Number
+    type: Number,
+    required: true
   },
   frontHand: {
-    type: Number
+    type: Number,
+    required: true
   },
   backHand: {
-    type: Number
+    type: Number,
+    required: true
   },
   date: {
     type: Date,
     default: Date.now
   }
 });
-module.exports = Processing = mongoose.model("processing", processingSchema);
+module.exports = Processing = mongoose.model('processing', processingSchema);

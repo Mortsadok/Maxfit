@@ -1,122 +1,197 @@
-import React, { useState } from "react";
-import "../../../css/Myprofile.css";
-import Card from "react-bootstrap/Card";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { CustomInput } from "reactstrap";
-import SecNav from "../SecNav";
-import Navbar from "../../Navbar/Navbar";
-import { connect } from "react-redux";
+import React, { useState, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import '../../../css/Myprofile.css';
+import Card from 'react-bootstrap/Card';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { CustomInput } from 'reactstrap';
+import SecNav from '../SecNav';
+import Navbar from '../../Navbar/Navbar';
+import Alert from '../../Layout/Alert';
+import MediaQuery from 'react-responsive';
+// Redux
+import { setTrainingPlan } from '../../../actions/trainingAction';
+import { connect } from 'react-redux';
+import MobileNav from '../../Mobile/MobileNav';
 
-const TrainingPlan = ({ user }) => {
-  const { Name } = user;
+const TrainingPlan = ({ user, setTrainingPlan }) => {
+  const { Name, _id } = user;
   let name = [];
-  const onChange = num => {
-    TraningData.forEach(item => {
-      if (item.selected === num) {
-        return (item.selected = true);
-      }
-    });
+  const onChange = id => {
+    setTrainingData(
+      trainingData.map(type => {
+        if (type.id === id && type.selected === false) {
+          setTypeName(type.trainingType);
+          return { ...type, selected: true };
+        }
+        return { ...type, selected: false };
+      })
+    );
   };
-  const TraningData = [
+  const onSubmit = e => {
+    e.preventDefault();
+    setTrainingPlan(buttonValue, typeName, _id);
+  };
+  const [typeName, setTypeName] = useState(null);
+  const [buttonValue, setButtonValue] = useState(null);
+  const buttonGroup = [1, 2, 3, 4, 5];
+  const [trainingData, setTrainingData] = useState([
     {
-      traningType: "מסת  שריר",
-      Name: "radio1",
-      customRadio: 1,
-      checked: false,
-      TraningData:
-        " שיטת אימון המותאמת לפיתוח כוחם וגודלם של השרירים. כאשר הוא נערך בצורה נכונה, אימון משקולות יכול להביא לשיפור הבריאות ולהרגשה טובה."
+      trainingType: 'מסת  שריר',
+      id: 1,
+      selected: false,
+      TrainingData:
+        ' שיטת אימון המותאמת לפיתוח כוחם וגודלם של השרירים. כאשר הוא נערך בצורה נכונה, אימון משקולות יכול להביא לשיפור הבריאות ולהרגשה טובה.'
     },
     {
-      traningType: "עיצוב וחיטוב",
-      Name: "radio2",
-      customRadio: 2,
-      checked: false,
-      TraningData:
-        "מטרת פיתוח הגוף היא להציג את מסת השרירים, גודלם וחיטובם, באופן האומנותי, הסימטרי והאסתטי ככל האפשר."
+      trainingType: 'עיצוב וחיטוב',
+      id: 2,
+      selected: false,
+      TrainingData:
+        'מטרת פיתוח הגוף היא להציג את מסת השרירים, גודלם וחיטובם, באופן האומנותי, הסימטרי והאסתטי ככל האפשר.'
     },
     {
-      traningType: "אירובי",
-      Name: "radio3",
-      customRadio: 3,
-      checked: false,
-      TraningData:
-        " מאמץ גופני תת-מרבי המפעיל קבוצות שרירים גדולות לזמן ממושך, כגון: הליכה, ריצה, רכיבה על אופניים, שחייה, סקי, זומבה ועוד."
+      trainingType: 'אירובי',
+      id: 3,
+      selected: false,
+      TrainingData:
+        ' מאמץ גופני תת-מרבי המפעיל קבוצות שרירים גדולות לזמן ממושך, כגון: הליכה, ריצה, רכיבה על אופניים, שחייה, סקי, זומבה ועוד.'
     },
     {
-      traningType: "אימון פונקציונאלי",
-      Name: "radio4",
-      customRadio: 4,
-      checked: false,
-      TraningData:
-        "  אימון פונקציונלי מאפשר לאמן את הגוף לא כמכלול של שרירים מבודדים,  אלא כמערכת שלמה המסוגלת לבצע באופן איכותי את הפעולות הכי מגוונות."
+      trainingType: 'אימון פונקציונאלי',
+      id: 4,
+      selected: false,
+      TrainingData:
+        '  אימון פונקציונלי מאפשר לאמן את הגוף לא כמכלול של שרירים מבודדים,  אלא כמערכת שלמה המסוגלת לבצע באופן איכותי את הפעולות הכי מגוונות.'
     }
-  ];
+  ]);
   if (Name !== undefined) {
-    name = Name.split(" ");
+    name = Name.split(' ');
   }
   return (
-    <div className="TrainingPlan">
-      <Navbar />
-      <SecNav />
-      <UnderNAV Name={name[0]} TraningData={TraningData} onChange={onChange} />
-    </div>
+    <Fragment>
+      <MediaQuery maxDeviceWidth={1024}>
+        <MobileNav />
+        <MobileTraining
+          Name={name[0]}
+          onChange={onChange}
+          buttonGroup={buttonGroup}
+          trainingData={trainingData}
+          setButtonValue={setButtonValue}
+          onSubmit={onSubmit}
+        />
+      </MediaQuery>
+      <MediaQuery minDeviceWidth={1280}>
+        <div className='TrainingPlan'>
+          <Navbar />
+          <SecNav />
+          <UnderNAV
+            Name={name[0]}
+            onChange={onChange}
+            buttonGroup={buttonGroup}
+            trainingData={trainingData}
+            setButtonValue={setButtonValue}
+            onSubmit={onSubmit}
+          />
+        </div>
+      </MediaQuery>
+    </Fragment>
   );
 };
-const UnderNAV = ({ Name, TraningData, onChange }) => (
-  <div className="underNAV">
-    <div className="Inside-box">
-      <div className="Headline">
-        <p className="font-weight-light">תוכנית אימונים</p>
+const UnderNAV = ({
+  Name,
+  onChange,
+  buttonGroup,
+  trainingData,
+  setButtonValue,
+  onSubmit
+}) => (
+  <div className='underNAV'>
+    <div className='Inside-box'>
+      <div className='Headline'>
+        <p className='font-weight-light'>תוכנית אימונים</p>
       </div>
-      <div className="userMSG">
+      <div className='userMSG'>
         {`שלום ${Name}, בחר בבקשה את תוכנית האימונים הרצויה:`}
       </div>
-      <div className="Train-content">
-        {TraningData.map((data, index) => (
-          <Card border="secondary" key={index} style={{ width: "18rem" }}>
+      <div className='Train-content'>
+        {trainingData.map((data, index) => (
+          <Card border='secondary' key={index} style={{ width: '18rem' }}>
             <Card.Header>
               <CustomInput
-                type="radio"
-                id={data.customRadio}
-                name={data.Name}
-                onChange={() => onChange(data.customRadio)}
-                checked={data.checked}
+                id={data.id}
+                type='radio'
+                onChange={() => onChange(data.id)}
+                checked={data.selected}
               />
-              {data.traningType}
+              {data.trainingType}
             </Card.Header>
             <Card.Body>
-              <Card.Text>{data.TraningData}</Card.Text>
+              <Card.Text>{data.TrainingData}</Card.Text>
             </Card.Body>
           </Card>
         ))}
       </div>
 
-      <div className="userMSG">כמה אימונים בשבוע?</div>
-      <div className="DaysTrain">
-        <ButtonGroup className="mr-2" aria-label="First group">
-          <Button variant="secondary">1</Button>
-          <Button variant="secondary">2</Button>
-          <Button variant="secondary">3</Button>
-          <Button variant="secondary">4</Button>
-          <Button variant="secondary">5</Button>
+      <div className='userMSG'>כמה אימונים בשבוע?</div>
+      <div className='DaysTrain'>
+        <ButtonGroup className='mr-2' aria-label='First group'>
+          {buttonGroup.map((button, index) => (
+            <Fragment key={index}>
+              <Button
+                onClick={() => setButtonValue(button)}
+                variant='secondary'
+              >
+                {button}
+              </Button>
+            </Fragment>
+          ))}
         </ButtonGroup>
       </div>
-      <div className="sendBtn">
-        <div className="btnsnd">
-          <Form>
-            <Button variant="outline-dark" type="submit">
+      <div className='sendBtn'>
+        <div className='btnsnd'>
+          <Form onSubmit={e => onSubmit(e)}>
+            <Button variant='outline-dark' type='submit'>
               בקש תוכנית אימונים
             </Button>
+            <div className='alert'>
+              <Alert />
+            </div>
           </Form>
         </div>
       </div>
     </div>
   </div>
 );
-
+const MobileTraining = ({
+  Name,
+  onSubmit,
+  trainingData,
+  onChange,
+  buttonGroup,
+  setButtonValue
+}) => (
+  <div className='Mobile'>
+    <div className='training'>
+      <main className='main'>
+        <UnderNAV
+          Name={Name}
+          onChange={onChange}
+          buttonGroup={buttonGroup}
+          trainingData={trainingData}
+          setButtonValue={setButtonValue}
+          onSubmit={onSubmit}
+        />
+      </main>
+    </div>
+  </div>
+);
+TrainingPlan.propTypes = {
+  user: PropTypes.object,
+  setTrainingPlan: PropTypes.func.isRequired
+};
 const mapStateToProps = state => ({
   user: state.authReducer.user
 });
-export default connect(mapStateToProps)(TrainingPlan);
+export default connect(mapStateToProps, { setTrainingPlan })(TrainingPlan);

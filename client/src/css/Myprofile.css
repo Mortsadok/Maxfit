@@ -192,7 +192,7 @@
   font-family: sans-serif;
 }
 
-.Train-content input[type="radio"] {
+.Train-content input[type='radio'] {
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -367,7 +367,19 @@
     width: 100%;
     margin-top: unset;
   }
-
+  .training .Inside-box {
+    height: auto;
+  }
+  .training .underNAV {
+    margin-top: unset;
+    height: auto;
+  }
+  .training .Train-content .card.border-secondary {
+    margin-bottom: 10px;
+  }
+  .training .btn.btn-secondary {
+    width: unset;
+  }
   .svg-inline--fa {
     margin-left: 5px;
     margin-right: 5px;
