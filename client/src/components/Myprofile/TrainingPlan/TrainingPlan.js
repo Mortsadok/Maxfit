@@ -152,7 +152,9 @@ const UnderNAV = ({
       <div className='sendBtn'>
         <div className='btnsnd'>
           <Form onSubmit={e => onSubmit(e)}>
-            <Button variant='outline-dark'>בקש תוכנית אימונים</Button>
+            <Button variant='outline-dark' type='submit'>
+              בקש תוכנית אימונים
+            </Button>
             <div className='alert'>
               <Alert />
             </div>
