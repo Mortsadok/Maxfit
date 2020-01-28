@@ -380,6 +380,41 @@
     position: unset;
   }
 
+  .MobileHealth .Inside-box {
+    height: unset;
+  }
+
+  .MobileHealth .HealthPolicy-content {
+    padding: .5rem;
+  }
+
+  .MobileHealth .Form-content {
+    padding: 1rem;
+    display: block;
+  }
+
+  .MobileHealth .underNAV {
+    height: unset;
+  }
+
+  .MobileHealth .row {
+    width: unset;
+  }
+
+  .training .btn {
+    margin-bottom: 15px;
+  }
+
+  .MobileHealth .btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .MobileHealth .HealthPolicy {
+    font-size: 16px;
+  }
+
   .notificationsMobile .NotificationsBox1 {
     width: unset;
     margin-right: unset;

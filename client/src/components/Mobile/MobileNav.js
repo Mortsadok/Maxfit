@@ -32,6 +32,9 @@ const MobileNav = ({ isAuth, loading, user }) => {
       <Link to='/Notifications' id='a-Padding'>
         <FontAwesomeIcon icon={faBell} /> עדכונים
       </Link>
+      <Link to='/' id='a-Padding'>
+        התנתקות
+      </Link>
     </Fragment>
   );
   const GuestLinks = () => <Fragment></Fragment>;

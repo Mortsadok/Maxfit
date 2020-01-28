@@ -156,9 +156,8 @@ const UnderNAV = ({
               בקש תוכנית אימונים
             </Button>
           </Form>
-
-          <Alert />
         </div>
+        <Alert />
       </div>
     </div>
   </div>
