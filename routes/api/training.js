@@ -21,10 +21,10 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { typeName, buttonValue, clientId } = req.body;
+    const { typeName, buttonValue, email } = req.body;
 
     try {
-      let buildPlanRequest = await Training.findOne({ clientId });
+      let buildPlanRequest = await Training.findOne({ email });
       if (buildPlanRequest) {
         return res
           .status(400)
@@ -34,12 +34,12 @@ router.post(
       buildPlanRequest = new Training({
         typeName,
         buttonValue,
-        clientId
+        email
       });
       await buildPlanRequest.save();
       res.json(req.body);
     } catch (err) {
-      console.error(err.message);
+      console.error('Server Error', err.message);
       res.status(500).send('Server Error');
     }
   }

@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
 import MobileNav from '../../Mobile/MobileNav';
 
 const TrainingPlan = ({ user, setTrainingPlan }) => {
-  const { Name, _id } = user;
+  const { Name, email } = user;
   let name = [];
   const onChange = id => {
     setTrainingData(
@@ -31,7 +31,7 @@ const TrainingPlan = ({ user, setTrainingPlan }) => {
   };
   const onSubmit = e => {
     e.preventDefault();
-    setTrainingPlan(typeName, buttonValue, _id);
+    setTrainingPlan(typeName, buttonValue, email);
   };
   const [typeName, setTypeName] = useState(null);
   const [buttonValue, setButtonValue] = useState(null);
@@ -156,8 +156,8 @@ const UnderNAV = ({
               בקש תוכנית אימונים
             </Button>
           </Form>
+          <Alert />
         </div>
-        <Alert />
       </div>
     </div>
   </div>

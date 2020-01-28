@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 const trainingSchema = new mongoose.Schema({
-  trainingType: {
+  typeName: {
     type: String,
     required: true
   },
-  dayValue: {
+  buttonValue: {
     type: Number,
     required: true
   },
-  clientId: {
+  email: {
     type: String,
     required: true
   },
