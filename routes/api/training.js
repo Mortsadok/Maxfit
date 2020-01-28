@@ -1,15 +1,18 @@
 const express = require('express');
-const { check, validationResult } = require('express-validator');
-const Training = require('../../models/Training');
+
 const router = express.Router();
+
+const Training = require('../../models/Training');
+
+const { validationResult, check } = require('express-validator');
 
 router.post(
   '/',
   [
-    check('dayValue', 'בחר מספר ימי אימון')
+    check('typeName', 'בחר תוכנית אימונים')
       .not()
       .isEmpty(),
-    check('trainingType', 'בחר תוכנית אימונים')
+    check('buttonValue', 'בחר מספר ימי אימון')
       .not()
       .isEmpty()
   ],
@@ -18,20 +21,22 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { dayValue, trainingType, clientId } = req.body;
+    const { typeName, buttonValue, clientId } = req.body;
+
     try {
-      let trainingRequest = await Training.findOne({ clientId });
-      if (trainingRequest) {
+      let buildPlanRequest = await Training.findOne({ clientId });
+      if (buildPlanRequest) {
         return res
           .status(400)
           .json({ errors: [{ msg: 'למשתמש זה קיים תוכנית אימונים במערכת' }] });
       }
-      trainingRequest = new Training({
-        dayValue,
-        trainingType,
+
+      buildPlanRequest = new Training({
+        typeName,
+        buttonValue,
         clientId
       });
-      await trainingRequest.save();
+      await buildPlanRequest.save();
       res.json(req.body);
     } catch (err) {
       console.error(err.message);

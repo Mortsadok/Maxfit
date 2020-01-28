@@ -31,7 +31,7 @@ const TrainingPlan = ({ user, setTrainingPlan }) => {
   };
   const onSubmit = e => {
     e.preventDefault();
-    setTrainingPlan(buttonValue, typeName, _id);
+    setTrainingPlan(typeName, buttonValue, _id);
   };
   const [typeName, setTypeName] = useState(null);
   const [buttonValue, setButtonValue] = useState(null);

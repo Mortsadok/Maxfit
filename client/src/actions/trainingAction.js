@@ -2,8 +2,8 @@ import axios from 'axios';
 import { setAlert } from '../actions/alertAction';
 
 export const setTrainingPlan = (
-  dayValue,
-  trainingType,
+  typeName,
+  buttonValue,
   clientId
 ) => async dispatch => {
   const config = {
@@ -11,7 +11,7 @@ export const setTrainingPlan = (
       'Content-Type': 'application/json'
     }
   };
-  const body = JSON.stringify({ dayValue, trainingType, clientId });
+  const body = JSON.stringify({ typeName, buttonValue, clientId });
   try {
     await axios.post('api/training', body, config);
     dispatch(setAlert('בקשה לתוכנית אימונים בוצעה', 'success'));
