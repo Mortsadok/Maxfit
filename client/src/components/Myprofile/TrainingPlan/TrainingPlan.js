@@ -73,6 +73,7 @@ const TrainingPlan = ({ user, setTrainingPlan }) => {
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
         <MobileNav />
+        <SecNav />
         <MobileTraining
           Name={name[0]}
           onChange={onChange}

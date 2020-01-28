@@ -489,9 +489,7 @@
     border: unset;
   }
 
-  .Inside-box {
-    height: 300px;
-  }
+
 
   .Processing-form .btn {
     width: unset;
@@ -584,4 +582,23 @@
   .badge {
     font-size: 45%;
   }
+
+  .MobileSub .underNAV {
+    height: auto;
+  }
+
+  .Mobile .underNAV {
+    height: auto;
+    margin-top: unset;
+  }
+
+  .MobileSettings .SettingsHeadline {
+    font-size: 18px;
+  }
+
+  .MobileSettings .Setting-form .card {
+    margin-left: unset;
+    margin-right: unset;
+  }
+
 }
