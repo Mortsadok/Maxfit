@@ -221,12 +221,15 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 #buttonEmail {
   margin-top: 2rem;
 }
+
 .Setting-form .btn {
   margin-top: 1rem;
 }
+
 .Setting-form .card {
   margin-right: 60px;
   margin-left: 60px;
@@ -325,7 +328,7 @@
   height: 300px;
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
+.custom-control-input:checked~.custom-control-label::before {
   color: #fff;
   border-color: #3d92d3;
   background-color: #3d92d3;
@@ -350,36 +353,55 @@
 .EmailForm .mailbtn {
   margin-top: 2.325rem;
 }
+
 /* ForgotPassword page*/
 .ForgotPassword .row {
   width: unset;
   padding: unset;
   justify-content: center;
 }
+
 .ForgotPasswordForm .alert {
   font-size: 16px;
 }
+
 .resetEmailForm .alert {
   font-size: 16px;
 }
+
 @media only screen and (max-width: 700px) {
   .secNAV {
     width: 100%;
     margin-top: unset;
   }
+
+  .notificationsMobile .NotificationsBox1 {
+    width: unset;
+    margin-right: unset;
+  }
+
+  .notificationsMobile .toast {
+    width: auto;
+    min-width: unset;
+  }
+
   .training .Inside-box {
     height: auto;
   }
+
   .training .underNAV {
     margin-top: unset;
     height: auto;
   }
+
   .training .Train-content .card.border-secondary {
     margin-bottom: 10px;
   }
+
   .training .btn.btn-secondary {
     width: unset;
   }
+
   .svg-inline--fa {
     margin-left: 5px;
     margin-right: 5px;

@@ -2,25 +2,32 @@ import React, { Fragment } from 'react';
 import './Notifications.css';
 import Toast from 'react-bootstrap/Toast';
 import Navbar from '../Navbar/Navbar';
+import MediaQuery from 'react-responsive';
+import MobileNav from '../Mobile/MobileNav';
 
 const Notifications = () => {
   return (
     <Fragment>
-      <Navbar />
-      <div className='Notifications'>
-        <div className='NotificationsCenter'>
-          <NotificationsBox1 />
-          <NotificationsBox2 />
+      <MediaQuery maxDeviceWidth={1024}>
+        <MobileNav />
+      </MediaQuery>
+      <NotificationMobile />
+      <MediaQuery minDeviceWidth={1280}>
+        <Navbar />
+        <div className='Notifications'>
+          <div className='NotificationsCenter'>
+            <NotificationsBox1 />
+            <NotificationsBox2 />
+          </div>
         </div>
-      </div>
+      </MediaQuery>
     </Fragment>
   );
 };
 
-const NotificationsBox1 = props => (
+const NotificationsBox1 = () => (
   <div className='NotificationsBox1'>
     <p className='font-weight-light'>עדכונים</p>
-
     <Toast>
       <Toast.Header>
         <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
@@ -31,7 +38,7 @@ const NotificationsBox1 = props => (
   </div>
 );
 
-const NotificationsBox2 = props => (
+const NotificationsBox2 = () => (
   <div className='NotificationsBox2'>
     <p className='font-weight-light'>שעות פתיחה</p>
     <div className='OpenHours'>
@@ -52,5 +59,13 @@ const NotificationsBox2 = props => (
     </div>
   </div>
 );
-
+const NotificationMobile = () => (
+  <div className='Mobile'>
+    <div className='notificationsMobile'>
+      <main className='main'>
+        <NotificationsBox1 />
+      </main>
+    </div>
+  </div>
+);
 export default Notifications;

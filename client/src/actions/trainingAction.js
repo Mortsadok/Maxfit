@@ -6,7 +6,6 @@ export const setTrainingPlan = (
   trainingType,
   clientId
 ) => async dispatch => {
-  console.log(dayValue, trainingType, clientId);
   const config = {
     headers: {
       'Content-Type': 'application/json'

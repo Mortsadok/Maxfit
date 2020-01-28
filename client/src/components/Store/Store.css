@@ -67,3 +67,9 @@
   display: block !important;
   font-size: 30px;
 }
+
+@media only screen and (max-width: 700px) {
+  .boxStore {
+    margin-top: unset;
+  }
+}

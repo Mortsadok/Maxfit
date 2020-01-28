@@ -155,10 +155,9 @@ const UnderNAV = ({
             <Button variant='outline-dark' type='submit'>
               בקש תוכנית אימונים
             </Button>
-            <div className='alert'>
-              <Alert />
-            </div>
           </Form>
+
+          <Alert />
         </div>
       </div>
     </div>
