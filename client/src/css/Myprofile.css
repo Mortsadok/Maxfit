@@ -375,13 +375,37 @@
     margin-top: unset;
   }
 
+  .MobileStore.carousel-control-next,
+  .carousel-control-prev {
+    position: unset;
+  }
+
   .notificationsMobile .NotificationsBox1 {
     width: unset;
     margin-right: unset;
+    min-height: 300px;
+    height: unset;
+    margin-top: unset;
+  }
+
+  .notificationsMobile .NotificationsBox2 {
+    width: unset;
+    margin-top: unset;
+    margin-left: unset;
+    margin-right: unset;
+    height: auto;
+  }
+
+  .notificationsMobile .li-att {
+    font-size: 30px;
+  }
+
+  .notificationsMobile .OpenHours {
+    margin-top: unset;
   }
 
   .notificationsMobile .toast {
-    width: auto;
+    width: 80%;
     min-width: unset;
   }
 
@@ -515,6 +539,7 @@
     font-size: 24px;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 1rem;
   }
 
   .LiveCenter {

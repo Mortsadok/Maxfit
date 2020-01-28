@@ -10,8 +10,8 @@ const Notifications = () => {
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
         <MobileNav />
+        <NotificationMobile />
       </MediaQuery>
-      <NotificationMobile />
       <MediaQuery minDeviceWidth={1280}>
         <Navbar />
         <div className='Notifications'>
@@ -64,6 +64,7 @@ const NotificationMobile = () => (
     <div className='notificationsMobile'>
       <main className='main'>
         <NotificationsBox1 />
+        <NotificationsBox2 />
       </main>
     </div>
   </div>
