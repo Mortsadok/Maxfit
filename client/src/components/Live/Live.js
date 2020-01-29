@@ -20,7 +20,7 @@ const Live = () => {
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
         <MobileNav />
-        <MobileLive />
+        <MobileLive getTime={getTime} />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
         <div className='Live'>
@@ -64,10 +64,10 @@ const LiveCenter = ({ getTime }) => (
     </div>
   </div>
 );
-const MobileLive = () => (
+const MobileLive = ({ getTime }) => (
   <div className='Mobile'>
     <main className='main'>
-      <LiveCenter />
+      <LiveCenter getTime={getTime} />
     </main>
   </div>
 );

@@ -18,6 +18,10 @@ const ClientsUsersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  clientId: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now

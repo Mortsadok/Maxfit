@@ -16,14 +16,15 @@ router.post(
     check('password', 'הכנס סיסמה עם 6 תווים או יותר').isLength({ min: 6 }),
     check('phone', 'הכנס מספר טלפון תקין')
       .not()
-      .isEmpty()
+      .isEmpty(),
+    check('clientId', 'הכנס תעודת זהות עם 9 ספרות').isLength({ min: 9, max: 9 })
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { Name, email, password, phone } = req.body;
+    const { Name, email, password, phone, clientId } = req.body;
 
     try {
       let user = await ClientsUsers.findOne({ email });
@@ -37,7 +38,8 @@ router.post(
         Name,
         email,
         password,
-        phone
+        phone,
+        clientId
       });
       //Encrypt The password
 

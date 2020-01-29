@@ -22,9 +22,10 @@ const Register = ({ register, isAuth, setAlert }) => {
     Password: '',
     Name: '',
     rePassword: '',
-    phone: ''
+    phone: '',
+    clientId: ''
   });
-  const { Email, Password, rePassword, Name, phone } = Data;
+  const { Email, Password, rePassword, Name, phone, clientId } = Data;
   const [typeState, setType] = useState(false);
   const onChange = e => setData({ ...Data, [e.target.name]: e.target.value });
 
@@ -33,7 +34,7 @@ const Register = ({ register, isAuth, setAlert }) => {
     if (Password !== rePassword) {
       setAlert('סיסמאות לא תואמות', 'danger');
     } else {
-      register(Name, Email, Password, phone);
+      register(Name, Email, Password, phone, clientId);
       resetForm();
       setTimeout(() => {
         setRedirect(true);
@@ -47,7 +48,8 @@ const Register = ({ register, isAuth, setAlert }) => {
       Password: '',
       rePassword: '',
       Name: '',
-      phone: ''
+      phone: '',
+      clientId: ''
     });
   };
   if (isAuth && redirectDelay) {
@@ -66,6 +68,7 @@ const Register = ({ register, isAuth, setAlert }) => {
           typeState={typeState}
           Password={Password}
           phone={phone}
+          clientId={clientId}
         />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
@@ -134,16 +137,31 @@ const Register = ({ register, isAuth, setAlert }) => {
                             />
                           </FormGroup>
                         </Col>
+                        <Col md={6}>
+                          <FormGroup>
+                            <Label>מספר פלאפון</Label>
+                            <Input
+                              type='text'
+                              name='phone'
+                              value={phone}
+                              onChange={e => onChange(e)}
+                              placeholder='מספר פלאפון'
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col md={6}>
+                          <FormGroup>
+                            <Label> תעודת זהות</Label>
+                            <Input
+                              type='text'
+                              name='clientId'
+                              value={clientId}
+                              onChange={e => onChange(e)}
+                              placeholder='תעודת זהות'
+                            />
+                          </FormGroup>
+                        </Col>
                       </Row>
-                      <Label>מספר פלאפון</Label>
-                      <Input
-                        type='text'
-                        name='phone'
-                        id='phoneSize'
-                        value={phone}
-                        onChange={e => onChange(e)}
-                        placeholder='מספר פלאפון'
-                      />
 
                       <div className='Register-Form-margin'></div>
                       <label>הצג סיסמה</label>
@@ -189,7 +207,8 @@ const RegisterMobile = ({
   onSubmit,
   Email,
   Password,
-  phone
+  phone,
+  clientId
 }) => (
   <div className='Mobile'>
     <main className='main'>
@@ -266,6 +285,18 @@ const RegisterMobile = ({
                     value={phone}
                     onChange={e => onChange(e)}
                     placeholder='מספר פלאפון'
+                  />
+                </FormGroup>
+              </Col>
+              <Col md={6}>
+                <FormGroup>
+                  <Label> תעודת זהות</Label>
+                  <Input
+                    type='text'
+                    name='clientId'
+                    value={clientId}
+                    onChange={e => onChange(e)}
+                    placeholder='תעודת זהות'
                   />
                 </FormGroup>
               </Col>

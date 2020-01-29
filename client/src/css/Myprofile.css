@@ -544,7 +544,16 @@
   .Time {
     height: 130px;
     width: 130px;
-    font-size: 40px;
+    font-size: 30px;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    position: unset;
+  }
+
+  .font-weight-light {
+    padding: 1rem;
   }
 
   .Time1 {
@@ -560,7 +569,7 @@
   .Date {
     height: 130px;
     width: 130px;
-    font-size: 30px;
+    font-size: 22px;
   }
 
   .Date1 {

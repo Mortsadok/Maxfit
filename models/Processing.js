@@ -13,7 +13,7 @@ const processingSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  backHand: {
+  waist: {
     type: Number,
     required: true
   },

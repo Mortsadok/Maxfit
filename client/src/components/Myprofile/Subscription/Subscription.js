@@ -15,13 +15,12 @@ import { Nclient } from '../../../actions/NclientAction';
 import SecNav from '../SecNav';
 
 const Subscription = ({ Nclient, user }) => {
-  const { phone, Name } = user;
+  const { phone, Name, id } = user;
   let fullName = [];
   // useState
   if (Name !== undefined) {
     fullName = Name.split(' ');
   }
-  const [userName] = useState(fullName);
   const [typeData, setTypeData] = useState([
     { id: 1, label: 'רגיל', value: 200, selected: false },
     { id: 2, label: 'סטודנט', value: 150, selected: false }
@@ -94,7 +93,7 @@ const Subscription = ({ Nclient, user }) => {
     Nclient(
       fullName[0],
       fullName[1],
-      uuid.v4(),
+      id,
       phone,
       typeName.typeName,
       timeName.timeName,
