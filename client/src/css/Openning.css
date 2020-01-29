@@ -287,6 +287,12 @@ body::-webkit-scrollbar-thumb {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+#phoneSize {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .Register-Form input[type="password"] {
   display: block;
   width: 100%;

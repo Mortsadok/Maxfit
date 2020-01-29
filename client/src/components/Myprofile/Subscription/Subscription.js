@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import '../../../css/Myprofile.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -7,13 +8,20 @@ import Navbar from '../../Navbar/Navbar';
 import MobileNav from '../../Mobile/MobileNav';
 import Alert from '../../Layout/Alert';
 import MediaQuery from 'react-responsive';
+import uuid from 'uuid';
 // Redux
 import { connect } from 'react-redux';
 import { Nclient } from '../../../actions/NclientAction';
 import SecNav from '../SecNav';
 
-const Subscription = ({ Nclient }) => {
+const Subscription = ({ Nclient, user }) => {
+  const { phone, Name } = user;
+  let fullName = [];
   // useState
+  if (Name !== undefined) {
+    fullName = Name.split(' ');
+  }
+  const [userName] = useState(fullName);
   const [typeData, setTypeData] = useState([
     { id: 1, label: 'רגיל', value: 200, selected: false },
     { id: 2, label: 'סטודנט', value: 150, selected: false }
@@ -24,8 +32,8 @@ const Subscription = ({ Nclient }) => {
     { id: 5, label: 'שנה', value: 12, selected: false }
   ]);
   const [paymentData, setPaymentData] = useState([
-    { id: 6, label: 'מזומן', value: 'cash', selected: false },
-    { id: 7, label: 'אשראי', value: 'credit', selected: false }
+    { id: 6, label: 'מזומן', value: 'מזומן', selected: false },
+    { id: 7, label: 'אשראי', value: 'אשראי', selected: false }
   ]);
   const [typeName, setTypeName] = useState({});
   const [timeName, setTimeName] = useState({});
@@ -34,15 +42,11 @@ const Subscription = ({ Nclient }) => {
   const [calcTime, setCalcTime] = useState({});
   const [calcPayment, setCalcPayment] = useState({});
   const [formData, setFormData] = useState({
-    firstname: 'eden',
-    lastname: 'elmalich',
-    id: '123456789',
-    Type: 'רגיל',
-    Time: 'חודש',
-    Payment: 'מזומן',
+    Type: '',
+    Time: '',
+    Payment: '',
     Total: 0
   });
-  const { firstname, lastname, id, Type, Time, Payment, Total } = FormData;
   const onChange = (e, id) => {
     if (e.target.value === 'typeData') {
       setTypeData(
@@ -88,9 +92,10 @@ const Subscription = ({ Nclient }) => {
     }
     setCalculation(Total);
     Nclient(
-      firstname,
-      lastname,
-      id,
+      fullName[0],
+      fullName[1],
+      uuid.v4(),
+      phone,
       typeName.typeName,
       timeName.timeName,
       calcPayment.calcPayment,
@@ -239,6 +244,7 @@ const UnderNAV = ({
                   חדש מנוי
                 </Button>
               </Form>
+              <Alert />
             </Card.Footer>
           </Card>
         </div>
@@ -269,4 +275,10 @@ const MobileSubscription = ({
     </div>
   </div>
 );
-export default connect(null, { Nclient })(Subscription);
+Subscription.propTypes = {
+  user: PropTypes.object
+};
+const mapStateToProps = state => ({
+  user: state.authReducer.user
+});
+export default connect(mapStateToProps, { Nclient })(Subscription);

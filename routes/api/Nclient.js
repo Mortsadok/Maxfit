@@ -1,20 +1,31 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const NewClient = require("../../models/NewClient");
-const { check, validationResult } = require("express-validator");
+const NewClient = require('../../models/NewClient');
+const { check, validationResult } = require('express-validator');
 
 // add new client
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const Clients = await NewClient.find();
     res.json(Clients);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
 router.post(
-  "/",
+  '/',
+  [
+    check('Type', 'הכנס סוג מנוי')
+      .not()
+      .isEmpty(),
+    check('Time', 'הכנס תקופת מנוי')
+      .not()
+      .isEmpty(),
+    check('Payment', 'הכנס אמצעי תשלום')
+      .not()
+      .isEmpty()
+  ],
 
   async (req, res) => {
     let errors = validationResult(req);
@@ -35,7 +46,7 @@ router.post(
     if (Nclient) {
       return res
         .status(400)
-        .json({ errors: [{ msg: "תעודת זהות זו נמצאת במערכת" }] });
+        .json({ errors: [{ msg: 'תעודת זהות זו נמצאת במערכת' }] });
     }
     try {
       Nclient = new NewClient({
@@ -52,7 +63,7 @@ router.post(
       res.json(req.body);
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );

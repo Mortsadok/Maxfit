@@ -8,17 +8,17 @@ import {
   LOGOUT,
   SUCCESS_RESET_PASSWORD,
   ERROR_RESET_PASSWORD
-} from "./typeActions";
-import axios from "axios";
-import { setAlert } from "../actions/alertAction";
-import setAuthToken from "../utils/setAuthToken";
+} from './typeActions';
+import axios from 'axios';
+import { setAlert } from '../actions/alertAction';
+import setAuthToken from '../utils/setAuthToken';
 
 export const checkUser = () => async dispatch => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get("/api/auth");
+    const res = await axios.get('/api/auth');
     dispatch({
       type: LOGIN_LOAD,
       payload: res.data
@@ -30,15 +30,15 @@ export const checkUser = () => async dispatch => {
     });
   }
 };
-export const register = (Name, email, password) => async dispatch => {
+export const register = (Name, email, password, phone) => async dispatch => {
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   };
-  const body = JSON.stringify({ Name, email, password });
+  const body = JSON.stringify({ Name, email, password, phone });
   try {
-    const res = await axios.post("api/users", body, config);
+    const res = await axios.post('api/users', body, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -47,7 +47,7 @@ export const register = (Name, email, password) => async dispatch => {
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
     dispatch({
       type: REGISTER_FAIL
@@ -57,12 +57,12 @@ export const register = (Name, email, password) => async dispatch => {
 export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   };
   const body = JSON.stringify({ email, password });
   try {
-    const res = await axios.post("api/auth", body, config);
+    const res = await axios.post('api/auth', body, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -72,7 +72,7 @@ export const login = (email, password) => async dispatch => {
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
     dispatch({
       type: LOGIN_FAIL
@@ -82,18 +82,18 @@ export const login = (email, password) => async dispatch => {
 export const resetPassword = (email, password) => async dispatch => {
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   };
   const body = JSON.stringify({ email, password });
   try {
-    await axios.post("/api/forgotPass", body, config);
+    await axios.post('/api/forgotPass', body, config);
 
-    dispatch(setAlert("סיסמה שונתה בהצלחה", "success"));
+    dispatch(setAlert('סיסמה שונתה בהצלחה', 'success'));
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
   }
 };
@@ -104,17 +104,17 @@ export const settingsResetPassword = (
 ) => async dispatch => {
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   };
   const body = JSON.stringify({ email, oldPassword, password });
   try {
-    await axios.post("/api/settingsForgotPass", body, config);
+    await axios.post('/api/settingsForgotPass', body, config);
     dispatch({
       type: SUCCESS_RESET_PASSWORD,
       payload: true
     });
-    dispatch(setAlert("סיסמה שונתה בהצלחה", "success"));
+    dispatch(setAlert('סיסמה שונתה בהצלחה', 'success'));
   } catch (err) {
     dispatch({
       type: ERROR_RESET_PASSWORD,
@@ -122,7 +122,7 @@ export const settingsResetPassword = (
     });
     const errors = err.response.data.errors;
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
   }
 };

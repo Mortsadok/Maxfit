@@ -1,5 +1,5 @@
-import { SET_CLIENTS } from "./typeActions";
-import axios from "axios";
+import axios from 'axios';
+import { setAlert } from './alertAction';
 
 export const Nclient = (
   firstname,
@@ -13,7 +13,7 @@ export const Nclient = (
 ) => async dispatch => {
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   };
   const body = JSON.stringify({
@@ -27,8 +27,12 @@ export const Nclient = (
     Total
   });
   try {
-    await axios.post("api/Nclient", body, config);
+    await axios.post('api/Nclient', body, config);
+    dispatch(setAlert('חידוש מנוי בוצע בהצלחה', 'success'));
   } catch (err) {
-    console.error(err.message);
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
+    }
   }
 };

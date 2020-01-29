@@ -1,39 +1,43 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const ClientsUsers = require("../../models/ClientsUsers");
-const { check, validationResult } = require("express-validator");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const config = require("config");
+const ClientsUsers = require('../../models/ClientsUsers');
+const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 router.post(
-  "/",
+  '/',
   [
-    check("Name", "הכנס שם תקין")
+    check('Name', 'הכנס שם תקין')
       .not()
       .isEmpty(),
-    check("email", "הכנס דואר אלקטרוני תקין").isEmail(),
-    check("password", "הכנס סיסמה עם 6 תווים או יותר").isLength({ min: 6 })
+    check('email', 'הכנס דואר אלקטרוני תקין').isEmail(),
+    check('password', 'הכנס סיסמה עם 6 תווים או יותר').isLength({ min: 6 }),
+    check('phone', 'הכנס מספר טלפון תקין')
+      .not()
+      .isEmpty()
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { Name, email, password } = req.body;
-  
+    const { Name, email, password, phone } = req.body;
+
     try {
       let user = await ClientsUsers.findOne({ email });
       if (user) {
         return res
           .status(400)
-          .json({ errors: [{ msg: "המשתמש קיים במערכת" }] });
+          .json({ errors: [{ msg: 'המשתמש קיים במערכת' }] });
       }
 
       user = new ClientsUsers({
         Name,
         email,
-        password
+        password,
+        phone
       });
       //Encrypt The password
 
@@ -52,7 +56,7 @@ router.post(
 
       jwt.sign(
         payload,
-        config.get("jwtSecret"),
+        config.get('jwtSecret'),
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
@@ -61,7 +65,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );
