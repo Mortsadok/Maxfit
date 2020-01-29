@@ -14,135 +14,228 @@ import SecNav from '../SecNav';
 
 const Subscription = ({ Nclient }) => {
   // useState
-  const [FormData, SetFormData] = useState({
+  const [typeData, setTypeData] = useState([
+    { id: 1, label: 'רגיל', value: 200, selected: false },
+    { id: 2, label: 'סטודנט', value: 150, selected: false }
+  ]);
+  const [timeData, setTimeData] = useState([
+    { id: 3, label: 'חודש', value: 1, selected: false },
+    { id: 4, label: 'שלושה חודשים', value: 3, selected: false },
+    { id: 5, label: 'שנה', value: 12, selected: false }
+  ]);
+  const [paymentData, setPaymentData] = useState([
+    { id: 6, label: 'מזומן', value: 'cash', selected: false },
+    { id: 7, label: 'אשראי', value: 'credit', selected: false }
+  ]);
+  const [typeName, setTypeName] = useState({});
+  const [timeName, setTimeName] = useState({});
+  const [calculationData, setCalculation] = useState(0);
+  const [calcType, setCalcType] = useState({});
+  const [calcTime, setCalcTime] = useState({});
+  const [calcPayment, setCalcPayment] = useState({});
+  const [formData, setFormData] = useState({
     firstname: 'eden',
     lastname: 'elmalich',
     id: '123456789',
-    phone: '0543241787',
     Type: 'רגיל',
     Time: 'חודש',
     Payment: 'מזומן',
     Total: 0
   });
-  const {
-    firstname,
-    lastname,
-    id,
-    phone,
-    Type,
-    Time,
-    Payment,
-    Total
-  } = FormData;
-  const SendClient = e => {
+  const { firstname, lastname, id, Type, Time, Payment, Total } = FormData;
+  const onChange = (e, id) => {
+    if (e.target.value === 'typeData') {
+      setTypeData(
+        typeData.map(type => {
+          if (type.id === id && type.selected === false) {
+            setCalcType({ calcType: type.value });
+            setTypeName({ typeName: type.label });
+            return { ...type, selected: true };
+          }
+          return { ...type, selected: false };
+        })
+      );
+    }
+    if (e.target.value === 'timeData') {
+      setTimeData(
+        timeData.map(time => {
+          if (time.id === id && time.selected === false) {
+            setCalcTime({ calcTime: time.value });
+            setTimeName({ timeName: time.label });
+            return { ...time, selected: true };
+          }
+          return { ...time, selected: false };
+        })
+      );
+    }
+    if (e.target.value === 'paymentData') {
+      setPaymentData(
+        paymentData.map(payment => {
+          if (payment.id === id && payment.selected === false) {
+            setCalcPayment({ calcPayment: payment.value });
+            return { ...payment, selected: true };
+          }
+          return { ...payment, selected: false };
+        })
+      );
+    }
+  };
+  const onSubmit = e => {
+    let Total = 0;
     e.preventDefault();
-    Nclient(firstname, lastname, id, phone, Type, Time, Payment, Total);
+    if (calcType.calcType !== undefined && calcTime.calcTime !== undefined) {
+      Total = calcType.calcType * calcTime.calcTime;
+    }
+    setCalculation(Total);
+    Nclient(
+      firstname,
+      lastname,
+      id,
+      typeName.typeName,
+      timeName.timeName,
+      calcPayment.calcPayment,
+      Total
+    );
+    ResetForm();
+  };
+  const ResetForm = () => {
+    setTimeout(() => {
+      setCalculation(0);
+    }, 2000);
+    setFormData({
+      ...formData,
+      firstname: '',
+      lastname: '',
+      id: '',
+      Phone: ''
+    });
+    setTimeName('');
+    setTypeName('');
+    setCalcTime('');
+    setCalcType('');
+    setCalcPayment('');
+    setTypeData(
+      typeData.map(type => {
+        return { ...type, selected: false };
+      })
+    );
+    setTimeData(
+      timeData.map(time => {
+        return { ...time, selected: false };
+      })
+    );
+    setPaymentData(
+      paymentData.map(payment => {
+        return { ...payment, selected: false };
+      })
+    );
   };
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
         <MobileNav />
         <SecNav />
-        <MobileSubscription SendClient={SendClient} />
+        <MobileSubscription
+          typeData={typeData}
+          timeData={timeData}
+          onChange={onChange}
+          paymentData={paymentData}
+          calculationData={calculationData}
+          onSubmit={onSubmit}
+        />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
         <div className='Subscription'>
           <Navbar />
           <SecNav />
-          <UnderNAV SendClient={SendClient} />
+          <UnderNAV
+            typeData={typeData}
+            timeData={timeData}
+            onChange={onChange}
+            paymentData={paymentData}
+            calculationData={calculationData}
+            onSubmit={onSubmit}
+          />
         </div>
       </MediaQuery>
     </Fragment>
   );
 };
 
-const UnderNAV = ({ SendClient }) => (
+const UnderNAV = ({
+  typeData,
+  timeData,
+  paymentData,
+  onChange,
+  calculationData,
+  onSubmit
+}) => (
   <div className='underNAV'>
     <div className='Inside-box'>
       <div className='Headline'>
-        <p class='font-weight-light'>חידוש מנוי</p>
+        <p className='font-weight-light'>חידוש מנוי</p>
         <div className='SubscriptionMenu'>
           <Card border='secondary' style={{ width: '50rem' }}>
             <Card.Body>
               <Card.Text>
-                <Form.Label>סוג מנוי</Form.Label>
-                {['radio'].map(type => (
-                  <div key={`custom-inline-${type}`} className='mb-3'>
+                <Form.Label id='subLabel'>סוג מנוי</Form.Label>
+                {typeData.map(type => (
+                  <span key={type.id} className='mb-3'>
                     <Form.Check
                       custom
                       inline
-                      label='רגיל'
-                      type={type}
-                      id={`custom-inline-${type}-1`}
+                      label={type.label}
+                      id={type.id}
+                      type='radio'
+                      value={'typeData'}
+                      checked={type.selected}
+                      onChange={e => onChange(e, type.id)}
                     />
-                    <Form.Check
-                      custom
-                      inline
-                      label='סטודנט'
-                      type={type}
-                      id={`custom-inline-${type}-2`}
-                    />
-                  </div>
+                  </span>
                 ))}
               </Card.Text>
               <Card.Text>
-                <Form.Label>תקופת מנוי</Form.Label>
-                {['radio'].map(type => (
-                  <div key={`custom-inline-${type}`} className='mb-3'>
+                <Form.Label id='subLabel'>תקופת מנוי</Form.Label>
+                {timeData.map(time => (
+                  <span key={time.id} className='mb-3'>
                     <Form.Check
                       custom
                       inline
-                      label='חודש'
-                      type={type}
-                      id={`custom-inline-${type}-3`}
+                      label={time.label}
+                      id={time.id}
+                      value={'timeData'}
+                      type='radio'
+                      checked={time.selected}
+                      onChange={e => onChange(e, time.id)}
                     />
-                    <Form.Check
-                      custom
-                      inline
-                      label='שלושה חודשים'
-                      type={type}
-                      id={`custom-inline-${type}-4`}
-                    />
-                    <Form.Check
-                      custom
-                      inline
-                      label='שנה'
-                      type={type}
-                      id={`custom-inline-${type}-5`}
-                    />
-                  </div>
+                  </span>
                 ))}
               </Card.Text>
               <Card.Text>
-                <Form.Label>אמצעי תשלום</Form.Label>
-                {['radio'].map(type => (
-                  <div key={`custom-inline-${type}`} className='mb-3'>
+                <Form.Label id='subLabel'>אמצעי תשלום</Form.Label>
+                {paymentData.map(payment => (
+                  <span key={payment.id} className='mb-3'>
                     <Form.Check
                       custom
                       inline
-                      label='אשראי'
-                      type={type}
-                      id={`custom-inline-${type}-6`}
+                      label={payment.label}
+                      id={payment.id}
+                      type='radio'
+                      value={'paymentData'}
+                      checked={payment.selected}
+                      onChange={e => onChange(e, payment.id)}
                     />
-                    <Form.Check
-                      custom
-                      inline
-                      label='מזומן'
-                      type={type}
-                      id={`custom-inline-${type}-7`}
-                    />
-                  </div>
+                  </span>
                 ))}
               </Card.Text>
             </Card.Body>
-            <div className='Sum'>סה"כ לתשלום:</div>
+            <div className='Sum'>
+              סה"כ לתשלום:
+              <span>₪{calculationData}</span>
+            </div>
             <Card.Footer>
-              <Form>
-                <Button
-                  onClick={e => SendClient(e)}
-                  variant='outline-success'
-                  type='submit'
-                >
+              <Form onSubmit={e => onSubmit(e)}>
+                <Button variant='outline-success' type='submit'>
                   חדש מנוי
                 </Button>
               </Form>
@@ -153,11 +246,25 @@ const UnderNAV = ({ SendClient }) => (
     </div>
   </div>
 );
-const MobileSubscription = ({ SendClient }) => (
+const MobileSubscription = ({
+  typeData,
+  timeData,
+  paymentData,
+  onChange,
+  calculationData,
+  onSubmit
+}) => (
   <div className='Mobile'>
     <div className='MobileSub'>
       <main className='main'>
-        <UnderNAV SendClient={SendClient} />
+        <UnderNAV
+          typeData={typeData}
+          timeData={timeData}
+          onChange={onChange}
+          paymentData={paymentData}
+          calculationData={calculationData}
+          onSubmit={onSubmit}
+        />
       </main>
     </div>
   </div>

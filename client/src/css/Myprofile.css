@@ -258,6 +258,10 @@
   text-align: center;
 }
 
+#subLabel {
+  display: block;
+}
+
 .Settingsline {
   text-align: center;
 }
@@ -285,6 +289,7 @@
 
 .Subscription .card-text {
   border-bottom: 1px solid #6c757d;
+  padding: .75rem;
 }
 
 .Sum {
@@ -599,6 +604,10 @@
   .MobileSettings .Setting-form .card {
     margin-left: unset;
     margin-right: unset;
+  }
+
+  .notificationsMobile .mr-auto {
+    white-space: pre;
   }
 
 }
