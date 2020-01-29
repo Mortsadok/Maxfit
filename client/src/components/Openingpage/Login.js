@@ -1,22 +1,22 @@
-import React, { useState, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { Card, Badge } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser as FasUser } from '@fortawesome/free-regular-svg-icons';
-import logo from '../../img/logo.png';
-import '../../css/Openning.css';
-import MediaQuery from 'react-responsive';
-import Alert from '../Layout/Alert';
+import React, { useState, Fragment } from "react";
+import PropTypes from "prop-types";
+import { Card, Badge } from "react-bootstrap";
+import { Link, Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser as FasUser } from "@fortawesome/free-regular-svg-icons";
+import logo from "../../img/logo.png";
+import "../../css/Openning.css";
+import MediaQuery from "react-responsive";
+import Alert from "../Layout/Alert";
 // Redux
-import { connect } from 'react-redux';
-import { login } from '../../actions/authActions';
+import { connect } from "react-redux";
+import { login } from "../../actions/authActions";
 
 const Login = ({ login, isAuth }) => {
   // useState
   const [Data, SetData] = useState({
-    Email: '',
-    Password: ''
+    Email: "",
+    Password: ""
   });
   const { Email, Password } = Data;
   const [typeState, setType] = useState(false);
@@ -27,7 +27,7 @@ const Login = ({ login, isAuth }) => {
     login(Email, Password);
   };
   if (isAuth) {
-    return <Redirect to='/Home' />;
+    return <Redirect to="/Home" />;
   }
 
   return (
@@ -43,51 +43,51 @@ const Login = ({ login, isAuth }) => {
         />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
-        <div className='Pages-attributes'>
-          <main className='main'>
-            <div className='MainPage-container'>
-              <div className='MainPage-content '>
-                <Card className='Card-size'>
+        <div className="Pages-attributes">
+          <main className="main">
+            <div className="MainPage-container">
+              <div className="MainPage-content ">
+                <Card className="Card-size">
                   <Card.Header>התחברות</Card.Header>
                   <Card.Body>
-                    <FontAwesomeIcon className='Main-Icon' icon={FasUser} />
-                    <header className='Main-Title'> התחברות</header>
+                    <FontAwesomeIcon className="Main-Icon" icon={FasUser} />
+                    <header className="Main-Title"> התחברות</header>
 
-                    <form className='MainPage-Form' onSubmit={e => onSubmit(e)}>
+                    <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
                       <label>דואר אלקטרוני</label>
                       <input
-                        type='text'
-                        name='Email'
+                        type="text"
+                        name="Email"
                         value={Email}
                         onChange={e => onChange(e)}
-                        placeholder='דואר אלקטרוני'
+                        placeholder="דואר אלקטרוני"
                       />
                       <label>סיסמה</label>
                       <input
-                        type={typeState ? 'text' : 'password'}
-                        name='Password'
+                        type={typeState ? "text" : "password"}
+                        name="Password"
                         value={Password}
                         onChange={e => onChange(e)}
-                        placeholder='סיסמה'
+                        placeholder="סיסמה"
                       />
                       <label>הצג סיסמה</label>
                       <input
-                        type='checkbox'
+                        type="checkbox"
                         onClick={() => setType(!typeState)}
                       />
 
-                      <input type='submit' name='Password' value='התחברות' />
-                      <div className='Alert'>
+                      <input type="submit" name="Password" value="התחבר" />
+                      <div className="Alert">
                         <Alert />
                       </div>
-                      <div className='Button-content '>
-                        <div className='LoginApp-text'>
-                          <Link to='/forgotPass'>שכחת את הסיסמה?</Link>
+                      <div className="Button-content ">
+                        <div className="LoginApp-text">
+                          <Link to="/forgotPass">שכחת את הסיסמה?</Link>
                         </div>
-                        <div className='LoginApp-text'>
+                        <div className="LoginApp-text">
                           איך לך משתמש?
-                          <span className='Link-Color'>
-                            <Link to='/Register' className='RegistarButton'>
+                          <span className="Link-Color">
+                            <Link to="/Register" className="RegistarButton">
                               הירשם כעת
                             </Link>
                           </span>
@@ -112,53 +112,53 @@ const LoginMobile = ({
   Email,
   onSubmit
 }) => (
-  <div className='Mobile'>
-    <main className='main'>
-      <img id='logo' src={logo} alt={logo} />
-      <header className='Mobile-Main-Title'>
-        <Badge pill variant='dark'>
+  <div className="Mobile">
+    <main className="main">
+      <img id="logo" src={logo} alt={logo} />
+      <header className="Mobile-Main-Title">
+        <Badge pill variant="dark">
           התחברות
         </Badge>
       </header>
-      <Card className='Card-size'>
+      <Card className="Card-size">
         <Card.Header>התחברות</Card.Header>
         <Card.Body>
-          <FontAwesomeIcon className='Main-Icon' icon={FasUser} />
-          <header className='Main-Title'> התחברות</header>
+          <FontAwesomeIcon className="Main-Icon" icon={FasUser} />
+          <header className="Main-Title"> התחברות</header>
 
-          <form className='MainPage-Form' onSubmit={e => onSubmit(e)}>
+          <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
             <label>דואר אלקטרוני</label>
             <input
-              type='text'
-              name='Email'
+              type="text"
+              name="Email"
               value={Email}
               onChange={e => onChange(e)}
-              placeholder='דואר אלקטרוני'
+              placeholder="דואר אלקטרוני"
             />
             <label>סיסמה</label>
             <input
-              type={typeState ? 'text' : 'password'}
-              name='Password'
+              type={typeState ? "text" : "password"}
+              name="Password"
               value={Password}
               onChange={e => onChange(e)}
-              placeholder='סיסמה'
+              placeholder="סיסמה"
             />
-            <div className='Checkbox-Flex'>
+            <div className="Checkbox-Flex">
               <label>הצג סיסמה</label>
-              <input type='checkbox' onClick={() => setType(!typeState)} />
+              <input type="checkbox" onClick={() => setType(!typeState)} />
             </div>
-            <input type='submit' name='Password' value='התחברות' />
-            <div className='Alert'>
+            <input type="submit" name="Password" value="התחברות" />
+            <div className="Alert">
               <Alert />
             </div>
-            <div className='Button-content '>
-              <div className='LoginApp-text'>
-                <Link to='/forgotPass'>שכחת את הסיסמה?</Link>
+            <div className="Button-content ">
+              <div className="LoginApp-text">
+                <Link to="/forgotPass">שכחת את הסיסמה?</Link>
               </div>
-              <div className='LoginApp-text'>
+              <div className="LoginApp-text">
                 איך לך משתמש?
-                <span className='Link-Color'>
-                  <Link to='/Register' className='RegistarButton'>
+                <span className="Link-Color">
+                  <Link to="/Register" className="RegistarButton">
                     הירשם כעת
                   </Link>
                 </span>
