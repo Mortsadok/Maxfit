@@ -1,11 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import './Notifications.css';
 import Toast from 'react-bootstrap/Toast';
 import Navbar from '../Navbar/Navbar';
 import MediaQuery from 'react-responsive';
 import MobileNav from '../Mobile/MobileNav';
-
-const Notifications = () => {
+import PropTypes from 'prop-types';
+// Redux
+import { connect } from 'react-redux';
+import { getUpdates } from '../../actions/updateAction';
+const Notifications = ({ getUpdates, get_updates }) => {
+  useEffect(() => {
+    getUpdates();
+  }, []);
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
@@ -16,7 +22,7 @@ const Notifications = () => {
         <Navbar />
         <div className='Notifications'>
           <div className='NotificationsCenter'>
-            <NotificationsBox1 />
+            <NotificationsBox1 get_updates={get_updates} />
             <NotificationsBox2 />
           </div>
         </div>
@@ -25,16 +31,21 @@ const Notifications = () => {
   );
 };
 
-const NotificationsBox1 = () => (
+const NotificationsBox1 = ({ get_updates }) => (
   <div className='NotificationsBox1'>
     <p className='font-weight-light'>עדכונים</p>
-    <Toast>
-      <Toast.Header>
-        <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
-        <strong className='mr-auto'>מנהל חדר הכושר</strong>
-      </Toast.Header>
-      <Toast.Body>.הודעה חדשה ממנהל חדר הכושר</Toast.Body>
-    </Toast>
+    {get_updates.map(update => (
+      <Toast>
+        <Toast.Header>
+          <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
+          <strong className='mr-auto'>
+            הודעה מאת {update.firstname}
+            {update.lastname}
+          </strong>
+        </Toast.Header>
+        <Toast.Body>{update.update}</Toast.Body>
+      </Toast>
+    ))}
   </div>
 );
 
@@ -69,4 +80,10 @@ const NotificationMobile = () => (
     </div>
   </div>
 );
-export default Notifications;
+Notifications.propTypes = {
+  getUpdates: PropTypes.array
+};
+const mapStateToProps = state => ({
+  get_updates: state.updatesReducer.get_updates
+});
+export default connect(mapStateToProps, { getUpdates })(Notifications);
