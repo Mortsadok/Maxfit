@@ -15,7 +15,7 @@ import {
 // Redux
 import { connect } from 'react-redux';
 
-const Navbar = ({ user }) => {
+const Navbar = ({ user, get_updates }) => {
   const { Name } = user;
   return (
     <div className='Navbar'>
@@ -37,6 +37,13 @@ const Navbar = ({ user }) => {
             <FontAwesomeIcon className='BellIcon' icon={faBell} />
             <NavLink to='/Notifications'>עדכונים</NavLink>
           </div>
+          <span>
+            <button className='Notifications-att'>
+              <FontAwesomeIcon icon={faBell} />
+            </button>
+            <div className='Quantity'>{get_updates.length}</div>
+          </span>
+
           <div className='accountName'>{Name}</div>
         </div>
       </nav>
@@ -48,6 +55,7 @@ Navbar.propTypes = {
   user: PropTypes.object
 };
 const mapStateToProps = state => ({
-  user: state.authReducer.user
+  user: state.authReducer.user,
+  get_updates: state.updatesReducer.get_updates
 });
 export default connect(mapStateToProps)(Navbar);

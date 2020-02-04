@@ -12,6 +12,40 @@
   margin: auto;
 }
 
+.Notifications-att {
+  color: #353c3f;
+  font-size: 1.2rem;
+  width: 85px;
+  border: none;
+  outline: none;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: auto;
+  margin-bottom: 3px;
+  display: flex;
+  height: 75px;
+  justify-content: center;
+}
+
+.Quantity {
+  position: fixed;
+  display: block;
+  top: 15px;
+  padding-top: 1px;
+  height: 18px;
+  width: 18px;
+  line-height: 15px;
+  margin-right: 22px;
+  text-align: center;
+  background: #ff4b5a;
+  color: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  font-size: 12px;
+}
+
 .att a {
   display: flex;
   font-size: 20px;
@@ -60,6 +94,7 @@ a:hover {
   margin-right: 50.7%;
   top: 26px;
 }
+
 .accountName {
   display: flex;
   align-items: center;
