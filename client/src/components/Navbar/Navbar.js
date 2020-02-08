@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import logo from '../../img/logo.png';
@@ -16,6 +16,10 @@ import {
 import { connect } from 'react-redux';
 
 const Navbar = ({ user, get_updates }) => {
+  const [Notifications, setNotification] = useState([]);
+  useEffect(() => {
+    setNotification(get_updates.filter(update => update.readMessage !== true));
+  }, [get_updates]);
   const { Name } = user;
   return (
     <div className='Navbar'>
@@ -41,7 +45,7 @@ const Navbar = ({ user, get_updates }) => {
             <button className='Notifications-att'>
               <FontAwesomeIcon icon={faBell} />
             </button>
-            <div className='Quantity'>{get_updates.length}</div>
+            <div className='Quantity'>{Notifications.length}</div>
           </span>
 
           <div className='accountName'>{Name}</div>

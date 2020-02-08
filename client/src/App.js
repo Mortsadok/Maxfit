@@ -21,6 +21,7 @@ import setAuthToken from './utils/setAuthToken';
 import { Provider } from 'react-redux';
 import store from './store';
 import { checkUser } from './actions/authActions';
+import { getUpdates } from './actions/updateAction';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -28,6 +29,7 @@ if (localStorage.token) {
 const App = () => {
   useEffect(() => {
     store.dispatch(checkUser());
+    store.dispatch(getUpdates());
   }, []);
   return (
     <Provider store={store}>

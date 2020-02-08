@@ -12,4 +12,20 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+router.post('/', async (req, res) => {
+  const { _id, readMessage } = req.body;
+  try {
+    let updates = await Updates.findOne({ _id });
+
+    updates.updateOne({
+      readMessage
+    });
+    updates.readMessage = readMessage;
+    await updates.save();
+    res.json(req.body);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 module.exports = router;

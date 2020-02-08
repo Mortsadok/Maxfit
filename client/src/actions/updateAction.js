@@ -11,3 +11,17 @@ export const getUpdates = () => async dispatch => {
     console.error(err.message);
   }
 };
+export const changeReadMessage = (_id, readMessage) => async dispatch => {
+  console.log(_id, readMessage);
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    const body = JSON.stringify({ _id, readMessage });
+    await axios.post('/api/updates', body, config);
+  } catch (err) {
+    console.error(err.message);
+  }
+};

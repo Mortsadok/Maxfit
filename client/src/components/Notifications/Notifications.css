@@ -7,6 +7,7 @@
   margin-top: 25px;
   margin-bottom: 20px;
   margin-right: 50px;
+  overflow: auto;
 }
 
 .Notifications {
@@ -35,14 +36,15 @@
   direction: ltr;
   text-align: center;
   min-width: 500px;
+  cursor: pointer;
 }
 
 .mr-auto {
-  margin-left: 63px; /* צריך לשים את שם כותב ההודעה באמצע */
+  margin-left: 63px;
+  /* צריך לשים את שם כותב ההודעה באמצע */
 }
 
-.toat-header {
-}
+.toat-header {}
 
 .fade.toast.show {
   margin-left: auto;

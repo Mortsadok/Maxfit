@@ -7,25 +7,35 @@ import MobileNav from '../Mobile/MobileNav';
 import PropTypes from 'prop-types';
 // Redux
 import { connect } from 'react-redux';
-import { getUpdates } from '../../actions/updateAction';
-const Notifications = ({ getUpdates, get_updates }) => {
+import { getUpdates, changeReadMessage } from '../../actions/updateAction';
+const Notifications = ({ getUpdates, get_updates, changeReadMessage }) => {
   useEffect(() => {
     getUpdates();
   }, []);
   useEffect(() => {
     getUpdates();
   });
+  let style = {
+    backgroundColor: '#e3e3e3'
+  };
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
         <MobileNav />
-        <NotificationMobile />
+        <NotificationMobile
+          get_updates={get_updates}
+          changeReadMessage={changeReadMessage}
+        />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
         <Navbar />
         <div className='Notifications'>
           <div className='NotificationsCenter'>
-            <NotificationsBox1 get_updates={get_updates} />
+            <NotificationsBox1
+              get_updates={get_updates}
+              style={style}
+              changeReadMessage={changeReadMessage}
+            />
             <NotificationsBox2 />
           </div>
         </div>
@@ -34,19 +44,32 @@ const Notifications = ({ getUpdates, get_updates }) => {
   );
 };
 
-const NotificationsBox1 = ({ get_updates }) => (
+const NotificationsBox1 = ({ get_updates, changeReadMessage }) => (
   <div className='NotificationsBox1'>
     <p className='font-weight-light'>עדכונים</p>
     {get_updates.map(update => (
-      <Toast>
-        <Toast.Header>
-          <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
-          <strong className='mr-auto'>
-            הודעה מאת {`${update.firstname}  ${update.lastname}`}
-          </strong>
-        </Toast.Header>
-        <Toast.Body>{update.update}</Toast.Body>
-      </Toast>
+      <Fragment>
+        <Toast
+          onClick={() => changeReadMessage(update._id, true)}
+          id={!update.readMessage ? 'toastBackground' : 'toastReadMessage'}
+        >
+          <Toast.Header
+            id={!update.readMessage ? 'toastBackground' : 'toastReadMessage'}
+          >
+            <img
+              src='holder.js/20x20?text=%20'
+              className='rounded mr-2'
+              alt=''
+            />
+            <strong className='mr-auto'>
+              הודעה מאת {`${update.firstname}  ${update.lastname}`}
+            </strong>
+          </Toast.Header>
+          <Toast.Body id={!update.readMessage ? 'toastFontColor' : null}>
+            {update.update}
+          </Toast.Body>
+        </Toast>
+      </Fragment>
     ))}
   </div>
 );
@@ -72,20 +95,27 @@ const NotificationsBox2 = () => (
     </div>
   </div>
 );
-const NotificationMobile = () => (
+const NotificationMobile = ({ get_updates, changeReadMessage }) => (
   <div className='Mobile'>
     <div className='notificationsMobile'>
       <main className='main'>
-        <NotificationsBox1 />
+        <NotificationsBox1
+          get_updates={get_updates}
+          changeReadMessage={changeReadMessage}
+        />
         <NotificationsBox2 />
       </main>
     </div>
   </div>
 );
 Notifications.propTypes = {
-  getUpdates: PropTypes.array
+  getUpdates: PropTypes.array,
+  changeReadMessage: PropTypes.func,
+  getUpdates: PropTypes.func
 };
 const mapStateToProps = state => ({
   get_updates: state.updatesReducer.get_updates
 });
-export default connect(mapStateToProps, { getUpdates })(Notifications);
+export default connect(mapStateToProps, { getUpdates, changeReadMessage })(
+  Notifications
+);
