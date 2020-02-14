@@ -8,7 +8,7 @@ import moment from "moment";
 
 const Live = () => {
   const getCurrentTime = () => {
-    setTime(moment().format("h:mm:ss"));
+    setTime(moment().format("HH:mm:ss"));
   };
   const [getTime, setTime] = useState(null);
   useEffect(() => {

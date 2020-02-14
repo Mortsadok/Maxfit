@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import PropTypes from "prop-types";
-import { Card, Badge } from "react-bootstrap";
+import { Card, Badge, Form, Button } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser as FasUser } from "@fortawesome/free-regular-svg-icons";
@@ -53,30 +53,40 @@ const Login = ({ login, isAuth }) => {
                     <FontAwesomeIcon className="Main-Icon" icon={FasUser} />
                     <header className="Main-Title"> התחברות</header>
 
-                    <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
-                      <label>דואר אלקטרוני</label>
-                      <input
+                    <Form.Group
+                      className="Login_Form"
+                      controlId="formBasicEmail"
+                    >
+                      <Form.Label>דואר אלקטרוני</Form.Label>
+                      <Form.Control
                         type="text"
                         name="Email"
                         value={Email}
                         onChange={e => onChange(e)}
-                        placeholder="דואר אלקטרוני"
                       />
-                      <label>סיסמה</label>
-                      <input
+                    </Form.Group>
+
+                    <Form.Group
+                      className="Login_Form"
+                      controlId="formBasicPassword"
+                    >
+                      <Form.Label>סיסמא</Form.Label>
+                      <Form.Control
                         type={typeState ? "text" : "password"}
                         name="Password"
                         value={Password}
                         onChange={e => onChange(e)}
-                        placeholder="סיסמה"
                       />
                       <label>הצג סיסמה</label>
                       <input
                         type="checkbox"
                         onClick={() => setType(!typeState)}
                       />
+                    </Form.Group>
 
+                    <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
                       <input type="submit" name="Password" value="התחבר" />
+                      {/* לשנות את כפתור התחבר לאותו הדבר כמו כפתור הירשם */}
                       <div className="Alert">
                         <Alert />
                       </div>
@@ -85,10 +95,11 @@ const Login = ({ login, isAuth }) => {
                           <Link to="/forgotPass">שכחת את הסיסמה?</Link>
                         </div>
                         <div className="LoginApp-text">
-                          איך לך משתמש?
+                          אין לך משתמש?
                           <span className="Link-Color">
-                            <Link to="/Register" className="RegistarButton">
-                              הירשם כעת
+                            <Link to="/Register">
+                              <Button variant="outline-dark">הירשם כעת</Button>
+                              {/*'להוריד את כפתור 'הירשם כעת' מתחת ל'אין לך משתמש*/}
                             </Link>
                           </span>
                         </div>
