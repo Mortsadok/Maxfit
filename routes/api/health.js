@@ -27,7 +27,14 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { firstName, lastName, documentsText, userId } = req.body;
+    const {
+      firstName,
+      lastName,
+      documentsText,
+      userId,
+      readMessage,
+      subject
+    } = req.body;
 
     try {
       let healthClient = await Health.findOne({ userId });
@@ -41,7 +48,9 @@ router.post(
         firstName,
         lastName,
         documentsText,
-        userId
+        userId,
+        readMessage,
+        subject
       });
       await healthClient.save();
       res.json(req.body);
