@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import PropTypes from "prop-types";
-import { Card, Badge } from "react-bootstrap";
+import { Card, Badge, Button } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressCard as FasAddressCard } from "@fortawesome/free-regular-svg-icons";
@@ -170,7 +170,13 @@ const Register = ({ register, isAuth, setAlert }) => {
                         onClick={() => setType(!typeState)}
                       />
 
-                      <input type="submit" name="Password" value="הרשמה" />
+                      <Button
+                        id="buttonPosition"
+                        type="submit"
+                        variant="outline-dark"
+                      >
+                        הירשם
+                      </Button>
                       <div className="Alert">
                         <Alert />
                       </div>
@@ -181,8 +187,12 @@ const Register = ({ register, isAuth, setAlert }) => {
                         <div className="LoginApp-text">
                           משתמש קיים?
                           <span className="Link-Color">
-                            <Link to="/Login" className="RegistarButton">
-                              התחבר
+                            <Link
+                              className="btnn"
+                              id="buttonPosition"
+                              to="/Login"
+                            >
+                              <Button variant="outline-dark">התחבר</Button>
                             </Link>
                           </span>
                         </div>

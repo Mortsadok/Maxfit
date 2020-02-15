@@ -79,11 +79,17 @@ button:not(:disabled) {
   line-height: 1;
   text-align: center;
   white-space: nowrap;
+  justify-content: center;
   vertical-align: baseline;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
+#buttonPosition {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
 .badge-headline .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
@@ -106,4 +112,12 @@ button:not(:disabled) {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5rem;
+}
+
+.cnt_btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  width: 100px;
 }

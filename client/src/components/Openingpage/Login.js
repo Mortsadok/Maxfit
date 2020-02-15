@@ -85,8 +85,9 @@ const Login = ({ login, isAuth }) => {
                     </Form.Group>
 
                     <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
-                      <input type="submit" name="Password" value="התחבר" />
-                      {/* לשנות את כפתור התחבר לאותו הדבר כמו כפתור הירשם */}
+                      <Button type="submit" variant="outline-dark">
+                        התחבר
+                      </Button>
                       <div className="Alert">
                         <Alert />
                       </div>
@@ -98,8 +99,12 @@ const Login = ({ login, isAuth }) => {
                           אין לך משתמש?
                           <span className="Link-Color">
                             <Link to="/Register">
-                              <Button variant="outline-dark">הירשם כעת</Button>
-                              {/*'להוריד את כפתור 'הירשם כעת' מתחת ל'אין לך משתמש*/}
+                              <Button
+                                className="cnt_btn"
+                                variant="outline-dark"
+                              >
+                                הירשם כעת
+                              </Button>
                             </Link>
                           </span>
                         </div>
