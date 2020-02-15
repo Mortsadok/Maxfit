@@ -28,14 +28,13 @@
   justify-content: center;
 }
 
-
 .Quantity {
-  position: fixed;
+  position: absolute;
   display: block;
   top: 15px;
   padding-top: 1px;
-  height: 18px;
-  width: 18px;
+  height: 17px;
+  width: 17px;
   line-height: 15px;
   margin-right: 22px;
   text-align: center;
@@ -101,10 +100,10 @@ a:hover {
 }
 
 #toastBackground {
-  background: #e3e3e3
+  background: #e3e3e3;
 }
 
-.toastFontColor: {
+.toastFontColor {
   color: white;
 }
 
@@ -116,5 +115,4 @@ a:hover {
   position: absolute;
   margin-right: 85rem;
   margin-top: 20px;
-
 }
