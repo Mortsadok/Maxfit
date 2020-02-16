@@ -1,38 +1,38 @@
-import React, { useState, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import '../../../css/Myprofile.css';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Navbar from '../../Navbar/Navbar';
-import MobileNav from '../../Mobile/MobileNav';
-import Alert from '../../Layout/Alert';
-import MediaQuery from 'react-responsive';
-import uuid from 'uuid';
+import React, { useState, Fragment } from "react";
+import PropTypes from "prop-types";
+import "../../../css/Myprofile.css";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Navbar from "../../Navbar/Navbar";
+import MobileNav from "../../Mobile/MobileNav";
+import Alert from "../../Layout/Alert";
+import MediaQuery from "react-responsive";
+import uuid from "uuid";
 // Redux
-import { connect } from 'react-redux';
-import { Nclient } from '../../../actions/NclientAction';
-import SecNav from '../SecNav';
+import { connect } from "react-redux";
+import { Nclient } from "../../../actions/NclientAction";
+import SecNav from "../SecNav";
 
 const Subscription = ({ Nclient, user }) => {
   const { phone, Name, id } = user;
   let fullName = [];
   // useState
   if (Name !== undefined) {
-    fullName = Name.split(' ');
+    fullName = Name.split(" ");
   }
   const [typeData, setTypeData] = useState([
-    { id: 1, label: 'רגיל', value: 200, selected: false },
-    { id: 2, label: 'סטודנט', value: 150, selected: false }
+    { id: 1, label: "רגיל", value: 200, selected: false },
+    { id: 2, label: "סטודנט", value: 150, selected: false }
   ]);
   const [timeData, setTimeData] = useState([
-    { id: 3, label: 'חודש', value: 1, selected: false },
-    { id: 4, label: 'שלושה חודשים', value: 3, selected: false },
-    { id: 5, label: 'שנה', value: 12, selected: false }
+    { id: 3, label: "חודש", value: 1, selected: false },
+    { id: 4, label: "שלושה חודשים", value: 3, selected: false },
+    { id: 5, label: "שנה", value: 12, selected: false }
   ]);
   const [paymentData, setPaymentData] = useState([
-    { id: 6, label: 'מזומן', value: 'מזומן', selected: false },
-    { id: 7, label: 'אשראי', value: 'אשראי', selected: false }
+    { id: 6, label: "מזומן", value: "מזומן", selected: false },
+    { id: 7, label: "אשראי", value: "אשראי", selected: false }
   ]);
   const [typeName, setTypeName] = useState({});
   const [timeName, setTimeName] = useState({});
@@ -41,13 +41,13 @@ const Subscription = ({ Nclient, user }) => {
   const [calcTime, setCalcTime] = useState({});
   const [calcPayment, setCalcPayment] = useState({});
   const [formData, setFormData] = useState({
-    Type: '',
-    Time: '',
-    Payment: '',
+    Type: "",
+    Time: "",
+    Payment: "",
     Total: 0
   });
   const onChange = (e, id) => {
-    if (e.target.value === 'typeData') {
+    if (e.target.value === "typeData") {
       setTypeData(
         typeData.map(type => {
           if (type.id === id && type.selected === false) {
@@ -59,7 +59,7 @@ const Subscription = ({ Nclient, user }) => {
         })
       );
     }
-    if (e.target.value === 'timeData') {
+    if (e.target.value === "timeData") {
       setTimeData(
         timeData.map(time => {
           if (time.id === id && time.selected === false) {
@@ -71,7 +71,7 @@ const Subscription = ({ Nclient, user }) => {
         })
       );
     }
-    if (e.target.value === 'paymentData') {
+    if (e.target.value === "paymentData") {
       setPaymentData(
         paymentData.map(payment => {
           if (payment.id === id && payment.selected === false) {
@@ -108,16 +108,16 @@ const Subscription = ({ Nclient, user }) => {
     }, 2000);
     setFormData({
       ...formData,
-      firstname: '',
-      lastname: '',
-      id: '',
-      Phone: ''
+      firstname: "",
+      lastname: "",
+      id: "",
+      Phone: ""
     });
-    setTimeName('');
-    setTypeName('');
-    setCalcTime('');
-    setCalcType('');
-    setCalcPayment('');
+    setTimeName("");
+    setTypeName("");
+    setCalcTime("");
+    setCalcType("");
+    setCalcPayment("");
     setTypeData(
       typeData.map(type => {
         return { ...type, selected: false };
@@ -149,7 +149,7 @@ const Subscription = ({ Nclient, user }) => {
         />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
-        <div className='Subscription'>
+        <div className="Subscription">
           <Navbar />
           <SecNav />
           <UnderNAV
@@ -174,24 +174,24 @@ const UnderNAV = ({
   calculationData,
   onSubmit
 }) => (
-  <div className='underNAV'>
-    <div className='Inside-box'>
-      <div className='Headline'>
-        <p className='font-weight-light'>חידוש מנוי</p>
-        <div className='SubscriptionMenu'>
-          <Card border='secondary' style={{ width: '50rem' }}>
+  <div className="underNAV">
+    <div className="Inside-box">
+      <div className="Headline">
+        <p className="font-weight-light">חידוש מנוי</p>
+        <div className="SubscriptionMenu">
+          <Card border="secondary" style={{ width: "50rem" }}>
             <Card.Body>
               <Card.Text>
-                <Form.Label id='subLabel'>סוג מנוי</Form.Label>
+                <Form.Label id="subLabel">סוג מנוי</Form.Label>
                 {typeData.map(type => (
-                  <span key={type.id} className='mb-3'>
+                  <span key={type.id} className="mb-3">
                     <Form.Check
                       custom
                       inline
                       label={type.label}
                       id={type.id}
-                      type='radio'
-                      value={'typeData'}
+                      type="radio"
+                      value={"typeData"}
                       checked={type.selected}
                       onChange={e => onChange(e, type.id)}
                     />
@@ -199,16 +199,16 @@ const UnderNAV = ({
                 ))}
               </Card.Text>
               <Card.Text>
-                <Form.Label id='subLabel'>תקופת מנוי</Form.Label>
+                <Form.Label id="subLabel">תקופת מנוי</Form.Label>
                 {timeData.map(time => (
-                  <span key={time.id} className='mb-3'>
+                  <span key={time.id} className="mb-3">
                     <Form.Check
                       custom
                       inline
                       label={time.label}
                       id={time.id}
-                      value={'timeData'}
-                      type='radio'
+                      value={"timeData"}
+                      type="radio"
                       checked={time.selected}
                       onChange={e => onChange(e, time.id)}
                     />
@@ -216,16 +216,16 @@ const UnderNAV = ({
                 ))}
               </Card.Text>
               <Card.Text>
-                <Form.Label id='subLabel'>אמצעי תשלום</Form.Label>
+                <Form.Label id="subLabel">אמצעי תשלום</Form.Label>
                 {paymentData.map(payment => (
-                  <span key={payment.id} className='mb-3'>
+                  <span key={payment.id} className="mb-3">
                     <Form.Check
                       custom
                       inline
                       label={payment.label}
                       id={payment.id}
-                      type='radio'
-                      value={'paymentData'}
+                      type="radio"
+                      value={"paymentData"}
                       checked={payment.selected}
                       onChange={e => onChange(e, payment.id)}
                     />
@@ -233,13 +233,13 @@ const UnderNAV = ({
                 ))}
               </Card.Text>
             </Card.Body>
-            <div className='Sum'>
+            <div className="Sum">
               סה"כ לתשלום:
               <span>₪{calculationData}</span>
             </div>
             <Card.Footer>
               <Form onSubmit={e => onSubmit(e)}>
-                <Button variant='outline-success' type='submit'>
+                <Button variant="outline-success" type="submit">
                   חדש מנוי
                 </Button>
               </Form>
@@ -259,9 +259,9 @@ const MobileSubscription = ({
   calculationData,
   onSubmit
 }) => (
-  <div className='Mobile'>
-    <div className='MobileSub'>
-      <main className='main'>
+  <div className="Mobile">
+    <div className="MobileSub">
+      <main className="main">
         <UnderNAV
           typeData={typeData}
           timeData={timeData}

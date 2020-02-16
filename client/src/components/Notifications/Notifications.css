@@ -44,7 +44,8 @@
   /* צריך לשים את שם כותב ההודעה באמצע */
 }
 
-.toat-header {}
+.toat-header {
+}
 
 .fade.toast.show {
   margin-left: auto;

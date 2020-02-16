@@ -26,7 +26,6 @@ h2 {
 .Openingpage .w-100 {
   width: 100% !important;
   height: unset;
-  padding: 1.25rem;
 }
 
 .Openingpage .carousel-inner {
@@ -35,19 +34,9 @@ h2 {
 
 .MainPage-text button {
   width: 115px;
-  color: #fff;
+  color: #343a40;
   font-size: 20px;
-  background-color: #353c3f;
-  background-clip: padding-box;
-  border: 2px solid #f8f9fa;
-  border-radius: 0.8rem;
   display: block;
-  outline: none;
-  text-decoration: none;
-  -webkit-transition: border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  padding: 0.3rem;
 }
 
 button:not(:disabled) {
