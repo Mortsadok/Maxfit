@@ -255,14 +255,15 @@
 }
 
 .SettingsInfo {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .SettingsHeadline {
-  margin: 0.5rem;
-  font-size: 23px;
+  font-size: 18px;
   text-align: center;
+  margin-top: 10px;
 }
 
 #subLabel {
@@ -381,6 +382,13 @@
 
 .resetEmailForm .alert {
   font-size: 16px;
+}
+
+.useLine {
+  border-top: 1px solid black;
+  width: 13rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media only screen and (max-width: 700px) {
