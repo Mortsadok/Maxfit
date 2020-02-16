@@ -8,7 +8,6 @@ import Navbar from "../../Navbar/Navbar";
 import MobileNav from "../../Mobile/MobileNav";
 import Alert from "../../Layout/Alert";
 import MediaQuery from "react-responsive";
-import uuid from "uuid";
 // Redux
 import { connect } from "react-redux";
 import { Nclient } from "../../../actions/NclientAction";
@@ -179,73 +178,101 @@ const UnderNAV = ({
       <div className="Headline">
         <p className="font-weight-light">חידוש מנוי</p>
         <div className="SubscriptionMenu">
-          <Card border="secondary" style={{ width: "50rem" }}>
+          <div className="testCard">
             <Card.Body>
-              <Card.Text>
-                <Form.Label id="subLabel">סוג מנוי</Form.Label>
-                {typeData.map(type => (
-                  <span key={type.id} className="mb-3">
-                    <Form.Check
-                      custom
-                      inline
-                      label={type.label}
-                      id={type.id}
-                      type="radio"
-                      value={"typeData"}
-                      checked={type.selected}
-                      onChange={e => onChange(e, type.id)}
-                    />
-                  </span>
-                ))}
-              </Card.Text>
-              <Card.Text>
-                <Form.Label id="subLabel">תקופת מנוי</Form.Label>
-                {timeData.map(time => (
-                  <span key={time.id} className="mb-3">
-                    <Form.Check
-                      custom
-                      inline
-                      label={time.label}
-                      id={time.id}
-                      value={"timeData"}
-                      type="radio"
-                      checked={time.selected}
-                      onChange={e => onChange(e, time.id)}
-                    />
-                  </span>
-                ))}
-              </Card.Text>
-              <Card.Text>
-                <Form.Label id="subLabel">אמצעי תשלום</Form.Label>
-                {paymentData.map(payment => (
-                  <span key={payment.id} className="mb-3">
-                    <Form.Check
-                      custom
-                      inline
-                      label={payment.label}
-                      id={payment.id}
-                      type="radio"
-                      value={"paymentData"}
-                      checked={payment.selected}
-                      onChange={e => onChange(e, payment.id)}
-                    />
-                  </span>
-                ))}
-              </Card.Text>
+              <div className="CustomSize">
+                <Card style={({ width: "20rem" }, { margin: "5px" })}>
+                  <Card.Body>
+                    <Card.Title>סוג מנוי</Card.Title>
+                    {typeData.map(type => (
+                      <span key={type.id} className="mb-3">
+                        <Form.Check
+                          custom
+                          inline
+                          label={type.label}
+                          id={type.id}
+                          type="radio"
+                          value={"typeData"}
+                          checked={type.selected}
+                          onChange={e => onChange(e, type.id)}
+                        />
+                      </span>
+                    ))}
+                  </Card.Body>
+                </Card>
+
+                <Card style={({ width: "20rem" }, { margin: "5px" })}>
+                  <Card.Body>
+                    <Card.Title>תקופת מנוי</Card.Title>
+
+                    {timeData.map(time => (
+                      <span key={time.id} className="mb-3">
+                        <Form.Check
+                          custom
+                          inline
+                          label={time.label}
+                          id={time.id}
+                          value={"timeData"}
+                          type="radio"
+                          checked={time.selected}
+                          onChange={e => onChange(e, time.id)}
+                        />
+                      </span>
+                    ))}
+                  </Card.Body>
+                </Card>
+
+                <Card style={({ width: "20rem" }, { margin: "5px" })}>
+                  <Card.Body>
+                    <Card.Title>אמצעי תשלום</Card.Title>
+
+                    {paymentData.map(payment => (
+                      <span key={payment.id} className="mb-3">
+                        <Form.Check
+                          custom
+                          inline
+                          label={payment.label}
+                          id={payment.id}
+                          type="radio"
+                          value={"paymentData"}
+                          checked={payment.selected}
+                          onChange={e => onChange(e, payment.id)}
+                        />
+                      </span>
+                    ))}
+                  </Card.Body>
+                </Card>
+              </div>
+              <Card
+                style={
+                  ({ width: "20rem" }, { height: "9rem" }, { padding: "1rem" })
+                }
+              >
+                <Card.Body>
+                  <Card.Title>סה"כ לתשלום:</Card.Title>
+
+                  <div className="Sum">
+                    <h4>
+                      {" "}
+                      <span>₪{calculationData}</span>{" "}
+                    </h4>
+                  </div>
+                  <Card.Footer>
+                    <Form onSubmit={e => onSubmit(e)}>
+                      <Button
+                        className="RenewBTN"
+                        variant="outline-success"
+                        type="submit"
+                      >
+                        חדש מנוי
+                      </Button>
+                    </Form>
+                    <Alert />
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
             </Card.Body>
-            <div className="Sum">
-              סה"כ לתשלום:
-              <span>₪{calculationData}</span>
-            </div>
-            <Card.Footer>
-              <Form onSubmit={e => onSubmit(e)}>
-                <Button variant="outline-success" type="submit">
-                  חדש מנוי
-                </Button>
-              </Form>
-              <Alert />
-            </Card.Footer>
-          </Card>
+          </div>
         </div>
       </div>
     </div>

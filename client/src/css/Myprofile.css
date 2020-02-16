@@ -143,8 +143,15 @@
 
 .card-body {
   padding: 0.4rem;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
+.CustomSize {
+  text-align: center;
+  flex-wrap: wrap;
+  display: inline-flex;
+}
 .userMSG {
   text-align: center;
   font-size: 20px;
@@ -192,7 +199,7 @@
   font-family: sans-serif;
 }
 
-.Train-content input[type='radio'] {
+.Train-content input[type="radio"] {
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -271,10 +278,12 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 3.5rem;
 }
 
+.RenewBTN {
+  width: 8rem;
+}
 .card.border-secondary {
   height: 350px;
 }
@@ -289,7 +298,7 @@
 
 .Subscription .card-text {
   border-bottom: 1px solid #6c757d;
-  padding: .75rem;
+  padding: 0.75rem;
 }
 
 .Sum {
@@ -333,7 +342,7 @@
   height: 300px;
 }
 
-.custom-control-input:checked~.custom-control-label::before {
+.custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   border-color: #3d92d3;
   background-color: #3d92d3;
@@ -390,7 +399,7 @@
   }
 
   .MobileHealth .HealthPolicy-content {
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   .MobileHealth .Form-content {
@@ -493,8 +502,6 @@
     margin-top: unset;
     border: unset;
   }
-
-
 
   .Processing-form .btn {
     width: unset;
@@ -618,5 +625,4 @@
   .notificationsMobile .mr-auto {
     white-space: pre;
   }
-
 }
