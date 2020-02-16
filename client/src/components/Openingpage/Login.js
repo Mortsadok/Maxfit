@@ -85,7 +85,11 @@ const Login = ({ login, isAuth }) => {
                     </Form.Group>
 
                     <form className="MainPage-Form" onSubmit={e => onSubmit(e)}>
-                      <Button type="submit" variant="outline-dark">
+                      <Button
+                        className="cnt_btn"
+                        type="submit"
+                        variant="outline-dark"
+                      >
                         התחבר
                       </Button>
                       <div className="Alert">

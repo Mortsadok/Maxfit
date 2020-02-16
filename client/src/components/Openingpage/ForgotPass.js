@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import PropTypes from "prop-types";
-import { Card, Badge } from "react-bootstrap";
+import { Card, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUnlockAlt } from "@fortawesome/free-solid-svg-icons";
@@ -90,7 +90,15 @@ const ForgotPass = ({ resetPassword, setAlert }) => {
                         onClick={() => setType(!typeState)}
                       />
 
-                      <input type="submit" name="Password" value="אפס סיסמה" />
+                      <Button
+                        className="cnt_btn"
+                        type="submit"
+                        name="Password"
+                        value="אפס סיסמה"
+                        variant="outline-dark"
+                      >
+                        אפס סיסמא
+                      </Button>
 
                       <div className="Alert">
                         <Alert />
@@ -98,8 +106,10 @@ const ForgotPass = ({ resetPassword, setAlert }) => {
                       <div className="LoginApp-text">
                         משתמש קיים?
                         <span className="Link-Color">
-                          <Link to="/Login" className="RegistarButton">
-                            התחבר
+                          <Link id="buttonPosition" to="/Login">
+                            <Button className="cnt_btn" variant="outline-dark">
+                              התחבר
+                            </Button>
                           </Link>
                         </span>
                       </div>

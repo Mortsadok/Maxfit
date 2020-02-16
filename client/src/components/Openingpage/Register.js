@@ -187,12 +187,13 @@ const Register = ({ register, isAuth, setAlert }) => {
                         <div className="LoginApp-text">
                           משתמש קיים?
                           <span className="Link-Color">
-                            <Link
-                              className="btnn"
-                              id="buttonPosition"
-                              to="/Login"
-                            >
-                              <Button variant="outline-dark">התחבר</Button>
+                            <Link id="buttonPosition" to="/Login">
+                              <Button
+                                className="cnt_btn"
+                                variant="outline-dark"
+                              >
+                                התחבר
+                              </Button>
                             </Link>
                           </span>
                         </div>
