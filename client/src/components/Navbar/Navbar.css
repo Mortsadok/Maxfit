@@ -10,12 +10,13 @@
   display: flex;
   width: 60%;
   margin: auto;
+  margin-left: 258px;
 }
 
 .Notifications-att {
   color: #353c3f;
   font-size: 1.2rem;
-  width: 85px;
+  width: 35px;
   border: none;
   outline: none;
   background-repeat: no-repeat;
@@ -28,6 +29,20 @@
   justify-content: center;
 }
 
+.SignOut {
+  font-size: 1.2rem;
+  width: 35px;
+  color: #353c3f;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 65px;
+}
+
 .Quantity {
   position: absolute;
   display: block;
@@ -36,7 +51,7 @@
   height: 17px;
   width: 17px;
   line-height: 15px;
-  margin-right: 22px;
+  margin-right: -3px;
   text-align: center;
   background: #ff4b5a;
   color: #fff;
@@ -113,6 +128,6 @@ a:hover {
   font-size: 20px;
   font-weight: 600;
   position: absolute;
-  margin-right: 85rem;
+  margin-right: 83rem;
   margin-top: 20px;
 }
