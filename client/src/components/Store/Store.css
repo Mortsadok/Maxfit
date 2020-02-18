@@ -55,6 +55,10 @@
   padding: 0px;
 }
 
+.carousel {
+  position: relative;
+}
+
 .Flex-content {
   display: flex;
   flex-wrap: wrap;

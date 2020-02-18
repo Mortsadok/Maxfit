@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "./Navbar.css";
 import "../../img/Img.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -51,9 +52,12 @@ const Navbar = ({ user, get_updates }) => {
           </span>
 
           <div className="accountName">{Name}</div>
-          <button className="SignOut">
-            <FontAwesomeIcon icon={faSignOutAlt} />
-          </button>
+
+          <Link to="/">
+            <button className="SignOut">
+              <FontAwesomeIcon icon={faSignOutAlt} />
+            </button>
+          </Link>
         </div>
       </nav>
     </div>
