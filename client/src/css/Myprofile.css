@@ -38,6 +38,26 @@
   white-space: nowrap;
 }
 
+.muscleIcon {
+  color: black;
+}
+
+.CalendarCheck {
+  color: black;
+}
+
+.ListUL {
+  color: black;
+}
+
+.Heartbeat {
+  color: black;
+}
+
+.Settings {
+  color: black;
+}
+
 .Att a.active {
   color: #14629d;
 }
@@ -152,6 +172,15 @@
   flex-wrap: wrap;
   display: inline-flex;
 }
+
+.CustomSize .card {
+  width: 365px;
+}
+
+.testCard {
+  width: 80%;
+}
+
 .userMSG {
   text-align: center;
   font-size: 20px;
@@ -310,6 +339,8 @@
   border-color: #6c757d !important;
 }
 
+/* Processing */
+
 .Processing .card {
   border: unset;
 }
@@ -325,7 +356,7 @@
 
 .Processing-form .form-control {
   display: flex;
-  margin: 1rem auto 1rem auto;
+  margin: 0rem auto 1rem auto;
   padding: 2rem;
 }
 
@@ -334,7 +365,7 @@
   width: 20%;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 25px;
+  margin-top: 1rem;
   justify-content: center;
 }
 

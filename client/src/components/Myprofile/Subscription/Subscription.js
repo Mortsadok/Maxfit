@@ -245,7 +245,9 @@ const UnderNAV = ({
               </div>
               <Card
                 style={
-                  ({ width: "20rem" }, { height: "9rem" }, { padding: "1rem" })
+                  ({ width: "20rem" },
+                  { height: "9rem" },
+                  { padding: "0.5rem" })
                 }
               >
                 <Card.Body>
