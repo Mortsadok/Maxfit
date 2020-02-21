@@ -224,7 +224,7 @@
   border-radius: 0px;
   width: 45px;
   font-size: 20px;
-  font-family: sans-serif;
+  font-family: Calibri;
 }
 
 .Train-content input[type="radio"] {
@@ -336,7 +336,7 @@
 
 .card.border-secondary {
   height: auto;
-  border-color: #6c757d !important;
+  border-color: #ced4da !important;
 }
 
 /* Processing */
