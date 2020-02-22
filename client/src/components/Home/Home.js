@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import homeimg from '../../img/homeimg.jpg';
 import brushstorke from '../../components/Home/brushstorke.png';
@@ -13,7 +13,14 @@ import MediaQuery from 'react-responsive';
 // Redux
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-const Home = ({ isAuth }) => {
+import { getUpdates } from '../../actions/updateAction';
+const Home = ({ isAuth, getUpdates }) => {
+  useEffect(() => {
+    getUpdates();
+  }, []);
+  useEffect(() => {
+    getUpdates();
+  });
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
@@ -119,4 +126,4 @@ Home.propTypes = {
 const mapStateToProps = state => ({
   isAuth: state.authReducer.isAuth
 });
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { getUpdates })(Home);
