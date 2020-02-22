@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
 import './Store.css';
@@ -19,8 +19,14 @@ import pic14 from '../../img/Nike Metcon Black-Volt.png';
 import Navbar from '../Navbar/Navbar';
 import MobileNav from '../Mobile/MobileNav';
 import MediaQuery from 'react-responsive';
+import { getUpdates } from '../../actions/updateAction';
+// Redux
+import { connect } from 'react-redux';
 
-const Store = () => {
+const Store = ({ get_updates }) => {
+  useEffect(() => {
+    getUpdates();
+  }, [get_updates]);
   const storeImages = [
     { src: pic1, alt: 'BPI - BULK MUSCLE' },
     { src: pic2, alt: 'Dymatize Super Mass' },
@@ -98,4 +104,7 @@ const MobileStore = ({ storeImages, storeImages1 }) => (
     </div>
   </div>
 );
-export default Store;
+const mapStateToProps = state => ({
+  get_updates: state.updatesReducer.get_updates
+});
+export default connect(mapStateToProps)(Store);
