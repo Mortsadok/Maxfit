@@ -17,8 +17,9 @@ import { Badge } from 'react-bootstrap';
 // Redux
 import { connect } from 'react-redux';
 import { Logout } from '../../actions/authActions';
+import { getUpdates } from '../../actions/updateAction';
 
-const OpeningPage = ({ isAuth, Logout }) => {
+const OpeningPage = ({ isAuth, Logout, getUpdates, get_updates }) => {
   const images = [
     { src: Notifications, alt: 'Notifications' },
     { src: Store, alt: 'Store' },
@@ -29,10 +30,11 @@ const OpeningPage = ({ isAuth, Logout }) => {
     { src: Subscription, alt: 'Subscription' }
   ];
   useEffect(() => {
+    getUpdates();
     if (isAuth) {
       Logout();
     }
-  });
+  }, [get_updates]);
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
@@ -127,6 +129,7 @@ OpeningPage.propTypes = {
   Logout: PropTypes.func.isRequired
 };
 const mapStateToProps = state => ({
-  isAuth: state.authReducer.isAuth
+  isAuth: state.authReducer.isAuth,
+  get_updates: state.updatesReducer.get_updates
 });
 export default connect(mapStateToProps, { Logout })(OpeningPage);

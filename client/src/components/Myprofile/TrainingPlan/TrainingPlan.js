@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../../../css/Myprofile.css';
 import { ButtonGroup, Button, Form, Card } from 'react-bootstrap';
@@ -11,8 +11,12 @@ import MediaQuery from 'react-responsive';
 import { setTrainingPlan } from '../../../actions/trainingAction';
 import { connect } from 'react-redux';
 import MobileNav from '../../Mobile/MobileNav';
+import { getUpdates } from '../../../actions/updateAction';
 
-const TrainingPlan = ({ user, setTrainingPlan }) => {
+const TrainingPlan = ({ user, setTrainingPlan, getUpdates }) => {
+  useEffect(() => {
+    getUpdates();
+  });
   const { Name, email } = user;
   let name = [];
   const onChange = id => {
