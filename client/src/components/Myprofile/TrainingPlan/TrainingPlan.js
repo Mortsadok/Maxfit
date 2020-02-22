@@ -1,19 +1,16 @@
-import React, { useState, Fragment } from "react";
-import PropTypes from "prop-types";
-import "../../../css/Myprofile.css";
-import Card from "react-bootstrap/Card";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { CustomInput } from "reactstrap";
-import SecNav from "../SecNav";
-import Navbar from "../../Navbar/Navbar";
-import Alert from "../../Layout/Alert";
-import MediaQuery from "react-responsive";
+import React, { useState, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import '../../../css/Myprofile.css';
+import { ButtonGroup, Button, Form, Card } from 'react-bootstrap';
+import { CustomInput } from 'reactstrap';
+import SecNav from '../SecNav';
+import Navbar from '../../Navbar/Navbar';
+import Alert from '../../Layout/Alert';
+import MediaQuery from 'react-responsive';
 // Redux
-import { setTrainingPlan } from "../../../actions/trainingAction";
-import { connect } from "react-redux";
-import MobileNav from "../../Mobile/MobileNav";
+import { setTrainingPlan } from '../../../actions/trainingAction';
+import { connect } from 'react-redux';
+import MobileNav from '../../Mobile/MobileNav';
 
 const TrainingPlan = ({ user, setTrainingPlan }) => {
   const { Name, email } = user;
@@ -36,46 +33,46 @@ const TrainingPlan = ({ user, setTrainingPlan }) => {
   const [typeName, setTypeName] = useState(null);
   const [buttonValue, setButtonValue] = useState(null);
   const buttonGroup = [
-    "שבת",
-    "שישי",
-    "חמישי",
-    "רביעי",
-    "שלישי",
-    "שני",
-    "ראשון"
+    'שבת',
+    'שישי',
+    'חמישי',
+    'רביעי',
+    'שלישי',
+    'שני',
+    'ראשון'
   ];
   const [trainingData, setTrainingData] = useState([
     {
-      trainingType: "מסת  שריר",
+      trainingType: 'מסת  שריר',
       id: 1,
       selected: false,
       TrainingData:
-        " שיטת אימון המותאמת לפיתוח כוחם וגודלם של השרירים. כאשר הוא נערך בצורה נכונה, אימון משקולות יכול להביא לשיפור הבריאות ולהרגשה טובה."
+        ' שיטת אימון המותאמת לפיתוח כוחם וגודלם של השרירים. כאשר הוא נערך בצורה נכונה, אימון משקולות יכול להביא לשיפור הבריאות ולהרגשה טובה.'
     },
     {
-      trainingType: "עיצוב וחיטוב",
+      trainingType: 'עיצוב וחיטוב',
       id: 2,
       selected: false,
       TrainingData:
-        "מטרת פיתוח הגוף היא להציג את מסת השרירים, גודלם וחיטובם, באופן האומנותי, הסימטרי והאסתטי ככל האפשר."
+        'מטרת פיתוח הגוף היא להציג את מסת השרירים, גודלם וחיטובם, באופן האומנותי, הסימטרי והאסתטי ככל האפשר.'
     },
     {
-      trainingType: "אירובי",
+      trainingType: 'אירובי',
       id: 3,
       selected: false,
       TrainingData:
-        " מאמץ גופני תת-מרבי המפעיל קבוצות שרירים גדולות לזמן ממושך, כגון: הליכה, ריצה, רכיבה על אופניים, שחייה, סקי, זומבה ועוד."
+        ' מאמץ גופני תת-מרבי המפעיל קבוצות שרירים גדולות לזמן ממושך, כגון: הליכה, ריצה, רכיבה על אופניים, שחייה, סקי, זומבה ועוד.'
     },
     {
-      trainingType: "אימון פונקציונאלי",
+      trainingType: 'אימון פונקציונאלי',
       id: 4,
       selected: false,
       TrainingData:
-        "  אימון פונקציונלי מאפשר לאמן את הגוף לא כמכלול של שרירים מבודדים,  אלא כמערכת שלמה המסוגלת לבצע באופן איכותי את הפעולות הכי מגוונות."
+        '  אימון פונקציונלי מאפשר לאמן את הגוף לא כמכלול של שרירים מבודדים,  אלא כמערכת שלמה המסוגלת לבצע באופן איכותי את הפעולות הכי מגוונות.'
     }
   ]);
   if (Name !== undefined) {
-    name = Name.split(" ");
+    name = Name.split(' ');
   }
   return (
     <Fragment>
@@ -92,7 +89,7 @@ const TrainingPlan = ({ user, setTrainingPlan }) => {
         />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
-        <div className="TrainingPlan">
+        <div className='TrainingPlan'>
           <Navbar />
           <SecNav />
           <UnderNAV
@@ -116,21 +113,21 @@ const UnderNAV = ({
   setButtonValue,
   onSubmit
 }) => (
-  <div className="underNAV">
-    <div className="Inside-box">
-      <div className="Headline">
-        <p className="font-weight-light">תוכנית אימונים</p>
+  <div className='underNAV'>
+    <div className='Inside-box'>
+      <div className='Headline'>
+        <p className='font-weight-light'>תוכנית אימונים</p>
       </div>
-      <div className="userMSG">
+      <div className='userMSG'>
         {`שלום ${Name}, בחר בבקשה את תוכנית האימונים הרצויה:`}
       </div>
-      <div className="Train-content">
+      <div className='Train-content'>
         {trainingData.map((data, index) => (
-          <Card border="secondary" key={index} style={{ width: "19rem" }}>
+          <Card border='secondary' key={index} style={{ width: '19rem' }}>
             <Card.Header>
               <CustomInput
                 id={data.id}
-                type="radio"
+                type='radio'
                 onChange={() => onChange(data.id)}
                 checked={data.selected}
               />
@@ -143,14 +140,15 @@ const UnderNAV = ({
         ))}
       </div>
 
-      <div className="userMSG">בחר בבקשה באיזה ימים תרצה להתאמן:</div>
-      <div className="DaysTrain">
-        <ButtonGroup className="mr-2" aria-label="First group">
+      <div className='userMSG'>בחר בבקשה באיזה ימים תרצה להתאמן:</div>
+      <div className='DaysTrain'>
+        <ButtonGroup className='mr-2' aria-label='First group'>
           {buttonGroup.map((button, index) => (
             <Fragment key={index}>
               <Button
                 onClick={() => setButtonValue(button)}
-                variant="secondary"
+                variant='secondary'
+                selected={true}
               >
                 {button}
               </Button>
@@ -158,10 +156,10 @@ const UnderNAV = ({
           ))}
         </ButtonGroup>
       </div>
-      <div className="sendBtn">
-        <div className="btnsnd">
+      <div className='sendBtn'>
+        <div className='btnsnd'>
           <Form onSubmit={e => onSubmit(e)}>
-            <Button variant="outline-dark" type="submit">
+            <Button variant='outline-dark' type='submit'>
               בקש תוכנית אימונים
             </Button>
           </Form>
@@ -179,9 +177,9 @@ const MobileTraining = ({
   buttonGroup,
   setButtonValue
 }) => (
-  <div className="Mobile">
-    <div className="training">
-      <main className="main">
+  <div className='Mobile'>
+    <div className='training'>
+      <main className='main'>
         <UnderNAV
           Name={Name}
           onChange={onChange}
