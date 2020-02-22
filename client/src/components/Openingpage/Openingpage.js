@@ -132,4 +132,4 @@ const mapStateToProps = state => ({
   isAuth: state.authReducer.isAuth,
   get_updates: state.updatesReducer.get_updates
 });
-export default connect(mapStateToProps, { Logout })(OpeningPage);
+export default connect(mapStateToProps, { Logout, getUpdates })(OpeningPage);
