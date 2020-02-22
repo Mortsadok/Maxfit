@@ -146,6 +146,10 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.RegisterButton {
+  margin-top: 1rem;
+}
+
 .MainPage-Form input[type="password"] {
   display: block;
   width: 100%;
