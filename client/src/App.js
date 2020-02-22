@@ -7,6 +7,8 @@ import "./css/Main.css";
 import "./css/Mobile.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Myprofile from "./components/Myprofile/Myprofile";
+import BuildPlan from "./components/Myprofile/BuildPlan/BuildPlan";
+import ProcessGraph from "./components/Myprofile/ProcessGraph/ProcessGraph";
 import Processing from "./components/Myprofile/Processing/Processing";
 import Subscription from "./components/Myprofile/Subscription/Subscription";
 import TrainingPlan from "./components/Myprofile/TrainingPlan/TrainingPlan";
@@ -50,6 +52,8 @@ const App = () => {
             <Route path="/TrainingPlan" component={TrainingPlan} />
             <Route path="/UserSettings" component={UserSettings} />
             <Route path="/Health" component={Health} />
+            <Route path="/BuildPlan" component={BuildPlan} />
+            <Route path="/ProcessGraph" component={ProcessGraph} />
           </Switch>
         </div>
       </BrowserRouter>
