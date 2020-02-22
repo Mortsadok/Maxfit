@@ -35,7 +35,15 @@ const TrainingPlan = ({ user, setTrainingPlan }) => {
   };
   const [typeName, setTypeName] = useState(null);
   const [buttonValue, setButtonValue] = useState(null);
-  const buttonGroup = [1, 2, 3, 4, 5];
+  const buttonGroup = [
+    "שבת",
+    "שישי",
+    "חמישי",
+    "רביעי",
+    "שלישי",
+    "שני",
+    "ראשון"
+  ];
   const [trainingData, setTrainingData] = useState([
     {
       trainingType: "מסת  שריר",
@@ -135,7 +143,7 @@ const UnderNAV = ({
         ))}
       </div>
 
-      <div className="userMSG">כמה אימונים בשבוע?</div>
+      <div className="userMSG">בחר בבקשה באיזה ימים תרצה להתאמן:</div>
       <div className="DaysTrain">
         <ButtonGroup className="mr-2" aria-label="First group">
           {buttonGroup.map((button, index) => (

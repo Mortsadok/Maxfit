@@ -196,8 +196,8 @@
 }
 
 .mr-2.btn-group {
-  margin-right: 0px;
   margin-bottom: 0.8rem;
+  width: 550px;
 }
 
 .mr-2,
@@ -221,10 +221,12 @@
 }
 
 .btn.btn-secondary {
-  border-radius: 0px;
-  width: 45px;
+  width: 15px;
   font-size: 20px;
   font-family: Calibri;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
 .Train-content input[type="radio"] {
@@ -334,6 +336,9 @@
   text-align: center;
 }
 
+.btn-secondary:hover {
+  background-color: #343a40;
+}
 .card.border-secondary {
   height: auto;
   border-color: #ced4da !important;
