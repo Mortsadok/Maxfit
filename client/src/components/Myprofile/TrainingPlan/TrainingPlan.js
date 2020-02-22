@@ -16,6 +16,9 @@ import { getUpdates } from '../../../actions/updateAction';
 const TrainingPlan = ({ user, setTrainingPlan, getUpdates }) => {
   useEffect(() => {
     getUpdates();
+  }, []);
+  useEffect(() => {
+    getUpdates();
   });
   const { Name, email } = user;
   let name = [];
@@ -203,4 +206,6 @@ TrainingPlan.propTypes = {
 const mapStateToProps = state => ({
   user: state.authReducer.user
 });
-export default connect(mapStateToProps, { setTrainingPlan })(TrainingPlan);
+export default connect(mapStateToProps, { setTrainingPlan, getUpdates })(
+  TrainingPlan
+);
