@@ -31,6 +31,11 @@ h2 {
   height: unset;
 }
 
+#marginCard {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 .Openingpage .carousel-inner {
   width: unset;
 }
@@ -38,6 +43,7 @@ h2 {
 .carousel-indicators {
   visibility: hidden;
 }
+
 .MainPage-text button {
   width: 115px;
   color: #343a40;
@@ -80,12 +86,14 @@ button:not(:disabled) {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 #buttonPosition {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 100px;
 }
+
 .badge-headline .badge-pill {
   padding-right: 0.6em;
   padding-left: 0.6em;
