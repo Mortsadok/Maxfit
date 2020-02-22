@@ -1,11 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import '../../css/Myprofile.css';
 import Navbar from '../Navbar/Navbar';
 import SecNav from './SecNav';
 import MediaQuery from 'react-responsive';
 import MobileNav from '../Mobile/MobileNav';
-
-const Myprofile = () => {
+import { connect } from 'react-redux';
+import { getUpdates } from '../../actions/updateAction';
+const Myprofile = ({ getUpdates }) => {
+  useEffect(() => {
+    getUpdates();
+  }, []);
+  useEffect(() => {
+    getUpdates();
+  });
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
@@ -27,4 +34,4 @@ const MobileMyProfile = () => (
     <main className='main'></main>
   </div>
 );
-export default Myprofile;
+export default connect(null, { getUpdates })(Myprofile);
