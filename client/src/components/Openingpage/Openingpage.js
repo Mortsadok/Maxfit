@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 import { Logout } from '../../actions/authActions';
 import { getUpdates } from '../../actions/updateAction';
 
-const OpeningPage = ({ isAuth, Logout, getUpdates, get_updates }) => {
+const OpeningPage = ({ isAuth, Logout, getUpdates }) => {
   const images = [
     { src: Notifications, alt: 'Notifications' },
     { src: Store, alt: 'Store' },
@@ -31,13 +31,13 @@ const OpeningPage = ({ isAuth, Logout, getUpdates, get_updates }) => {
   ];
   useEffect(() => {
     getUpdates();
-  }, []);
-  useEffect(() => {
-    getUpdates();
     if (isAuth) {
       Logout();
     }
-  }, [get_updates]);
+  });
+  useEffect(() => {
+    getUpdates();
+  }, []);
   return (
     <Fragment>
       <MediaQuery maxDeviceWidth={1024}>
