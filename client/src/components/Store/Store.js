@@ -23,10 +23,13 @@ import { getUpdates } from '../../actions/updateAction';
 // Redux
 import { connect } from 'react-redux';
 
-const Store = ({ get_updates }) => {
+const Store = ({ getUpdates }) => {
   useEffect(() => {
     getUpdates();
-  }, [get_updates]);
+  }, []);
+  useEffect(() => {
+    getUpdates();
+  });
   const storeImages = [
     { src: pic1, alt: 'BPI - BULK MUSCLE' },
     { src: pic2, alt: 'Dymatize Super Mass' },
@@ -107,4 +110,4 @@ const MobileStore = ({ storeImages, storeImages1 }) => (
 const mapStateToProps = state => ({
   get_updates: state.updatesReducer.get_updates
 });
-export default connect(mapStateToProps)(Store);
+export default connect(mapStateToProps, { getUpdates })(Store);

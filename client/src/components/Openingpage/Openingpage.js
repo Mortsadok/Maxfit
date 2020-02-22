@@ -31,6 +31,9 @@ const OpeningPage = ({ isAuth, Logout, getUpdates, get_updates }) => {
   ];
   useEffect(() => {
     getUpdates();
+  }, []);
+  useEffect(() => {
+    getUpdates();
     if (isAuth) {
       Logout();
     }
