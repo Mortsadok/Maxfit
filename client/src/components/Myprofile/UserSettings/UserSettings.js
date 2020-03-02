@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import '../../../css/Myprofile.css';
 import SecNav from '../SecNav';
 import Navbar from '../../Navbar/Navbar';
@@ -19,7 +19,7 @@ const UserSettings = ({ user, settingsResetPassword, setAlert }) => {
     rePassword: ''
   });
   const { password, rePassword, oldPassword } = data;
-  const { Name, email } = user;
+  const { Name, email, Time, date } = user;
   const onChange = e => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -56,6 +56,8 @@ const UserSettings = ({ user, settingsResetPassword, setAlert }) => {
           <UnderNAV
             Name={Name}
             email={email}
+            Time={Time}
+            date={date}
             password={password}
             rePassword={rePassword}
             oldPassword={oldPassword}
@@ -71,6 +73,8 @@ const UserSettings = ({ user, settingsResetPassword, setAlert }) => {
 const UnderNAV = ({
   Name,
   email,
+  Time,
+  date,
   password,
   rePassword,
   onChange,
@@ -83,7 +87,7 @@ const UnderNAV = ({
       <div className='Headline'>
         <p className='font-weight-light'>הגדרות</p>
         <div className='Setting-form'>
-          <PersonalDetails Name={Name} email={email} />
+          <PersonalDetails Name={Name} email={email} Time={Time} date={date} />
           <ForgotPassword
             onSubmit={onSubmit}
             oldPassword={oldPassword}

@@ -17,14 +17,35 @@ router.post(
     check('phone', 'הכנס מספר טלפון תקין')
       .not()
       .isEmpty(),
-    check('clientId', 'הכנס תעודת זהות עם 9 ספרות').isLength({ min: 9, max: 9 })
+    check('clientId', 'הכנס תעודת זהות עם 9 ספרות').isLength({
+      min: 9,
+      max: 9
+    }),
+    check('Type', 'הכנס סוג מנוי')
+      .not()
+      .isEmpty(),
+    check('Time', 'הכנס תקופת מנוי')
+      .not()
+      .isEmpty(),
+    check('Payment', 'הכנס אמצעי תשלום')
+      .not()
+      .isEmpty()
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { Name, email, password, phone, clientId } = req.body;
+    const {
+      Name,
+      email,
+      password,
+      phone,
+      clientId,
+      Type,
+      Time,
+      Payment
+    } = req.body;
 
     try {
       let user = await ClientsUsers.findOne({ email });
@@ -39,7 +60,10 @@ router.post(
         email,
         password,
         phone,
-        clientId
+        clientId,
+        Type,
+        Time,
+        Payment
       });
       //Encrypt The password
 

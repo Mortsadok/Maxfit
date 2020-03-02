@@ -289,9 +289,11 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid #ced4da;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .Register-Form input[type="email"] {
   border-radius: 0.25rem;
 }
+
 .Register-Form input[type="password"] {
   display: block;
   width: 100%;

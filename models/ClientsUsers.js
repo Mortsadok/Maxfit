@@ -22,6 +22,18 @@ const ClientsUsersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  Type: {
+    type: String,
+    required: true
+  },
+  Time: {
+    type: String,
+    required: true
+  },
+  Payment: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
