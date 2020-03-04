@@ -1,24 +1,20 @@
 const mongoose = require('mongoose');
 
-const ClientsUsersSchema = new mongoose.Schema({
-  Name: {
+const NclientSchema = new mongoose.Schema({
+  firstname: {
     type: String,
     required: true
   },
-  email: {
+  lastname: {
+    type: String,
+    required: true
+  },
+  id: {
     type: String,
     required: true,
     unique: true
   },
-  password: {
-    type: String,
-    required: true
-  },
   phone: {
-    type: String,
-    required: true
-  },
-  clientId: {
     type: String,
     required: true
   },
@@ -34,8 +30,8 @@ const ClientsUsersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  readMessage: {
-    type: Boolean,
+  Total: {
+    type: String,
     required: true
   },
   subject: {
@@ -44,11 +40,7 @@ const ClientsUsersSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now(new Date('<YYYY-mm-dd>'))
   }
 });
-
-module.exports = ClientsUsers = mongoose.model(
-  'ClientUser',
-  ClientsUsersSchema
-);
+module.exports = NewClient = mongoose.model('Nclient', NclientSchema);
