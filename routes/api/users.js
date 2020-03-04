@@ -44,7 +44,8 @@ router.post(
       clientId,
       Type,
       Time,
-      Payment
+      Payment,
+      readMessage
     } = req.body;
 
     try {
@@ -63,7 +64,8 @@ router.post(
         clientId,
         Type,
         Time,
-        Payment
+        Payment,
+        readMessage
       });
       //Encrypt The password
 

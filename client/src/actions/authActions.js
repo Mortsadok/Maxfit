@@ -38,7 +38,8 @@ export const register = (
   clientId,
   Type,
   Time,
-  Payment
+  Payment,
+  readMessage = false
 ) => async dispatch => {
   const config = {
     headers: {
@@ -53,7 +54,8 @@ export const register = (
     clientId,
     Type,
     Time,
-    Payment
+    Payment,
+    readMessage
   });
   try {
     const res = await axios.post('api/users', body, config);
