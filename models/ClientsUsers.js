@@ -38,6 +38,10 @@ const ClientsUsersSchema = new mongoose.Schema({
     type: Boolean,
     required: true
   },
+  subject: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
