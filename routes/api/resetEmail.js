@@ -1,12 +1,13 @@
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
-const ClientUser = require("../../models/ClientsUsers");
-const { check, validationResult } = require("express-validator");
+const NewClient = require('../../models/NewClient');
+
+const { check, validationResult } = require('express-validator');
 
 router.post(
-  "/",
-  [check("email", "הכנס דואר אלקטרוני תקין").isEmail()],
+  '/',
+  [check('email', 'הכנס דואר אלקטרוני תקין').isEmail()],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -14,15 +15,15 @@ router.post(
     }
     const { _id, email } = req.body;
     try {
-      let user = await ClientUser.findOne({ _id });
+      let user = await NewClient.findOne({ _id });
       if (!user) {
-        return res.status(400).json({ errors: [{ msg: "משתמש לא קיים" }] });
+        return res.status(400).json({ errors: [{ msg: 'משתמש לא קיים' }] });
       }
-      let CheckEmail = await ClientUser.findOne({ email });
+      let CheckEmail = await NewClient.findOne({ email });
       if (CheckEmail) {
         return res
           .status(400)
-          .json({ errors: [{ msg: "דואר אלקטרוני זה קיים במערכת" }] });
+          .json({ errors: [{ msg: 'דואר אלקטרוני זה קיים במערכת' }] });
       }
       user.update({
         email
@@ -32,7 +33,7 @@ router.post(
       res.json(req.body);
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );

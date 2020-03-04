@@ -1,27 +1,27 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const auth = require("../../middleware/auth");
-const ClientUser = require("../../models/ClientsUsers");
-const { check, validationResult } = require("express-validator");
-const config = require("config");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+const auth = require('../../middleware/auth');
+const NewClient = require('../../models/NewClient');
+const { check, validationResult } = require('express-validator');
+const config = require('config');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
-router.get("/", auth, async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
-    const user = await ClientsUsers.findById(req.user.id).select("-password");
+    const user = await NewClient.findById(req.user.id).select('-password');
     res.json(user);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
 
 router.post(
-  "/",
+  '/',
   [
-    check("email", "הכנס דואר אלקטרוני תקין").isEmail(),
-    check("password", "הכנס סיסמה תקינה")
+    check('email', 'הכנס דואר אלקטרוני תקין').isEmail(),
+    check('password', 'הכנס סיסמה תקינה')
       .not()
       .isEmpty()
   ],
@@ -33,16 +33,16 @@ router.post(
     const { email, password } = req.body;
 
     try {
-      let user = await ClientUser.findOne({ email });
+      let user = await NewClient.findOne({ email });
 
       if (!user) {
-        return res.status(400).json({ errors: [{ msg: "משתמש לא קיים" }] });
+        return res.status(400).json({ errors: [{ msg: 'משתמש לא קיים' }] });
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
-        return res.status(400).json({ errors: [{ msg: "סיסמה לא נכונה" }] });
+        return res.status(400).json({ errors: [{ msg: 'סיסמה לא נכונה' }] });
       }
 
       const payload = {
@@ -53,7 +53,7 @@ router.post(
 
       jwt.sign(
         payload,
-        config.get("jwtSecret"),
+        config.get('jwtSecret'),
         { expiresIn: 36000 },
         (err, token) => {
           if (err) throw err;
@@ -62,7 +62,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );

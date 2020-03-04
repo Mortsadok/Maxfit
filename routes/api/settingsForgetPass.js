@@ -1,15 +1,15 @@
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const ClientUser = require("../../models/ClientsUsers");
-const { check, validationResult } = require("express-validator");
+const bcrypt = require('bcryptjs');
+const NewClient = require('../../models/NewClient');
+const { check, validationResult } = require('express-validator');
 
 router.post(
-  "/",
+  '/',
   [
-    check("password", "הכנס סיסמה עם 6 תווים או יותר").isLength({ min: 6 }),
-    check("oldPassword", "הכנס סיסמה ישנה")
+    check('password', 'הכנס סיסמה עם 6 תווים או יותר').isLength({ min: 6 }),
+    check('oldPassword', 'הכנס סיסמה ישנה')
       .not()
       .isEmpty()
   ],
@@ -20,14 +20,14 @@ router.post(
     }
     const { email, oldPassword, password } = req.body;
     try {
-      let user = await ClientUser.findOne({ email });
+      let user = await NewClient.findOne({ email });
       if (!user) {
-        return res.status(400).json({ errors: [{ msg: "משתמש לא קיים" }] });
+        return res.status(400).json({ errors: [{ msg: 'משתמש לא קיים' }] });
       }
       const isMatch = await bcrypt.compare(oldPassword, user.password);
 
       if (!isMatch) {
-        return res.status(400).json({ errors: [{ msg: "סיסמה לא נכונה" }] });
+        return res.status(400).json({ errors: [{ msg: 'סיסמה לא נכונה' }] });
       }
       user.update({
         password
@@ -38,7 +38,7 @@ router.post(
       res.json(req.body);
     } catch (err) {
       console.error(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );

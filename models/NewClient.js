@@ -1,15 +1,15 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const NclientSchema = new mongoose.Schema({
-  firstname: {
+  Name: {
     type: String,
     required: true
   },
-  lastname: {
+  email: {
     type: String,
     required: true
   },
-  id: {
+  clientId: {
     type: String,
     required: true,
     unique: true
@@ -30,13 +30,20 @@ const NclientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Total: {
+  readMessage: {
     type: String,
     required: true
   },
+  subject: {
+    type: String,
+    required: true
+  },
+  Total: {
+    type: String
+  },
   date: {
     type: Date,
-    default: Date.now(new Date("<YYYY-mm-dd>"))
+    default: Date.now(new Date('<YYYY-mm-dd>'))
   }
 });
-module.exports = NewClient = mongoose.model("Nclient", NclientSchema);
+module.exports = NewClient = mongoose.model('Nclient', NclientSchema);
