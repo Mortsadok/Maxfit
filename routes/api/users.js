@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const NewClient = require('../../models/NewClient');
+const Notifications = require('../../models/Notifications');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -74,7 +75,11 @@ router.post(
       const salt = await bcrypt.genSalt(10);
 
       user.password = await bcrypt.hash(password, salt);
-
+      let noti = Notifications({
+        readMessage,
+        subject
+      });
+      await noti.save();
       await user.save();
       // Making Web Token
 

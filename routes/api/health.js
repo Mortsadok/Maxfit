@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const Health = require('../../models/Health');
+const Notifications = require('../../models/Notifications');
 
 const { validationResult, check } = require('express-validator');
 
@@ -43,7 +44,6 @@ router.post(
           .status(400)
           .json({ errors: [{ msg: 'למשתמש זה קיים הצהרת בריאות במערכת' }] });
       }
-
       healthClient = new Health({
         firstName,
         lastName,
@@ -52,6 +52,11 @@ router.post(
         readMessage,
         subject
       });
+      let noti = new Notifications({
+        readMessage,
+        subject
+      });
+      await noti.save();
       await healthClient.save();
       res.json(req.body);
     } catch (err) {

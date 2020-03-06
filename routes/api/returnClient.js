@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ReturnClient = require('../../models/returnClients');
 const { check, validationResult } = require('express-validator');
+const Notifications = require('../../models/Notifications');
 
 // add new client
 router.get('/', async (req, res) => {
@@ -61,6 +62,11 @@ router.post(
         subject,
         readMessage
       });
+      let noti = Notifications({
+        readMessage,
+        subject
+      });
+      await noti.save();
       await returnClient.save();
       res.json(req.body);
     } catch (err) {
