@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const NewClient = require('../../models/NewClient');
+const ReturnClient = require('../../models/returnClients');
 const { check, validationResult } = require('express-validator');
 
 // add new client
 router.get('/', async (req, res) => {
   try {
-    const Clients = await NewClient.find();
-    res.json(Clients);
+    const returnClient = await ReturnClient.find();
+    res.json(returnClient);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -33,33 +33,35 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     const {
-      firstname,
-      lastname,
-      id,
+      Name,
+      clientId,
       phone,
       Type,
       Time,
       Payment,
-      Total
+      Total,
+      subject,
+      readMessage
     } = req.body;
-    let Nclient = await NewClient.findOne({ id });
-    if (Nclient) {
+    let returnClient = await ReturnClient.findOne({ clientId });
+    if (returnClient) {
       return res
         .status(400)
         .json({ errors: [{ msg: 'תעודת זהות זו נמצאת במערכת' }] });
     }
     try {
-      Nclient = new NewClient({
-        firstname,
-        lastname,
-        id,
+      returnClient = new ReturnClient({
+        Name,
+        clientId,
         phone,
         Type,
         Time,
         Payment,
-        Total
+        Total,
+        subject,
+        readMessage
       });
-      await Nclient.save();
+      await returnClient.save();
       res.json(req.body);
     } catch (err) {
       console.error(err.message);

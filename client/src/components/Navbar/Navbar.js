@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
-import logo from "../../img/logo.png";
-import "./Navbar.css";
-import "../../img/Img.css";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import logo from '../../img/logo.png';
+import './Navbar.css';
+import '../../img/Img.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faUser,
@@ -13,9 +13,9 @@ import {
   faStore,
   faBell,
   faSignOutAlt
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 // Redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 const Navbar = ({ user, get_updates }) => {
   const [Notifications, setNotification] = useState([]);
@@ -24,37 +24,37 @@ const Navbar = ({ user, get_updates }) => {
   }, [get_updates]);
   const { Name } = user;
   return (
-    <div className="Navbar">
+    <div className='Navbar'>
       <nav>
-        <div className="nav">
-          <div className="logo">
-            <img src={logo} alt="logo" />
+        <div className='nav'>
+          <div className='logo'>
+            <img src={logo} alt='logo' />
           </div>
 
-          <div className="att">
-            <FontAwesomeIcon className="homeIcon" icon={faHome} />
-            <NavLink to="/Home">עמוד הבית</NavLink>
-            <FontAwesomeIcon className="userIcon" icon={faUser} />
-            <NavLink to="/Myprofile">אזור אישי</NavLink>
-            <FontAwesomeIcon className="LocationIcon" icon={faMapMarkerAlt} />
-            <NavLink to="/Live">LIVE</NavLink>
-            <FontAwesomeIcon className="StoreIcon" icon={faStore} />
-            <NavLink to="/Store">חנות</NavLink>
-            <FontAwesomeIcon className="BellIcon" icon={faBell} />
-            <NavLink to="/Notifications">עדכונים</NavLink>
+          <div className='att'>
+            <FontAwesomeIcon className='homeIcon' icon={faHome} />
+            <NavLink to='/Home'>עמוד הבית</NavLink>
+            <FontAwesomeIcon className='userIcon' icon={faUser} />
+            <NavLink to='/Myprofile'>אזור אישי</NavLink>
+            <FontAwesomeIcon className='LocationIcon' icon={faMapMarkerAlt} />
+            <NavLink to='/Live'>LIVE</NavLink>
+            <FontAwesomeIcon className='StoreIcon' icon={faStore} />
+            <NavLink to='/Store'>חנות</NavLink>
+            <FontAwesomeIcon className='BellIcon' icon={faBell} />
+            <NavLink to='/Notifications'>עדכונים</NavLink>
           </div>
 
           <span>
-            <button className="Notifications-att">
+            <button className='Notifications-att'>
               <FontAwesomeIcon icon={faBell} />
             </button>
-            <div className="Quantity">{Notifications.length}</div>
+            <div className='Quantity'>{Notifications.length}</div>
           </span>
 
-          <div className="accountName">{Name}</div>
+          <div className='accountName'>{Name !== null ? Name : ''}</div>
 
-          <Link to="/">
-            <button className="SignOut">
+          <Link to='/'>
+            <button className='SignOut'>
               <FontAwesomeIcon icon={faSignOutAlt} />
             </button>
           </Link>

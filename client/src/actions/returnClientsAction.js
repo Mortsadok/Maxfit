@@ -1,15 +1,16 @@
 import axios from 'axios';
 import { setAlert } from './alertAction';
 
-export const Nclient = (
-  firstname,
-  lastname,
-  id,
+export const setReturnClient = (
+  Name,
+  clientId,
   phone,
   Type,
   Time,
   Payment,
-  Total = 0
+  Total = 0,
+  subject = 'התראה לחידוש מנוי',
+  readMessage = false
 ) => async dispatch => {
   const config = {
     headers: {
@@ -17,17 +18,18 @@ export const Nclient = (
     }
   };
   const body = JSON.stringify({
-    firstname,
-    lastname,
-    id,
+    Name,
+    clientId,
     phone,
     Type,
     Time,
     Payment,
-    Total
+    Total,
+    subject,
+    readMessage
   });
   try {
-    await axios.post('api/Nclient', body, config);
+    await axios.post('api/returnClient', body, config);
     dispatch(setAlert('חידוש מנוי בוצע בהצלחה', 'success'));
   } catch (err) {
     const errors = err.response.data.errors;

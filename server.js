@@ -6,7 +6,7 @@ const path = require('path');
 connectDB();
 
 app.use(express.json({ extended: false }));
-app.use('/api/Nclient', require('./routes/api/Nclient'));
+app.use('/api/returnClient', require('./routes/api/returnClient'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/health', require('./routes/api/health'));
 app.use('/api/auth', require('./routes/api/auth'));
