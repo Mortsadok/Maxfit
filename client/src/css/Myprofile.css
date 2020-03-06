@@ -378,6 +378,10 @@
   height: 300px;
 }
 
+.ShowStats {
+  width: 15%;
+}
+
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   border-color: #3d92d3;

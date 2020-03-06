@@ -1,23 +1,23 @@
-import React, { useState, Fragment } from 'react';
-import '../../../css/Myprofile.css';
-import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
-import { Button, Col } from 'react-bootstrap';
-import Navbar from '../../Navbar/Navbar';
-import MediaQuery from 'react-responsive';
-import MobileNav from '../../Mobile/MobileNav';
-import { Link } from 'react-router-dom';
+import React, { useState, Fragment } from "react";
+import "../../../css/Myprofile.css";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import { Button, Col } from "react-bootstrap";
+import Navbar from "../../Navbar/Navbar";
+import MediaQuery from "react-responsive";
+import MobileNav from "../../Mobile/MobileNav";
+import { Link } from "react-router-dom";
 // Redux
-import { connect } from 'react-redux';
-import { setProcessing } from '../../../actions/processingAction';
-import SecNav from '../SecNav';
+import { connect } from "react-redux";
+import { setProcessing } from "../../../actions/processingAction";
+import SecNav from "../SecNav";
 
 const Processing = ({ setProcessing }) => {
   const [getProccessing, setProcessingData] = useState({
-    Weight: '',
-    Chest: '',
-    frontHand: '',
-    waist: ''
+    Weight: "",
+    Chest: "",
+    frontHand: "",
+    waist: ""
   });
   const { Weight, Chest, frontHand, waist } = getProccessing;
   const onChange = e => {
@@ -42,7 +42,7 @@ const Processing = ({ setProcessing }) => {
         />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
-        <div className='Processing'>
+        <div className="Processing">
           <Navbar />
           <SecNav />
           <UnderNAV
@@ -60,29 +60,29 @@ const Processing = ({ setProcessing }) => {
 };
 
 const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
-  <div className='underNAV'>
-    <div className='Inside-box'>
-      <div className='Headline'>
-        <p className='font-weight-light'>עדכון מדדים</p>
-        <div className='Processing-form'>
-          <Card style={{ width: '50rem' }}>
+  <div className="underNAV">
+    <div className="Inside-box">
+      <div className="Headline">
+        <p className="font-weight-light">עדכון מדדים</p>
+        <div className="Processing-form">
+          <Card style={{ width: "50rem" }}>
             <Card.Body>
               <Card.Text>
                 <Form>
                   <Form.Row>
                     <Col>
                       <Form.Control
-                        name='Weight'
+                        name="Weight"
                         value={Weight}
-                        placeholder='הכנס משקל'
+                        placeholder="הכנס משקל"
                         onChange={e => onChange(e)}
                       />
                     </Col>
                     <Col>
                       <Form.Control
-                        name='Chest'
+                        name="Chest"
                         value={Chest}
-                        placeholder='הכנס היקף חזה'
+                        placeholder="הכנס היקף חזה"
                         onChange={e => onChange(e)}
                       />
                     </Col>
@@ -94,17 +94,17 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
                   <Form.Row>
                     <Col>
                       <Form.Control
-                        name='frontHand'
+                        name="frontHand"
                         value={frontHand}
-                        placeholder='הכנס היקף יד'
+                        placeholder="הכנס היקף יד"
                         onChange={e => onChange(e)}
                       />
                     </Col>
                     <Col>
                       <Form.Control
-                        name='waist'
+                        name="waist"
                         value={waist}
-                        placeholder='הכנס היקף מותניים'
+                        placeholder="הכנס היקף מותניים"
                         onChange={e => onChange(e)}
                       />
                     </Col>
@@ -112,12 +112,14 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
                 </Form>
               </Card.Text>
             </Card.Body>
-            <Button variant='outline-success' type='submit'>
+            <Button variant="outline-success" type="submit">
               שלח מדדים
             </Button>
-            <Link to='/ProcessGraph' variant='outline-success'>
-              הצג מדדים
-            </Link>
+            <Button className="ShowStats" variant="outline-secondery">
+              <Link to="/ProcessGraph" variant="outline-success">
+                הצג מדדים
+              </Link>
+            </Button>
           </Card>
         </div>
       </div>
@@ -132,9 +134,9 @@ const MobileProcessing = ({
   onChange,
   onSubmit
 }) => (
-  <div className='Mobile'>
-    <div className='MobileProcessing'>
-      <main className='main'>
+  <div className="Mobile">
+    <div className="MobileProcessing">
+      <main className="main">
         <UnderNAV
           Weight={Weight}
           Chest={Chest}
