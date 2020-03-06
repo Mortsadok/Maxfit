@@ -80,7 +80,7 @@ router.post(
 
       const payload = {
         user: {
-          id: user.id
+          clientId: user.clientId
         }
       };
 
