@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import './Live.css';
 import Navbar from '../Navbar/Navbar';

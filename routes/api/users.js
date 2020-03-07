@@ -77,7 +77,8 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
       let noti = Notifications({
         readMessage,
-        subject
+        subject,
+        Name
       });
       await noti.save();
       await user.save();

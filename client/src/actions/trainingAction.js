@@ -4,14 +4,24 @@ import { setAlert } from '../actions/alertAction';
 export const setTrainingPlan = (
   typeName,
   buttonValue,
-  email
+  email,
+  Name,
+  readMessage = false,
+  subject = 'בקשה לתוכנית אימונים'
 ) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
     }
   };
-  const body = JSON.stringify({ typeName, buttonValue, email });
+  const body = JSON.stringify({
+    typeName,
+    buttonValue,
+    email,
+    Name,
+    readMessage,
+    subject
+  });
   try {
     await axios.post('api/training', body, config);
     dispatch(setAlert('בקשה לתוכנית אימונים בוצעה', 'success'));

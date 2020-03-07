@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const Training = require('../../models/Training');
+const Notifications = require('../../models/Notifications');
 
 const { validationResult, check } = require('express-validator');
 
@@ -21,7 +22,14 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { typeName, buttonValue, email } = req.body;
+    const {
+      typeName,
+      buttonValue,
+      email,
+      Name,
+      readMessage,
+      subject
+    } = req.body;
 
     try {
       let buildPlanRequest = await Training.findOne({ email });
@@ -34,8 +42,16 @@ router.post(
       buildPlanRequest = new Training({
         typeName,
         buttonValue,
-        email
+        email,
+        readMessage,
+        subject
       });
+      let noti = Notifications({
+        readMessage,
+        subject,
+        Name
+      });
+      await noti.save();
       await buildPlanRequest.save();
       res.json(req.body);
     } catch (err) {

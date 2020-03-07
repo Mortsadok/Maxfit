@@ -15,6 +15,7 @@ app.use('/api/settingsForgotPass', require('./routes/api/settingsForgetPass'));
 app.use('/api/resetEmail', require('./routes/api/resetEmail'));
 app.use('/api/training', require('./routes/api/training'));
 app.use('/api/updates', require('./routes/api/updates'));
+app.use('/api/processing', require('./routes/api/processing'));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

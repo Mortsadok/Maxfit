@@ -17,6 +17,18 @@ const processingSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  email: {
+    type: String,
+    required: true
+  },
+  readMessage: {
+    type: Boolean,
+    required: true
+  },
+  subject: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
