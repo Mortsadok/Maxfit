@@ -7,6 +7,10 @@ body {
   direction: rtl;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .Box-flex {
   display: flex;
   height: 500px;

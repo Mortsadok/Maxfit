@@ -115,11 +115,13 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
             <Button variant="outline-success" type="submit">
               שלח מדדים
             </Button>
-            <Button className="ShowStats" variant="outline-secondery">
-              <Link to="/ProcessGraph" variant="outline-success">
-                הצג מדדים
-              </Link>
-            </Button>
+            <Link
+              to="/ProcessGraph"
+              className="ShowStats"
+              variant="outline-success"
+            >
+              הצג מדדים
+            </Link>
           </Card>
         </div>
       </div>
