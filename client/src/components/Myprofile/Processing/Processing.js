@@ -115,7 +115,6 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
             <Button variant="outline-success" type="submit">
               שלח מדדים
             </Button>
-
             <Link
               to="/ProcessGraph"
               className="ShowStats"

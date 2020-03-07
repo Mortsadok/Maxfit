@@ -1,5 +1,5 @@
 .ProcessGraphBox {
-  height: 100vh;
+  height: 600px;
   width: 95%;
   margin: auto;
   border-radius: 50px;
@@ -7,11 +7,10 @@
   margin-top: 25px;
   margin-bottom: 20px;
   display: flex;
-  overflow: auto;
 }
 
 .Inside_ProcessGraphBox {
-  height: 100vh;
+  height: 580px;
   width: 98%;
   margin: auto;
   border-radius: 50px;
@@ -19,31 +18,26 @@
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  overflow: auto;
 }
 
 /* Cards attributes */
 .Stat-content {
   display: flex;
-  padding: 3rem;
   text-align: right;
-  flex-wrap: wrap;
 }
 
 .Stat-content .card {
   flex: 0 0 40%;
-  height: 400px;
   margin-right: auto;
   margin-left: auto;
   background: #f8f9fa;
-  margin-top: 15px;
+  margin-top: 2.5rem;
 }
 
 .Stat-content .card-header {
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem;
   margin-bottom: 0;
   background-color: #f8f9fa;
-  box-shadow: 0px 2px 5px 0px #353c3f;
   color: #353c3f;
   font-weight: 600;
 }
@@ -66,5 +60,18 @@
 }
 
 .HandState {
-  padding: 1.25rem;
+  padding: auto;
+}
+
+.GraphSize {
+  margin: auto;
+  width: 340px;
+}
+
+.ButtonClick {
+  margin-top: 2rem;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  color: black;
 }
