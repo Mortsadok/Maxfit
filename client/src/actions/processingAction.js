@@ -5,7 +5,7 @@ export const setProcessing = (
   Weight,
   Chest,
   frontHand,
-  backHand,
+  waist,
   Name,
   email,
   readMessage = false,
@@ -13,23 +13,27 @@ export const setProcessing = (
 ) => async dispatch => {
   const config = {
     headers: {
-      'Content-Type': 'applications/json'
+      'Content-Type': 'application/json'
     }
   };
   const body = JSON.stringify({
     Weight,
     Chest,
     frontHand,
-    backHand,
+    waist,
     Name,
     email,
     readMessage,
     subject
   });
   try {
-    await axios.post('/api/processing', body, config);
-    dispatch(setAlert('מדדים נשלחו בהצלחה', 'success'));
+    await axios.post('api/processing', body, config);
+    dispatch(setAlert('שליחת מדדים בוצעה בהצלחה', 'success'));
   } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
+    }
     console.error(err.message);
   }
 };

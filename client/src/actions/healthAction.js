@@ -8,7 +8,7 @@ export const setHealthDetails = (
   lastName,
   documentsText,
   readMessage = false,
-  subject = 'הצהרת בריאות'
+  subject = 'התקבלה הצהרת בריאות חדשה מאת'
 ) => async dispatch => {
   const config = {
     headers: {

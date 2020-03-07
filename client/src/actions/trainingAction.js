@@ -7,7 +7,7 @@ export const setTrainingPlan = (
   email,
   Name,
   readMessage = false,
-  subject = 'בקשה לתוכנית אימונים'
+  subject = 'התקבלה בקשה לתוכנית אימונים חדשה מאת'
 ) => async dispatch => {
   const config = {
     headers: {

@@ -2,19 +2,19 @@ const mongoose = require('mongoose');
 
 const processingSchema = new mongoose.Schema({
   Weight: {
-    type: Number,
+    type: String,
     required: true
   },
   Chest: {
-    type: Number,
+    type: String,
     required: true
   },
   frontHand: {
-    type: Number,
+    type: String,
     required: true
   },
   waist: {
-    type: Number,
+    type: String,
     required: true
   },
   email: {

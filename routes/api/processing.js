@@ -36,7 +36,6 @@ router.post(
       readMessage,
       subject
     } = req.body;
-
     try {
       let processingRequest = await Processing.findOne({ email });
       if (processingRequest) {
@@ -49,6 +48,7 @@ router.post(
         Chest,
         frontHand,
         waist,
+        email,
         readMessage,
         subject
       });

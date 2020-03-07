@@ -95,7 +95,6 @@ const Register = ({ register, isAuth, setAlert }) => {
   const getPrice = () => {
     let Total = 0;
     if (calcType.calcType !== undefined && calcTime.calcTime !== undefined) {
-      console.log(calcType.calcType, calcTime.calcTime);
       Total = calcType.calcType * calcTime.calcTime;
     }
     setCalculation(Total);

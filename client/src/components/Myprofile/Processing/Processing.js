@@ -15,19 +15,18 @@ import SecNav from '../SecNav';
 
 const Processing = ({ setProcessing, user }) => {
   const { Name, email } = user;
-  const [getProccessing, setProcessingData] = useState({
+  const [getValues, setProcessingData] = useState({
     Weight: '',
     Chest: '',
     frontHand: '',
     waist: ''
   });
-  const { Weight, Chest, frontHand, waist } = getProccessing;
+  const { Weight, Chest, frontHand, waist } = getValues;
   const onChange = e => {
-    setProcessingData({ getProccessing, [e.target.name]: e.target.value });
+    setProcessingData({ ...getValues, [e.target.name]: e.target.value });
   };
   const onSubmit = e => {
     e.preventDefault();
-    console.log('check');
     setProcessing(Weight, Chest, frontHand, waist, Name, email);
   };
   return (
@@ -67,11 +66,11 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
     <div className='Inside-box'>
       <div className='Headline'>
         <p className='font-weight-light'>עדכון מדדים</p>
-        <div className='Processing-form'>
+        <form className='Processing-form' onSubmit={e => onSubmit(e)}>
           <Card style={{ width: '50rem' }}>
             <Card.Body>
               <Card.Text>
-                <Form onSubmit={e => onSubmit(e)}>
+                <Form>
                   <Form.Row>
                     <Col>
                       <Form.Control
@@ -112,7 +111,6 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
                       />
                     </Col>
                   </Form.Row>
-                  <Alert />
                 </Form>
               </Card.Text>
             </Card.Body>
@@ -127,6 +125,9 @@ const UnderNAV = ({ Weight, Chest, frontHand, waist, onChange, onSubmit }) => (
               הצג מדדים
             </Link>
           </Card>
+        </form>
+        <div className='Alert'>
+          <Alert />
         </div>
       </div>
     </div>
