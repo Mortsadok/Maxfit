@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react";
 import "../../../css/Myprofile.css";
+import "../../../css/Alerts.css";
 import { Form, Row, Col, Button } from "react-bootstrap/";
 import Navbar from "../../Navbar/Navbar";
 import Alert from "../../Layout/Alert";
@@ -96,7 +97,7 @@ const UnderNAV = ({
               שלח
             </Button>
           </div>
-          <div className="Alert">
+          <div className="HealthAlerts">
             <Alert />
           </div>
         </Form>

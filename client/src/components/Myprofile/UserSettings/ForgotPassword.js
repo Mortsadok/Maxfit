@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Card, Form, Button, Row, Col } from "react-bootstrap";
 import "../../../css/Myprofile.css";
+import "../../../css/Alerts.css";
 import Alert from "../../Layout/Alert";
 // Redux
 import { connect } from "react-redux";
@@ -58,7 +59,7 @@ const ForgotPassword = ({
                 שנה סיסמא
               </Button>
               {successResetPassword || errorResetPassword ? (
-                <div className="alert">
+                <div className="UserSettingsPasswordAlerts">
                   <Alert />
                 </div>
               ) : null}

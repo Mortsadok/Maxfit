@@ -1,32 +1,33 @@
-import React, { useState, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import '../../../css/Myprofile.css';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Navbar from '../../Navbar/Navbar';
-import MobileNav from '../../Mobile/MobileNav';
-import Alert from '../../Layout/Alert';
-import MediaQuery from 'react-responsive';
+import React, { useState, Fragment } from "react";
+import PropTypes from "prop-types";
+import "../../../css/Myprofile.css";
+import "../../../css/Alerts.css";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Navbar from "../../Navbar/Navbar";
+import MobileNav from "../../Mobile/MobileNav";
+import Alert from "../../Layout/Alert";
+import MediaQuery from "react-responsive";
 // Redux
-import { connect } from 'react-redux';
-import { setReturnClient } from '../../../actions/returnClientsAction';
-import SecNav from '../SecNav';
+import { connect } from "react-redux";
+import { setReturnClient } from "../../../actions/returnClientsAction";
+import SecNav from "../SecNav";
 
 const Subscription = ({ setReturnClient, user }) => {
   const { phone, Name, clientId } = user;
   const [typeData, setTypeData] = useState([
-    { id: 1, label: 'רגיל', value: 200, selected: false },
-    { id: 2, label: 'סטודנט', value: 150, selected: false }
+    { id: 1, label: "רגיל", value: 200, selected: false },
+    { id: 2, label: "סטודנט", value: 150, selected: false }
   ]);
   const [timeData, setTimeData] = useState([
-    { id: 3, label: 'חודש', value: 1, selected: false },
-    { id: 4, label: 'שלושה חודשים', value: 3, selected: false },
-    { id: 5, label: 'שנה', value: 12, selected: false }
+    { id: 3, label: "חודש", value: 1, selected: false },
+    { id: 4, label: "שלושה חודשים", value: 3, selected: false },
+    { id: 5, label: "שנה", value: 12, selected: false }
   ]);
   const [paymentData, setPaymentData] = useState([
-    { id: 6, label: 'מזומן', value: 'מזומן', selected: false },
-    { id: 7, label: 'אשראי', value: 'אשראי', selected: false }
+    { id: 6, label: "מזומן", value: "מזומן", selected: false },
+    { id: 7, label: "אשראי", value: "אשראי", selected: false }
   ]);
   const [typeName, setTypeName] = useState({});
   const [timeName, setTimeName] = useState({});
@@ -35,13 +36,13 @@ const Subscription = ({ setReturnClient, user }) => {
   const [calcTime, setCalcTime] = useState({});
   const [calcPayment, setCalcPayment] = useState({});
   const [formData, setFormData] = useState({
-    Type: '',
-    Time: '',
-    Payment: '',
+    Type: "",
+    Time: "",
+    Payment: "",
     Total: 0
   });
   const onChange = (e, id) => {
-    if (e.target.value === 'typeData') {
+    if (e.target.value === "typeData") {
       setTypeData(
         typeData.map(type => {
           if (type.id === id && type.selected === false) {
@@ -53,7 +54,7 @@ const Subscription = ({ setReturnClient, user }) => {
         })
       );
     }
-    if (e.target.value === 'timeData') {
+    if (e.target.value === "timeData") {
       setTimeData(
         timeData.map(time => {
           if (time.id === id && time.selected === false) {
@@ -65,7 +66,7 @@ const Subscription = ({ setReturnClient, user }) => {
         })
       );
     }
-    if (e.target.value === 'paymentData') {
+    if (e.target.value === "paymentData") {
       setPaymentData(
         paymentData.map(payment => {
           if (payment.id === id && payment.selected === false) {
@@ -101,16 +102,16 @@ const Subscription = ({ setReturnClient, user }) => {
     }, 2000);
     setFormData({
       ...formData,
-      firstname: '',
-      lastname: '',
-      id: '',
-      Phone: ''
+      firstname: "",
+      lastname: "",
+      id: "",
+      Phone: ""
     });
-    setTimeName('');
-    setTypeName('');
-    setCalcTime('');
-    setCalcType('');
-    setCalcPayment('');
+    setTimeName("");
+    setTypeName("");
+    setCalcTime("");
+    setCalcType("");
+    setCalcPayment("");
     setTypeData(
       typeData.map(type => {
         return { ...type, selected: false };
@@ -142,7 +143,7 @@ const Subscription = ({ setReturnClient, user }) => {
         />
       </MediaQuery>
       <MediaQuery minDeviceWidth={1280}>
-        <div className='Subscription'>
+        <div className="Subscription">
           <Navbar />
           <SecNav />
           <UnderNAV
@@ -167,26 +168,26 @@ const UnderNAV = ({
   calculationData,
   onSubmit
 }) => (
-  <div className='underNAV'>
-    <div className='Inside-box'>
-      <div className='Headline'>
-        <p className='font-weight-light'>חידוש מנוי</p>
-        <div className='SubscriptionMenu'>
-          <div className='testCard'>
+  <div className="underNAV">
+    <div className="Inside-box">
+      <div className="Headline">
+        <p className="font-weight-light">חידוש מנוי</p>
+        <div className="SubscriptionMenu">
+          <div className="testCard">
             <Card.Body>
-              <div className='CustomSize'>
-                <Card style={({ width: '20rem' }, { margin: '5px' })}>
+              <div className="CustomSize">
+                <Card style={({ width: "20rem" }, { margin: "5px" })}>
                   <Card.Body>
                     <Card.Title>סוג מנוי</Card.Title>
                     {typeData.map(type => (
-                      <span key={type.id} className='mb-3'>
+                      <span key={type.id} className="mb-3">
                         <Form.Check
                           custom
                           inline
                           label={type.label}
                           id={type.id}
-                          type='radio'
-                          value={'typeData'}
+                          type="radio"
+                          value={"typeData"}
                           checked={type.selected}
                           onChange={e => onChange(e, type.id)}
                         />
@@ -195,19 +196,19 @@ const UnderNAV = ({
                   </Card.Body>
                 </Card>
 
-                <Card style={({ width: '20rem' }, { margin: '5px' })}>
+                <Card style={({ width: "20rem" }, { margin: "5px" })}>
                   <Card.Body>
                     <Card.Title>תקופת מנוי</Card.Title>
 
                     {timeData.map(time => (
-                      <span key={time.id} className='mb-3'>
+                      <span key={time.id} className="mb-3">
                         <Form.Check
                           custom
                           inline
                           label={time.label}
                           id={time.id}
-                          value={'timeData'}
-                          type='radio'
+                          value={"timeData"}
+                          type="radio"
                           checked={time.selected}
                           onChange={e => onChange(e, time.id)}
                         />
@@ -216,19 +217,19 @@ const UnderNAV = ({
                   </Card.Body>
                 </Card>
 
-                <Card style={({ width: '20rem' }, { margin: '5px' })}>
+                <Card style={({ width: "20rem" }, { margin: "5px" })}>
                   <Card.Body>
                     <Card.Title>אמצעי תשלום</Card.Title>
 
                     {paymentData.map(payment => (
-                      <span key={payment.id} className='mb-3'>
+                      <span key={payment.id} className="mb-3">
                         <Form.Check
                           custom
                           inline
                           label={payment.label}
                           id={payment.id}
-                          type='radio'
-                          value={'paymentData'}
+                          type="radio"
+                          value={"paymentData"}
                           checked={payment.selected}
                           onChange={e => onChange(e, payment.id)}
                         />
@@ -239,36 +240,38 @@ const UnderNAV = ({
               </div>
               <Card
                 style={
-                  ({ width: '20rem' },
-                  { height: '9rem' },
-                  { padding: '0.5rem' })
+                  ({ width: "20rem" },
+                  { height: "9rem" },
+                  { padding: "0.5rem" })
                 }
               >
                 <Card.Body>
                   <Card.Title>סה"כ לתשלום:</Card.Title>
 
-                  <div className='Sum'>
+                  <div className="Sum">
                     <h4>
-                      {' '}
-                      <span>₪{calculationData}</span>{' '}
+                      {" "}
+                      <span>₪{calculationData}</span>{" "}
                     </h4>
                   </div>
                   <Card.Footer>
                     <Form onSubmit={e => onSubmit(e)}>
                       <Button
-                        className='RenewBTN'
-                        variant='outline-success'
-                        type='submit'
+                        className="RenewBTN"
+                        variant="outline-success"
+                        type="submit"
                       >
                         חדש מנוי
                       </Button>
                     </Form>
-                    <Alert />
                   </Card.Footer>
                 </Card.Body>
               </Card>
             </Card.Body>
           </div>
+        </div>
+        <div className="SubscriptionAlers">
+          <Alert />
         </div>
       </div>
     </div>
@@ -282,9 +285,9 @@ const MobileSubscription = ({
   calculationData,
   onSubmit
 }) => (
-  <div className='Mobile'>
-    <div className='MobileSub'>
-      <main className='main'>
+  <div className="Mobile">
+    <div className="MobileSub">
+      <main className="main">
         <UnderNAV
           typeData={typeData}
           timeData={timeData}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Form, Row, Button, Card } from "react-bootstrap";
 import "../../../css/Myprofile.css";
+import "../../../css/Alerts.css";
 import Alert from "../../Layout/Alert";
 // Redux
 import { connect } from "react-redux";
@@ -67,7 +68,11 @@ const EmailForm = ({
                 >
                   שנה דואר אלקטרוני
                 </Button>
-                {successResetEmail || errorResetEmail ? <Alert /> : null}
+                {successResetEmail || errorResetEmail ? (
+                  <div className="UserSettingsEmailAlerts">
+                    <Alert />
+                  </div>
+                ) : null}
               </div>
             </form>
           </Card.Text>

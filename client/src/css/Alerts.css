@@ -1,0 +1,97 @@
+/* Health */
+
+.HealthAlerts {
+  text-align: center;
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  height: 30px;
+}
+
+/* Processing */
+
+.ProcessingAlerts {
+  text-align: center;
+  width: 280px;
+  margin-left: auto;
+  display: block;
+  margin-top: -19.5rem;
+  margin-right: 1.2rem;
+  height: 30px;
+  line-height: 5px;
+}
+
+/* TrainingPlan */
+
+.TrainingPlanAlerts {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  display: block;
+  margin-top: -8rem;
+  margin-right: 2.75rem;
+}
+
+/* Subscription */
+
+.SubscriptionAlers {
+  text-align: center;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 20px;
+  line-height: 1px;
+  margin-top: 3px;
+}
+
+/* UserSettings */
+
+/* Change Password */
+
+.UserSettingsPasswordAlerts {
+  text-align: center;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 2.45rem;
+  height: 30px;
+  line-height: 5px;
+}
+
+/* Change Email */
+
+.UserSettingsEmailAlerts {
+  text-align: center;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 2.45rem;
+  height: 30px;
+  line-height: 5px;
+}
+
+/* Register */
+
+.RegisterAlet {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: 30px;
+  line-height: 15px;
+}
+
+.LoginAlert {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  line-height: 10px;
+  margin-top: 1rem;
+}
