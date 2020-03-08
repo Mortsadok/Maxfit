@@ -1,57 +1,57 @@
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
-import MediaQuery from 'react-responsive';
-import '../../../css/Mobile.css';
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import MediaQuery from "react-responsive";
+import "../../../css/Mobile.css";
 
 class WaistStat extends React.Component {
   state = {
     dataBar: {
       labels: [
-        'ינואר',
-        'פברואר',
-        'מרץ',
-        'אפריל',
-        'מאי',
-        'יוני',
-        'יולי',
-        'אוגוסט',
-        'ספטמבר',
-        'אוקטובר',
-        'נובמבר',
-        'דצמבר'
+        "ינואר",
+        "פברואר",
+        "מרץ",
+        "אפריל",
+        "מאי",
+        "יוני",
+        "יולי",
+        "אוגוסט",
+        "ספטמבר",
+        "אוקטובר",
+        "נובמבר",
+        "דצמבר"
       ],
       datasets: [
         {
-          label: 'סטטיסטיקת יד קדמית',
+          label: "סטטיסטיקת היקף מותניים",
           data: [2, 4, 4, 5, 3, 7, 6, 5, 7, 4, 1, 3],
           backgroundColor: [
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)'
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)"
           ],
           borderWidth: 2,
           borderColor: [
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)',
-            'rgba(167, 65, 74, 1)'
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)",
+            "rgba(167, 65, 74, 1)"
           ]
         }
       ]
@@ -65,7 +65,7 @@ class WaistStat extends React.Component {
             barPercentage: 1,
             gridLines: {
               display: true,
-              color: 'rgba(0, 0, 0, 0.1)'
+              color: "rgba(0, 0, 0, 0.1)"
             }
           }
         ],
@@ -73,7 +73,7 @@ class WaistStat extends React.Component {
           {
             gridLines: {
               display: true,
-              color: 'rgba(0, 0, 0, 0.1)'
+              color: "rgba(0, 0, 0, 0.1)"
             },
             ticks: {
               beginAtZero: true
@@ -86,7 +86,7 @@ class WaistStat extends React.Component {
 
   render() {
     return (
-      <div className='HandState'>
+      <div className="HandState">
         <MediaQuery maxDeviceWidth={1024}>
           <Bar
             width={350}
