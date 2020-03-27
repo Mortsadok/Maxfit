@@ -10,10 +10,10 @@ import {
   ERROR_RESET_PASSWORD,
   SUCCESS_RESET_EMAIL,
   ERROR_RESET_EMAIL
-} from "../actions/typeActions";
+} from '../actions/typeActions';
 
 const initialState = {
-  token: localStorage.getItem("token"),
+  token: localStorage.getItem('token'),
   isAuth: null,
   loading: true,
   user: {},
@@ -34,7 +34,7 @@ const authReducer = (state = initialState, action) => {
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
-      localStorage.setItem("token", payload.token);
+      localStorage.setItem('token', payload.token);
       return {
         ...state,
         ...payload,
@@ -45,7 +45,7 @@ const authReducer = (state = initialState, action) => {
     case REGISTER_FAIL:
     case LOGIN_FAIL:
     case LOGOUT:
-      localStorage.removeItem("token");
+      localStorage.removeItem('token');
       return {
         ...state,
 
